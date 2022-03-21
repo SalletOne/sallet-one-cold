@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_gravity="center"
+        android:layout_marginRight="20dp"
+
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/shape_5_corner_f8"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical"
+            android:gravity="clip_vertical"
+            android:layout_marginBottom="16dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="@string/activity_scan_result4"
+                android:textStyle="bold"
+                android:textColor="#D2D2D2"
+                android:textSize="16sp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/color_tv_blue"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:gravity="right"
+                android:id="@+id/tv_send_addr"
+                android:text=""
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="clip_vertical"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="@string/activity_scan_result5"
+                android:textStyle="bold"
+                android:textColor="#D2D2D2"
+                android:textSize="16sp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/color_tv_blue"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:gravity="right"
+                android:text=""
+                android:id="@+id/tv_get_addr"
+                android:layout_height="wrap_content"/>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginRight="15dp"
+            android:gravity="clip_vertical"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="@string/activity_scan_result6"
+                android:textStyle="bold"
+                android:textColor="#D2D2D2"
+                android:textSize="16sp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/color_tv_blue"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:gravity="right"
+                android:text=""
+                android:id="@+id/tv_num"
+                android:layout_height="wrap_content"/>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical"
+            android:gravity="clip_vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="@string/activity_scan_result7"
+                android:textStyle="bold"
+                android:textColor="#D2D2D2"
+                android:textSize="16sp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:gravity="right"
+                android:textColor="@color/color_tv_blue"
+                android:layout_marginTop="5dp"
+                android:text=""
+                android:id="@+id/tv_fee"
+                android:layout_height="wrap_content"/>
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="13sp"
+            android:background="@drawable/shape_25_stroke_blue"
+            android:text="@string/confirm_trac"
+            android:textColor="@color/color_tv_blue"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:id="@+id/tv_time"
+            android:layout_marginTop="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:layout_height="wrap_content"/>
+
+
+
+
+
+    </LinearLayout>

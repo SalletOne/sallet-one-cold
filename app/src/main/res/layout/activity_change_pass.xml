@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+    <include
+        layout="@layout/title_bar"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="@string/destruction_wallet_pass"
+        android:textSize="16sp"
+        android:id="@+id/tv_titel"
+        android:textColor="#2a2e2f"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"/>
+
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/et_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_5_corner"
+            android:paddingLeft="11dp"
+            android:paddingTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:hint="@string/ac_money_pass_et1"
+            android:paddingRight="15dp"
+            android:paddingBottom="11dp"
+            android:inputType="textPassword"
+            android:textColorHint="#686a6b"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+        <ImageView
+            android:layout_width="40dp"
+            android:src="@mipmap/ic_nosee"
+            android:layout_alignParentRight="true"
+            android:padding="10dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="40dp"
+            android:id="@+id/iv_is_see"
+            android:layout_height="40dp"/>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginLeft="30dp"
+        android:paddingLeft="11dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/no_lenth_pass"
+        android:textSize="11sp"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/et_pass2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/shape_5_corner"
+        android:hint="@string/ac_money_pass_et2"
+        android:paddingLeft="11dp"
+        android:paddingTop="10dp"
+        android:paddingRight="15dp"
+        android:inputType="textPassword"
+        android:paddingBottom="11dp"
+        android:textColorHint="#686a6b"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+
+
+
+    <TextView
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/bt"
+        android:text="@string/confirm"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        style="@style/btStyle"
+        android:textSize="12sp"
+
+        android:layout_width="match_parent"
+        />
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="not_new_version">Please update to the latest version, this version is not currently supported</string>
+    <string name="request_read">request read permission</string>
+    <string name="input_u">Please insert a  USB flash disk</string>
+    <string name="u_no_file">No files in the USB flash disk</string>
+    <string name="read_file">Reading the file...</string>
+    <string name="file_content">Read file content:</string>
+    <string name="no_new_verinu">There is no latest version in the U disk</string>
+    <string name="installing">installing new version</string>
+    <string name="request_install">Request installation permission</string>
+    <string name="confirm_trac">Repeat confirmation</string>
+    <string name="net_submit">Your device is connected to the network. In order to ensure the safe use of the cold wallet, it is recommended that you disconnect all network connections.</string>
+    <string name="sallet_one_check">Sallet one version security check</string>
+    <string name="check_submit">To prevent sallet one from being maliciously modified, please go to the sallet one official website https://www.salletone.com/ to verify the current version of sha1/md5/APKHash</string>
+</resources>

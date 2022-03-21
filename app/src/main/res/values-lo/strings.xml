@@ -1,0 +1,230 @@
+<resources>
+    <string name="about_us_abus">《About us》</string>
+    <string name="about_service">The terms of service</string>
+
+    <string name="about_us_call">Contact us</string>
+    <string name="about_us_web"> Wallet website</string>
+    <string name="activity_set_up_ok11">Creation complete</string>
+
+    <string name="lg_chinese">Chinese</string>
+    <string name="lg_English">English</string>
+    <string name="lg_Cambodian">Cambodian</string>
+    <string name="lg_Lao">Lao</string>
+    <string name="lg_Malay">Malay</string>
+    <string name="lg_Indonesian">Indonesian</string>
+    <string name="lg_Vietnamese">Vietnamese</string>
+    <string name="lg_Arabic">Arabic</string>
+    <string name="lg_French">French</string>
+    <string name="lg_Hindi">Hindi</string>
+    <string name="lg_Italian">Italian</string>
+    <string name="lg_Russian">Russian</string>
+    <string name="lg_Korean">Korean</string>
+    <string name="lg_Burmese">Burmese</string>
+    <string name="lg_Japanese">Japanese</string>
+    <string name="lg_Thai">Thai</string>
+    <string name="lg_Spanish">Spanish</string>
+    <string name="lg_Finnish">Finnish</string>
+    <string name="lg_Portuguese">Portuguese</string>
+    <string name="lg_Swedish">Swedish</string>
+    <string name="lg_Persian">Persian</string>
+    <string name="lg_Danish">Danish</string>
+    <string name="lg_German">German</string>
+    <string name="lg_Norwegian">Norwegian</string>
+    <string name="lg_Greek">Greek</string>
+    //老挝
+    <string name="app_name">Sallet One</string>
+    <string name="ac_back_up_word_tv1">ບັນທຶກກະເປົາເງິນຂອງທ່ານດ້ວຍ ຄໍາ ສັບ mnemonic
+</string>
+    <string name="ac_back_up_word_tv2">ການໄດ້ມາຂອງ ຄໍາ ສັບ mnemonic ແມ່ນກົງກັບການເປັນເຈົ້າຂອງຊັບສິນໃນຫຼັກຊັບ, ການສູນເສຍ ຄໍາ ສັບ mnemonic ບໍ່ສາມາດພົບໄດ້, ຈື່ ຈໍາ ໄວ້ວ່າຈະເກັບຢ່າງຖືກຕ້ອງ
+</string>
+    <string name="ac_back_up_word_tv3">ສໍາ ຮອງຂໍ້ມູນ ສໍາ ເລັດ
+</string>
+    <string name="ac_ball_btc_set_tv1">ພາລາມິເຕີ ກະເປົາ
+</string>
+    <string name="ac_ball_btc_set_tv2">ສ້າງ/ປ່ຽນທີ່ຢູ່ຍ່ອຍ
+</string>
+    <string name="ac_ball_btc_set_tv3">ທີ່ຢູ່ຍ່ອຍ
+</string>
+    <string name="ac_ball_btc_set_tv4">ຕື່ມທີ່ຢູ່ຍ່ອຍ ໃຫມ່
+</string>
+    <string name="ac_ball_eth_set_tv1">ພາລາມິເຕີ ກະເປົາ
+</string>
+    <string name="ac_ball_eth_set_tv2">ສ້າງ/ປ່ຽນທີ່ຢູ່ຍ່ອຍ
+</string>
+    <string name="ac_ball_eth_set_tv3">ທີ່ຢູ່ຍ່ອຍ
+</string>
+    <string name="ac_ball_eth_set_tv4">ຕື່ມທີ່ຢູ່ຍ່ອຍ ໃຫມ່
+</string>
+    <string name="ac_main_tv1">ຂອງຂ້ອຍ ເປົາເງິນ
+</string>
+    <string name="ac_main_tv2">ຮ້ານຂາຍ ຄໍາ ສັບ mnemonic
+</string>
+    <string name="ac_money_pass_tv1">ສ້າງລະຫັດຜ່ານຂອງກະເປົາເງິນ
+</string>
+    <string name="ac_money_pass_tv2">ສ້າງລະຫັດຜ່ານຂອງ BTC, ETH
+</string>
+    <string name="ac_money_pass_et1">ລະຫັດຜ່ານ
+</string>
+    <string name="ac_money_pass_et2">ເຮັດລະຫັດຜ່ານອີກຄັ້ງ
+</string>
+    <string name="ac_money_pass_et3">ການຮ້ອງຂໍລະຫັດຜ່ານ (ເປັນທາງເລືອກ)
+</string>
+    <string name="ac_money_pass_bt">ສ້າງ
+</string>
+    <string name="ac_resume_ball_tv1">ສ້າງລະຫັດຜ່ານຂອງກະເປົາເງິນ
+</string>
+    <string name="ac_resume_ball_tv2">ສ້າງລະຫັດຜ່ານຂອງ BTC, ETH
+
+</string>
+    <string name="ac_resume_ball_tv3">ກະລຸນາໃສ່ ຄໍາ ສັບ mnemonic ໃນ ຄໍາ ສັ່ງທີ່ຖືກຕ້ອງ, ແຍກໂດຍຫ້ອງພາສາອັງກິດ
+</string>
+    <string name="ac_resume_ball_tv4">ສ້າງ
+</string>
+    <string name="ac_resume_word_tv1">ພັກຜ່ອນກະເປົາເງິນ
+</string>
+    <string name="ac_resume_word_tv2">ສັ່ງ ຄໍາ ສັບ mnemonic ຢ່າງຖືກຕ້ອງເພື່ອໃຫ້ແນ່ໃຈວ່າທ່ານສາມາດປະຫຍັດໄດ້ຢ່າງຖືກຕ້ອງ
+</string>
+    <string name="ac_resume_word_tv3">ສ້າງ
+</string>
+    <string name="ac_sc_bp_word1">ຮ້ານຂາຍ ຄໍາ ສັບ mnemonic
+</string>
+    <string name="ac_sc_bp_word2">ການໄດ້ຮັບ ຄໍາ ສັບ mnemonic ເທົ່າກັບການເປັນເຈົ້າຂອງຊັບສິນໃນຫຼັກຊັບ
+</string>
+    <string name="ac_sc_bp_word3">ສໍາ ຮອງທັນທີ
+</string>
+    <string name="ac_sc_bp_word4">ຫຼັງຈາກນັ້ນ, ຊ່ວຍປະຢັດ
+</string>
+    <string name="ac_scan1">ສະແກນລະຫັດ QR
+</string>
+    <string name="ac_scan2">ສະແກນລະຫັດ QR ໃນ APP
+</string>
+    <string name="activity_scan_result1">ການສະແກນຜົນໄດ້ຮັບ
+</string>
+    <string name="activity_scan_result2">ສະແກນລະຫັດ QR ໃນ APP
+</string>
+    <string name="activity_scan_result3">ການຊື້ຂາຍເນື້ອຫາ
+</string>
+    <string name="activity_scan_result4">ສົ່ງທີ່ຢູ່
+</string>
+    <string name="activity_scan_result5">ຮັບທີ່ຢູ່
+</string>
+    <string name="activity_scan_result6">ຈໍາ ນວນຂໍ້ສະ ເຫນີ
+</string>
+    <string name="activity_scan_result7">ຄ່າ ທໍາ ນຽມລົບ
+</string>
+    <string name="activity_scan_result8">ລາຍເຊັນ
+</string>
+    <string name="activity_scan_result_ok1">ລະຫັດ QR
+</string>
+    <string name="activity_scan_result_ok2">ໃຊ້ແອັບພລິເຄຊັນເພື່ອວິເຄາະລະຫັດເພື່ອສືບຕໍ່ການເຮັດທຸລະ ກໍາ
+</string>
+    <string name="activity_scan_result_ok3">ສໍາ ເລັດ
+</string>
+    <string name="activity_set_up_ok1">ການສ້າງ ສໍາ ເລັດ
+</string>
+    <string name="activity_set_up_ok2">ໂອເຄ
+</string>
+    <string name="activity_start1">ຍິນດີຕ້ອນຮັບສູ່Sallet
+</string>
+    <string name="activity_start2">ປະຕິບັດຕາມ ຄໍາ ແນະ ນໍາ ໃນການ ດໍາ ເນີນງານ
+</string>
+    <string name="activity_start3">ສ້າງຕົວຕົນ
+</string>
+    <string name="activity_start4">ໃຊ້ກະເປົາເງິນຂອງທ່ານເປັນຄັ້ງ ທໍາ ອິດ
+</string>
+    <string name="activity_start5">ຟື້ນຟູຕົວຕົນ
+</string>
+    <string name="activity_start6">ມີກະເປົາເງິນແລ້ວ
+</string>
+    <string name="dialog_loading11">ກໍາ ລັງໂຫລດ...</string>
+    <string name="dialog_address_zxing1">ໃຊ້ APP ເພື່ອສະແກນລະຫັດເພື່ອໄປຫາທີ່ຢູ່
+</string>
+    <string name="dialog_input_pass1">ໃສ່ລະຫັດຜ່ານເພື່ອເຮັດລາຍເຊັນໃຫ້ ສໍາ ເລັດ
+</string>
+    <string name="dialog_input_pass_delete">ໃສ່ລະຫັດຜ່ານເພື່ອ ທໍາ ລາຍກະເປົາເງິນ
+</string>
+    <string name="dialog_input_pass2">ໃຊ້ APP ເພື່ອສະແກນລະຫັດເພື່ອໄປຫາທີ່ຢູ່
+</string>
+    <string name="dialog_input_pass3">ຢືນຢັນ
+</string>
+    <string name="dialog_make_sure1">ໃຫ້ແນ່ໃຈວ່າການ ສໍາ ຮອງ ສໍາ ເລັດແລ້ວ
+</string>
+    <string name="dialog_make_sure2">ຖ້າ ຄໍາ ສັບ mnemonic ຫາຍໄປ, ມັນບໍ່ສາມາດດຶງຄືນໄດ້, ໃຫ້ແນ່ໃຈວ່າຈະ ສໍາ ຮອງແລະກົດ OK ເພື່ອກ້າວໄປສູ່ຂັ້ນຕອນຕໍ່ໄປ
+</string>
+    <string name="dialog_make_sure3">ຢືນຢັນ
+</string>
+    <string name="please_input_etpass">ໃສ່ລະຫັດຜ່ານຂອງທ່ານກ່ອນ
+</string>
+    <string name="password_wrong">ຂໍ້ຜິດພາດຂອງລະຫັດຜ່ານ, ຫຼັງຈາກເວລາ %sຂອງກະເປົາເງິນສໍ້ລາດບັງຫຼວງ
+</string>
+    <string name="password_submit">ຄໍາ ແນະ ນໍາ ກ່ຽວກັບລະຫັດຜ່ານ:
+</string>
+    <string name="creat_address_success">ທີ່ຢູ່ໄດ້ປະສົບຜົນ ສໍາ ເລັດ
+</string>
+    <string name="creat_money_pass_ac1">ກະລຸນາໃສ່ການປະສົມປະສານຂອງແປດຕົວເລກທີ່ມີຕົວເລກແລະຕົວອັກສອນ
+</string>
+    <string name="creat_money_pass_ac2">ກະລຸນາໃສ່ການປະສົມປະສານຂອງແປດຕົວເລກທີ່ມີຕົວເລກແລະຕົວອັກສອນ
+</string>
+    <string name="creat_money_pass_ac3">ທ່ານໃສ່ລະຫັດຜ່ານສອງຄັ້ງສອງຄັ້ງແມ່ນບໍ່ສອດຄ່ອງ
+</string>
+    <string name="creat_money_pass_ac4">ກະລຸນາໃສ່ລະຫັດຜ່ານຂອງທ່ານອີກຄັ້ງ
+</string>
+    <string name="creat_money_pass_ac5">ກະລຸນາໃສ່ລະຫັດຜ່ານຂອງທ່ານ
+</string>
+    <string name="qr_code_not_trade">ລະຫັດ QR ບໍ່ແມ່ນການເຮັດທຸລະ ກໍາ
+</string>
+    <string name="scan_resulte_ac1">ຢືນຢັນວ່າທີ່ຢູ່ແມ່ນສ້າງຂື້ນໂດຍ ຄໍາ ວ່າ mnemonic ຫຼືສືບຕໍ່ສ້າງທີ່ຢູ່ຍ່ອຍ!
+!</string>
+    <string name="input_password_2_sign">ໃສ່ລະຫັດຜ່ານເພື່ອເຮັດລາຍເຊັນໃຫ້ ສໍາ ເລັດ
+</string>
+    <string name="no_words_back_up">ທ່ານບໍ່ໄດ້ສະ ຫນັບ ສະ ຫນູນ ຄໍາ ເວົ້າ mnemonic ຂອງທ່ານ, ກະລຸນາສະ ຫນັບ ສະ ຫນູນ ພວກເຂົາໄວເທົ່າທີ່ຈະໄວໄດ້ຖ້າເສຍ
+</string>
+    <string name="address_default">(ມາດຕະຖານ)
+</string>
+    <string name="ac_regist3">ລະຫັດຜ່ານ
+</string>
+    <string name="ac_regist4">ຢືນຢັນລະຫັດຜ່ານ
+</string>
+    <string name="setting_pass">ໃສ່ລະຫັດຜ່ານ
+</string>
+    <string name="pass_not_eq">ລະຫັດຜ່ານແມ່ນລະເມີດລະຫັດຜ່ານຂອງການຢັ້ງຢືນ
+</string>
+    <string name="setting_success">ກໍາ ນົດຜົນ ສໍາ ເລັດ
+</string>
+    <string name="pass_wrong">ລະຫັດຜ່ານຂໍ້ຜິດພາດ
+</string>
+    <string name="confirm">ຢືນຢັນ
+</string>
+    <string name="destruction_wallet">ການ ທໍາ ລາຍກະເປົາເງິນ
+</string>
+    <string name="destruction_wallet_pass">ໃສ່ລະຫັດລັບການ ທໍາ ລາຍ
+</string>
+    <string name="wrong_words">ຂໍ້ຜິດພາດຂອງ Mnemonic, ກະລຸນາທົບທວນ
+</string>
+    <string name="no_lenth_pass">ກະລຸນາໃສ່ຕົວເລກນ້ອຍກວ່າສິບຕົວພ້ອມດ້ວຍຕົວອັກສອນລວມ + ຈົດ ຫມາຍ
+</string>
+    <string name="check_get_addre">ຮັບທີ່ຢູ່
+</string>
+    <string name="coin_manage">ການຄຸ້ມຄອງເງິນຕາ
+</string>
+    <string name="change_language">ການປ່ຽນແປງພາສາ
+</string>
+    <string name="about_us">ກ່ຽວກັບພວກເຮົາ
+</string>
+    <string name="about_us_service">ເງື່ອນໄຂການບໍລິການ
+</string>
+    <string name="new_version">Version update</string>
+    <string name="not_new_version">Please update to the latest version, this version is not currently supported</string>
+    <string name="request_read">request read permission</string>
+    <string name="input_u">Please insert a  USB flash disk</string>
+    <string name="u_no_file">No files in the USB flash disk</string>
+    <string name="read_file">Reading the file...</string>
+    <string name="file_content">Read file content:</string>
+    <string name="no_new_verinu">There is no latest version in the U disk</string>
+    <string name="installing">installing new version</string>
+    <string name="request_install">Request installation permission</string>
+    <string name="confirm_trac">Repeat confirmation</string>
+    <string name="net_submit">Your device is connected to the network. In order to ensure the safe use of the cold wallet, it is recommended that you disconnect all network connections.</string>
+    <string name="sallet_one_check">Sallet one version security check</string>
+    <string name="check_submit">To prevent sallet one from being maliciously modified, please go to the sallet one official website https://www.salletone.com/ to verify the current version of sha1/md5/APKHash</string>
+</resources>

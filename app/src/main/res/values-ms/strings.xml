@@ -1,0 +1,230 @@
+<resources>
+    <string name="about_us_abus">《About us》</string>
+    <string name="about_service">The terms of service</string>
+
+    <string name="about_us_call">Contact us</string>
+    <string name="about_us_web"> Wallet website</string>
+    <string name="activity_set_up_ok11">Creation complete</string>
+
+    <string name="lg_chinese">Chinese</string>
+    <string name="lg_English">English</string>
+    <string name="lg_Cambodian">Cambodian</string>
+    <string name="lg_Lao">Lao</string>
+    <string name="lg_Malay">Malay</string>
+    <string name="lg_Indonesian">Indonesian</string>
+    <string name="lg_Vietnamese">Vietnamese</string>
+    <string name="lg_Arabic">Arabic</string>
+    <string name="lg_French">French</string>
+    <string name="lg_Hindi">Hindi</string>
+    <string name="lg_Italian">Italian</string>
+    <string name="lg_Russian">Russian</string>
+    <string name="lg_Korean">Korean</string>
+    <string name="lg_Burmese">Burmese</string>
+    <string name="lg_Japanese">Japanese</string>
+    <string name="lg_Thai">Thai</string>
+    <string name="lg_Spanish">Spanish</string>
+    <string name="lg_Finnish">Finnish</string>
+    <string name="lg_Portuguese">Portuguese</string>
+    <string name="lg_Swedish">Swedish</string>
+    <string name="lg_Persian">Persian</string>
+    <string name="lg_Danish">Danish</string>
+    <string name="lg_German">German</string>
+    <string name="lg_Norwegian">Norwegian</string>
+    <string name="lg_Greek">Greek</string>
+    //马来西亚
+    <string name="app_name">Sallet One</string>
+    <string name="ac_back_up_word_tv1">Sandarkan dompet anda dengan kata nemonik
+</string>
+    <string name="ac_back_up_word_tv2">Pemerolehan kata nemonik sama dengan pemilikan aset dompet, kehilangan kata nemonik tidak boleh dijumpai semula, sila simpan dengan baik
+</string>
+    <string name="ac_back_up_word_tv3">Sandaran selesai
+</string>
+    <string name="ac_ball_btc_set_tv1">Tetapan dompet
+</string>
+    <string name="ac_ball_btc_set_tv2">Cipta/tukar subalamat
+</string>
+    <string name="ac_ball_btc_set_tv3">Subalamat
+</string>
+    <string name="ac_ball_btc_set_tv4">Tambah subalamat
+</string>
+    <string name="ac_ball_eth_set_tv1">Tetapan dompet
+</string>
+    <string name="ac_ball_eth_set_tv2">Cipta/tukar subalamat
+</string>
+    <string name="ac_ball_eth_set_tv3">Subalamat
+</string>
+    <string name="ac_ball_eth_set_tv4">Tambah subalamat
+</string>
+    <string name="ac_main_tv1">Dompet saya
+</string>
+    <string name="ac_main_tv2">Sandarkan kata nemonik
+</string>
+    <string name="ac_money_pass_tv1">Cipta kata laluan dompet
+</string>
+    <string name="ac_money_pass_tv2">Cipta kata laluan dompet BTC, ETH
+</string>
+    <string name="ac_money_pass_et1">Kata laluan
+</string>
+    <string name="ac_money_pass_et2">Ulang kata laluan
+</string>
+    <string name="ac_money_pass_et3">Kata laluan prom (pilihan)
+</string>
+    <string name="ac_money_pass_bt">Cipta
+</string>
+    <string name="ac_resume_ball_tv1">Mencipta kata laluan dompet
+</string>
+    <string name="ac_resume_ball_tv2">Cipta kata laluan dompet BTC, ETH
+</string>
+    <string name="ac_resume_ball_tv3">Sila masukkan kata nemonik dalam susunan yang betul, dipisahkan oleh ruang bahasa Inggeris
+</string>
+    <string name="ac_resume_ball_tv4">Cipta
+</string>
+    <string name="ac_resume_word_tv1">Pulihkan dompet
+</string>
+    <string name="ac_resume_word_tv2">Sila susun kata nemonik dengan betul supaya anda dapat membuat sandaran dengan betul
+</string>
+    <string name="ac_resume_word_tv3">Cipta
+</string>
+    <string name="ac_sc_bp_word1">Sandarkan kata nemonik
+</string>
+    <string name="ac_sc_bp_word2">Pemerolehan kata nemonik sama dengan pemilikan aset dompet
+</string>
+    <string name="ac_sc_bp_word3">Sandarkan serta-merta
+</string>
+    <string name="ac_sc_bp_word4">Sandarkan kemudian
+</string>
+    <string name="ac_scan1">Imbas kod QR
+</string>
+    <string name="ac_scan2">Imbas kod QR pada aplikasi
+</string>
+    <string name="activity_scan_result1">Hasil imbasan
+</string>
+    <string name="activity_scan_result2">Imbas kod QR pada aplikasi
+</string>
+    <string name="activity_scan_result3">Kandungan dagangan
+</string>
+    <string name="activity_scan_result4">Alamat penghantaran
+</string>
+    <string name="activity_scan_result5">Alamat penerimaan
+</string>
+    <string name="activity_scan_result6">Bilangan tawaran
+</string>
+    <string name="activity_scan_result7">Yuran pelombong
+</string>
+    <string name="activity_scan_result8">Tandatangan
+</string>
+    <string name="activity_scan_result_ok1">Kod QR
+</string>
+    <string name="activity_scan_result_ok2">Gunakan aplikasi untuk mengimbas kod untuk meneruskan transaksi
+</string>
+    <string name="activity_scan_result_ok3">Selesai
+</string>
+    <string name="activity_set_up_ok1">Ciptaan selesai
+</string>
+    <string name="activity_set_up_ok2">Baiklah
+</string>
+    <string name="activity_start1">Selamat datang ke Sallet
+</string>
+    <string name="activity_start2">Sila ikuti prom untuk beroperasi
+</string>
+    <string name="activity_start3">Cipta identity
+</string>
+    <string name="activity_start4">Gunakan dompet anda untuk kali pertama
+</string>
+    <string name="activity_start5">Pulihkan identiti
+</string>
+    <string name="activity_start6">Sudah mempunyai dompet
+</string>
+    <string name="dialog_loading11">Memuat dalam…
+</string>
+    <string name="dialog_address_zxing1">Gunakan aplikasi untuk mengimbas kod untuk mendapatkan alamat
+</string>
+    <string name="dialog_input_pass1">Masukkan alamat untuk melengkapkan tandatangan
+</string>
+    <string name="dialog_input_pass_delete">Masukkan alamat untuk memusnahkan dompet
+</string>
+    <string name="dialog_input_pass2">Gunakan aplikasi untuk mengimbas kod untuk mendapatkan alamat
+</string>
+    <string name="dialog_input_pass3">Sahkan
+</string>
+    <string name="dialog_make_sure1">Pastikan sandaran telah selesai
+</string>
+    <string name="dialog_make_sure2">Sekiranya kata nemonik hilang, ia tidak boleh diambil, sila pastikan sandaran dibuat, klik OK untuk meneruskan ke langkah seterusnya
+</string>
+    <string name="dialog_make_sure3">Sahkan
+</string>
+    <string name="please_input_etpass">Sila masukkan kata laluan dahulu
+</string>
+    <string name="password_wrong">Ralat kata laluan, selepas %s musnahkan dompet
+</string>
+    <string name="password_submit">Petua kata laluan:
+</string>
+    <string name="creat_address_success">Berjaya menjana alamat
+</string>
+    <string name="creat_money_pass_ac1">Sila masukkan gabungan lapan digit nombor dan abjad
+</string>
+    <string name="creat_money_pass_ac2">Sila masukkan gabungan lapan digit nombor dan abjad
+</string>
+    <string name="creat_money_pass_ac3">Kata laluan yang dua kali dimasukkan tidak konsisten
+</string>
+    <string name="creat_money_pass_ac4">Sila masukkan kata laluan semula
+</string>
+    <string name="creat_money_pass_ac5">Sila masukkan kata laluan
+</string>
+    <string name="qr_code_not_trade">Kod QR bukan transaksi
+</string>
+    <string name="scan_resulte_ac1">Sila sahkan sama ada alamat dijanakan oleh kata nemonik atau teruskan untuk menjanakan subalamat!
+!</string>
+    <string name="input_password_2_sign">Masukkan alamat untuk melengkapkan tandatangan
+</string>
+    <string name="no_words_back_up">Anda tidak membuat sandaran kepada kata nemonik, sila sandarkan secepat mungkin sekiranya hilang
+</string>
+    <string name="address_default">(Lalai)
+</string>
+    <string name="ac_regist3">Kata laluan
+</string>
+    <string name="ac_regist4">Sahkan kata laluan
+</string>
+    <string name="setting_pass">Tetapkan kata laluan
+</string>
+    <string name="pass_not_eq">Kata laluan tidak konsisten dengan kata laluan yang disahkan
+</string>
+    <string name="setting_success">Tetapan berjaya
+</string>
+    <string name="pass_wrong">Ralat kata laluan
+</string>
+    <string name="confirm">Sahkan
+</string>
+    <string name="destruction_wallet">Pemusnahan dompet
+</string>
+    <string name="destruction_wallet_pass">Tetapkan kata laluan pemusnahan
+</string>
+    <string name="wrong_words">Ralat nemonik, sila periksa
+</string>
+    <string name="no_lenth_pass">Sila masukkan sekurang-kurangnya gabungan sepuluh digit + abjad
+</string>
+    <string name="check_get_addre">Alamat Penerimaan:
+</string>
+    <string name="coin_manage">Pengurusan mata wang
+</string>
+    <string name="change_language">Penukaran bahasa
+</string>
+    <string name="about_us">Perihal kami
+</string>
+    <string name="about_us_service">Terma perkhidmatan
+</string>
+    <string name="new_version">Version update</string>
+    <string name="not_new_version">Please update to the latest version, this version is not currently supported</string>
+    <string name="request_read">request read permission</string>
+    <string name="input_u">Please insert a  USB flash disk</string>
+    <string name="u_no_file">No files in the USB flash disk</string>
+    <string name="read_file">Reading the file...</string>
+    <string name="file_content">Read file content:</string>
+    <string name="no_new_verinu">There is no latest version in the U disk</string>
+    <string name="installing">installing new version</string>
+    <string name="request_install">Request installation permission</string>
+    <string name="confirm_trac">Repeat confirmation</string>
+    <string name="net_submit">Your device is connected to the network. In order to ensure the safe use of the cold wallet, it is recommended that you disconnect all network connections.</string>
+    <string name="sallet_one_check">Sallet one version security check</string>
+    <string name="check_submit">To prevent sallet one from being maliciously modified, please go to the sallet one official website https://www.salletone.com/ to verify the current version of sha1/md5/APKHash</string>
+</resources>

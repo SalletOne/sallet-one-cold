@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:background="@drawable/shape_5_corner_white_dialog"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_gravity="bottom"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:textSize="16sp"
+        android:textColor="@color/color_black_333"
+        android:text="@string/dialog_input_pass_delete"
+        android:textStyle="bold"
+        android:id="@+id/tv_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginLeft="20dp"
+        android:layout_toLeftOf="@+id/iv_close"
+        android:layout_height="wrap_content"/>
+
+
+    <ImageView
+        android:layout_width="22dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="14dp"
+        android:layout_marginRight="20dp"
+        android:background="@mipmap/ic_close"
+        android:id="@+id/iv_close"
+        android:layout_height="22dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:background="@drawable/shape_5_corner_ef"
+            android:layout_below="@+id/iv_close"
+            android:layout_marginTop="29dp"
+            android:inputType="textPassword"
+            android:textColor="@color/color_black_333"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:id="@+id/et_pass"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_height="50dp"/>
+
+
+
+
+        <TextView
+            android:layout_below="@+id/et_pass"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="30dp"
+            android:id="@+id/bt"
+            android:text="@string/dialog_input_pass3"
+            style="@style/btStyle"/>
+
+</RelativeLayout>
+
+
+</LinearLayout>

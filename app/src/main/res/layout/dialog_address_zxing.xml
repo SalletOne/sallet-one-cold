@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="30dp"
+    android:layout_marginRight="10dp"
+    android:background="@drawable/shape_5_corner_white_dialog"
+
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="40dp"
+        android:src="@mipmap/ic_back"
+        android:layout_marginTop="14dp"
+        android:layout_marginLeft="15dp"
+        android:padding="10dp"
+        android:scaleType="centerInside"
+        android:id="@+id/iv_back"
+        android:layout_height="40dp"/>
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:src="@mipmap/ic_set"
+        android:id="@+id/iv_set"
+        android:visibility="gone"
+        android:scaleType="centerInside"
+        android:layout_marginTop="15dp"
+        android:layout_height="40dp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/iv_back"
+
+
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/ll_body"
+        android:layout_marginTop="25dp"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_height="25dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:background="@mipmap/ic_btc"
+                android:id="@+id/iv_logo"
+                android:layout_height="25dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="#F7931A"
+                android:text="BTC"
+                android:id="@+id/tv_logo"
+                android:layout_marginLeft="11dp"
+                android:textSize="20sp"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:background="@mipmap/ic_erweima_kuang"
+            android:padding="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="150dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:id="@+id/iv_ma"
+                android:layout_height="match_parent"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="33dp"
+            android:background="@drawable/shape_5_corner_f3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#949494"
+                android:layout_centerInParent="true"
+                android:id="@+id/tv_address"
+                android:layout_marginTop="11.5dp"
+                android:layout_marginBottom="13dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textIsSelectable="true"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="11dp"
+                android:visibility="gone"
+                android:background="@mipmap/ic_tv_set"
+                android:layout_height="22dp"/>
+
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textColor="#D2D2D2"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/dialog_address_zxing1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+</RelativeLayout>
+

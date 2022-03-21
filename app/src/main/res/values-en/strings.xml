@@ -1,0 +1,244 @@
+<resources>
+    <string name="lg_chinese">Chinese</string>
+    <string name="lg_English">English</string>
+    <string name="lg_Cambodian">Cambodian</string>
+    <string name="lg_Lao">Lao</string>
+    <string name="lg_Malay">Malay</string>
+    <string name="lg_Indonesian">Indonesian</string>
+    <string name="lg_Vietnamese">Vietnamese</string>
+    <string name="lg_Arabic">Arabic</string>
+    <string name="lg_French">French</string>
+    <string name="lg_Hindi">Hindi</string>
+    <string name="lg_Italian">Italian</string>
+    <string name="lg_Russian">Russian</string>
+    <string name="lg_Korean">Korean</string>
+    <string name="lg_Burmese">Burmese</string>
+    <string name="lg_Japanese">Japanese</string>
+    <string name="lg_Thai">Thai</string>
+    <string name="lg_Spanish">Spanish</string>
+    <string name="lg_Finnish">Finnish</string>
+    <string name="lg_Portuguese">Portuguese</string>
+    <string name="lg_Swedish">Swedish</string>
+    <string name="lg_Persian">Persian</string>
+    <string name="lg_Danish">Danish</string>
+    <string name="lg_German">German</string>
+    <string name="lg_Norwegian">Norwegian</string>
+    <string name="lg_Greek">Greek</string>
+    <string name="app_name">Sallet One</string>
+    <string name="ac_back_up_word_tv1">Use mnemonic words to back up your wallet
+</string>
+    <string name="ac_back_up_word_tv2">The acquisition of the mnemonic is equal to the ownership of the wallet asset. If the mnemonic is lost, it cannot be recovered
+</string>
+    <string name="ac_back_up_word_tv3">The backup is completed
+</string>
+
+    <string name="ac_ball_btc_set_tv1">Wallet setting
+</string>
+    <string name="ac_ball_btc_set_tv2">Create, switch subaddresses
+</string>
+    <string name="ac_ball_btc_set_tv3">Subaddress
+</string>
+    <string name="ac_ball_btc_set_tv4">Add new subaddress
+</string>
+
+    <string name="ac_ball_eth_set_tv1">Wallet setting
+</string>
+    <string name="ac_ball_eth_set_tv2">Create, switch subaddresses
+</string>
+    <string name="ac_ball_eth_set_tv3">Subaddress
+</string>
+    <string name="ac_ball_eth_set_tv4">Add new subaddress
+</string>
+
+    <string name="ac_main_tv1">My wallet</string>
+    <string name="ac_main_tv2">Back up mnemonic words
+</string>
+
+    <string name="ac_money_pass_tv1">Set wallet password
+</string>
+    <string name="ac_money_pass_tv2">Set password for BTC and ETH... wallet
+</string>
+    <string name="ac_money_pass_et1">Password
+</string>
+    <string name="ac_money_pass_et2">Repeat the password</string>
+    <string name="ac_money_pass_et3">Password Tips (Optional)</string>
+    <string name="ac_money_pass_bt">Create</string>
+
+    <string name="ac_resume_ball_tv1">Create wallet password
+</string>
+    <string name="ac_resume_ball_tv2">Create password for BTC and ETH wallet
+</string>
+    <string name="ac_resume_ball_tv3">Please enter the mnemonic words in the correct order, separated by English Spaces
+</string>
+    <string name="ac_resume_ball_tv4">Create</string>
+
+    <string name="ac_resume_word_tv1">Back up the wallet
+</string>
+    <string name="ac_resume_word_tv2">Please sort the mnemonic words in correct order to confirm that you backed them up correctly
+</string>
+    <string name="ac_resume_word_tv3">Create</string>
+
+    <string name="ac_sc_bp_word1">Back up mnemonic words
+</string>
+    <string name="ac_sc_bp_word2">Acquiring a mnemonic is equivalent to owning a wallet asset
+</string>
+    <string name="ac_sc_bp_word3">Back up now
+</string>
+    <string name="ac_sc_bp_word4">Back up later
+</string>
+
+    <string name="ac_scan1">Scan the code</string>
+    <string name="ac_scan2">Scan the QR code on the APP
+</string>
+
+    <string name="activity_scan_result1">The result of scan
+</string>
+    <string name="activity_scan_result2">Scan the QR code on the APP
+</string>
+    <string name="activity_scan_result3">Transaction detail
+</string>
+    <string name="activity_scan_result4">Sending address
+</string>
+    <string name="activity_scan_result5">Receiving address
+</string>
+    <string name="activity_scan_result6">Trading amount
+</string>
+    <string name="activity_scan_result7">Miner’s fee
+</string>
+    <string name="activity_scan_result8">Signature
+</string>
+
+    <string name="activity_scan_result_ok1">QR code
+</string>
+    <string name="activity_scan_result_ok2">Use the APP to scan the code and continue the transaction
+</string>
+    <string name="activity_scan_result_ok3">Complete</string>
+
+    <string name="activity_set_up_ok1">Success
+</string>
+    <string name="activity_set_up_ok2">Good
+</string>
+
+    <string name="activity_start1">Welcome to use Sallet
+</string>
+    <string name="activity_start2">Please follow the prompts
+</string>
+    <string name="activity_start3">Create identity
+</string>
+    <string name="dialog_loading11">Loading
+</string>
+    <string name="activity_start4">Using a wallet for the first time
+</string>
+    <string name="activity_start5">Restore  identity</string>
+    <string name="activity_start6">Have a wallet already
+</string>
+
+    <string name="dialog_address_zxing1">Use APP to scan the code to get the address
+</string>
+
+    <string name="dialog_input_pass1">Enter the password to complete the signature
+</string>
+    <string name="dialog_input_pass2">Use APP to scan the code to get the address
+</string>
+    <string name="dialog_input_pass3">Confirm
+</string>
+
+
+    <string name="dialog_make_sure1">Make sure the backup is complete
+</string>
+    <string name="dialog_make_sure2">If the mnemonic words are lost and cannot be recovered, please make sure to backup them and click OK to proceed to the next step
+</string>
+    <string name="dialog_make_sure3">Confirm
+</string>
+
+
+    <string name="please_input_etpass">Please enter your password first
+</string>
+    <string name="password_wrong">Password error, %s times before the wallet is destroyed
+</string>
+    <string name="password_submit">Password prompt:</string>
+
+    <string name="creat_address_success">Address is generated successfully</string>
+
+
+
+
+    <string name="creat_money_pass_ac1">Please enter an eight-digit combination of numbers and letters
+</string>
+    <string name="creat_money_pass_ac2">Please enter an eight-digit combination of numbers and letters
+</string>
+    <string name="creat_money_pass_ac3">The two passwords do not match
+</string>
+    <string name="creat_money_pass_ac4">Please enter your password again
+</string>
+    <string name="creat_money_pass_ac5">Please enter your password
+</string>
+
+
+
+    <string name="qr_code_not_trade">The QR code is not a transaction
+</string>
+
+
+
+    <string name="scan_resulte_ac1">Please confirm whether the address was generated by the mnemonic or continue to generate subaddresses!
+</string>
+    <string name="input_password_2_sign">Enter the password to complete the signature
+</string>
+
+
+    <string name="no_words_back_up">There is no backup mnemonic yet, please backup it as soon as possible in case you lose it
+</string>
+
+    <string name="address_default"> (default)</string>
+    <string name="ac_regist3">Password</string>
+    <string name="ac_regist4">Confirm the password
+</string>
+
+
+
+    <string name="setting_pass">Set the password</string>
+
+    <string name="pass_not_eq">The password and the confirmation password are not the same</string>
+
+    <string name="setting_success">Set successfully
+</string>
+
+    <string name="dialog_input_pass_delete">Enter the password to destroy the wallet</string>
+
+    <string name="pass_wrong">Incorrect password</string>
+
+    <string name="confirm">Confirm</string>
+
+    <string name="destruction_wallet">Destroy Wallet</string>
+    <string name="destruction_wallet_pass">Set destroy password</string>
+
+    <string name="wrong_words">The mnemonic word is wrong, please check again</string>
+
+    <string name="no_lenth_pass">Please enter at least ten digit + letter combinations</string>
+    <string name="check_get_addre">Receiving Address：</string>
+    <string name="coin_manage">Currency management</string>
+    <string name="change_language">Language switch</string>
+    <string name="about_us">About us</string>
+    <string name="about_us_service">《The terms of service》</string>
+    <string name="activity_set_up_ok11">Creation complete</string>
+    <string name="about_us_abus">《About us》</string>
+    <string name="about_service">Terms of Service</string>
+
+    <string name="about_us_call">Contact us</string>
+    <string name="about_us_web"> Wallet website</string>
+    <string name="new_version">Version update</string>
+    <string name="not_new_version">Please update to the latest version, this version is not currently supported</string>
+    <string name="request_read">request read permission</string>
+    <string name="input_u">Please insert a  USB flash disk</string>
+    <string name="u_no_file">No files in the USB flash disk</string>
+    <string name="read_file">Reading the file...</string>
+    <string name="file_content">Read file content:</string>
+    <string name="no_new_verinu">There is no latest version in the U disk</string>
+    <string name="installing">installing new version</string>
+    <string name="request_install">Request installation permission</string>
+    <string name="confirm_trac">Repeat confirmation</string>
+    <string name="net_submit">Your device is connected to the network. In order to ensure the safe use of the cold wallet, it is recommended that you disconnect all network connections.</string>
+    <string name="sallet_one_check">Sallet one version security check</string>
+    <string name="check_submit">To prevent sallet one from being maliciously modified, please go to the sallet one official website https://www.salletone.com/ to verify the current version of sha1/md5/APKHash</string>
+</resources>
