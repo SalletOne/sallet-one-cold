@@ -94,6 +94,7 @@ public class ScanRuleUtil {
         String type=ssArray[3];
         switch (type) {
             case "0":
+            case "4":
                  { //btc doge ltc bch
                 BtcTransDTO dto = gson.fromJson(trade, new TypeToken<BtcTransDTO>() {
                 }.getType()); //

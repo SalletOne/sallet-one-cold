@@ -95,6 +95,11 @@ public class AddressZxinDialog extends BaseDialog {
                 tv_logo.setText("ETH");
                 tv_logo.setTextColor(Color.parseColor("#1652F0"));
                 break;
+            case 2:
+                iv_logo.setBackgroundResource(R.mipmap.ic_dog_logo);
+                tv_logo.setText("DOGE");
+                tv_logo.setTextColor(Color.parseColor("#BA9F33"));
+                break;
         }
 
 

@@ -168,6 +168,25 @@ public class ScanResuleActivity extends BaseActivity {
 
                     break;
                 }
+                case "4": {
+                    btcTrade = bean.getBtcTrade();
+                    sendAddr = btcTrade.getSendAddress();
+                    getAddr = btcTrade.getReceiveAddress();
+                    for (BtcTransDTO.Out bb : btcTrade.getReceivers()) {
+                        if (bb.getAddress().equalsIgnoreCase(getAddr)) {
+                            num = bb.getAmount().toString();
+                        }
+                    }
+                    fee = btcTrade.getFee().toString();
+
+                    DecimalFormat df = new DecimalFormat("0.00000000");
+                    String amount = df.format(Double.parseDouble(num) * 0.00000001);
+                    tvNum.setText(amount + " DOGE");
+                    String amountFee = df.format(Double.parseDouble(fee) * 0.00000001);
+                    tvFee.setText(amountFee + " DOGE");
+
+                    break;
+                }
 
                 default:
 
@@ -213,6 +232,9 @@ public class ScanResuleActivity extends BaseActivity {
                         break;
                     case 1:
                         sign = Ethereum.getInstance().signTx(ethTrade, dh, index);
+                        break;
+                    case 4:
+                        sign = Dogecoin.getInstance().signTx(btcTrade, dh, index);
                         break;
 
                 }

@@ -142,6 +142,11 @@ public class CoinSetActivity extends BaseActivity {
         list.add(data1);
         CoinSetBean data2=new CoinSetBean();
 
+        data2.setName("Dogecoin");
+        data2.setNameSign("DOGE");
+        data2.setImage(R.mipmap.ic_dog_logo);
+        list.add(data2);
+
 //        CoinSetBean data9=new CoinSetBean();
 //        data9.setName("Polokadot");
 //        data9.setNameSign("DOT");
@@ -240,7 +245,13 @@ public class CoinSetActivity extends BaseActivity {
                 bean.setAddress(addressDTO2.getAddress());
                 bean.setName("ETH");
                 break;
-
+            case 2:
+                //生成doge地址
+                //Generate doge address
+                AddressDTO addressDTO3 = Dogecoin.getInstance().address(dh, 0);
+                bean.setAddress(addressDTO3.getAddress());
+                bean.setName("DOGE");
+                break;
 
         }
 
