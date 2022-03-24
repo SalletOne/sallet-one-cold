@@ -100,6 +100,11 @@ public class AddressZxinDialog extends BaseDialog {
                 tv_logo.setText("DOGE");
                 tv_logo.setTextColor(Color.parseColor("#BA9F33"));
                 break;
+            case 3:
+                iv_logo.setBackgroundResource(R.mipmap.ic_set_bch);
+                tv_logo.setText("BCH");
+                tv_logo.setTextColor(Color.parseColor("#48CB45"));
+                break;
         }
 
 

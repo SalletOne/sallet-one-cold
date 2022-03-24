@@ -146,7 +146,11 @@ public class CoinSetActivity extends BaseActivity {
         data2.setNameSign("DOGE");
         data2.setImage(R.mipmap.ic_dog_logo);
         list.add(data2);
-
+        CoinSetBean data3=new CoinSetBean();
+        data3.setName("Bitcoin Cash");
+        data3.setNameSign("BCH");
+        data3.setImage(R.mipmap.ic_set_bch);
+        list.add(data3);
 //        CoinSetBean data9=new CoinSetBean();
 //        data9.setName("Polokadot");
 //        data9.setNameSign("DOT");
@@ -252,7 +256,13 @@ public class CoinSetActivity extends BaseActivity {
                 bean.setAddress(addressDTO3.getAddress());
                 bean.setName("DOGE");
                 break;
-
+            case 3:
+                //生成bch地址
+                //Generate bch address
+                AddressDTO addressDTO5 = BitcoinCash.getInstance().address(dh, 0);
+                bean.setAddress(addressDTO5.getAddress());
+                bean.setName("BCH");
+                break;
         }
 
 
