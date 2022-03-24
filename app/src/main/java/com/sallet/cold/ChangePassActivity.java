@@ -21,7 +21,6 @@ import butterknife.OnClick;
 
 
 /**
- * 设置销毁密码，销毁密码用来销毁钱包还原到未使用状态，清除用户全部数据
  *  Set the destruction password,
  *  the destruction password is used to destroy the wallet and restore it to an unused state,
  *  clearing all user data
@@ -29,7 +28,6 @@ import butterknife.OnClick;
 public class ChangePassActivity extends BaseActivity {
 
     /**
-     * 绑定UI
      * Bind UI
      */
     @InjectView(R.id.rl_back)

@@ -18,7 +18,6 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 
 /**
- * 关于我们的产品介绍
  * About our product introduction
  */
 public class ShowUsActivity extends BaseActivity {

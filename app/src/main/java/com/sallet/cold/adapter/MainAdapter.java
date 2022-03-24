@@ -10,7 +10,6 @@ import com.sallet.cold.bean.CoinSetBean;
 import java.util.List;
 
 /**
- * 主页代币列表adapter
  * Home token list adapter
  */
 public class MainAdapter extends BaseQuickAdapter<CoinSetBean, BaseViewHolder> {
@@ -21,14 +20,11 @@ public class MainAdapter extends BaseQuickAdapter<CoinSetBean, BaseViewHolder> {
 
     @Override
     protected void convert(BaseViewHolder helper, CoinSetBean item) {
-        //显示代币名称
         //Show token name
         helper.setText(R.id.tv_name,item.getName()+"");
-        //显示代币地址
         //show token address
         helper.setText(R.id.tv_address,item.getAddress()+"");
         int  image=0;
-        //根据币种不同展示不同的背景图
         //Display different background images according to different currencies
         switch (item.getType()){
             case 0:

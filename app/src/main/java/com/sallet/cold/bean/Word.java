@@ -1,7 +1,6 @@
 package com.sallet.cold.bean;
 
 /**
- * 助记词词库
  * mnemonic thesaurus
  */
 public class Word {

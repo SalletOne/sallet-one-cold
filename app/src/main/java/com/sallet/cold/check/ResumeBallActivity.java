@@ -40,14 +40,12 @@ import butterknife.OnClick;
 
 
 /**
- * 恢复已存在的钱包，通过输入12个助记词来恢复曾经创建过的钱包
  *
  *Restore existing wallets, restore previously created wallets by entering 12 mnemonic phrases
  */
 public class ResumeBallActivity extends BaseActivity {
 
     /**
-     * 绑定UI
      * Bind UI
      */
 
@@ -62,17 +60,15 @@ public class ResumeBallActivity extends BaseActivity {
     TextView title;
 
 
-    String [] word;//助记词词库 mnemonic thesaurus
-    String [] wordList;//输入的助记词数组 array of input mnemonics
+    String [] word;// mnemonic thesaurus
+    String [] wordList;// array of input mnemonics
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resume_ball);
         ButterKnife.inject(this);
-        //从Word类中获取所有合法的助记词
         //Get all legal mnemonics from Word class
         word=new Word().getWords();
-        //输入框输入规则
         //input box input rules
         String regular = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
         etPass.setKeyListener(new DigitsKeyListener() {
@@ -83,12 +79,10 @@ public class ResumeBallActivity extends BaseActivity {
 
             @Override
             protected char[] getAcceptedChars() {
-                //只允许输入制定好的字符串
                 //Only allow input of the specified string
                 return regular.toCharArray();
             }
         });
-        //添加输入监听
         //add input listener
         etPass.addTextChangedListener(new TextWatcher() {
             @Override
@@ -104,21 +98,16 @@ public class ResumeBallActivity extends BaseActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                //通过空格符分割输入的内容，分割为数组中的单个元素
                 //Split the input by a space character into individual elements in the array
                 wordList =s.toString().split(" ");
-                //是否匹配词库中的单词
                 //whether to match words in the thesaurus
                 boolean isFalse=false;
-                //遍历数组
                 //iterate over the array
                 for (String value : wordList) {
                     isFalse = false;
-                    //遍历数组比对词库
                     //Traverse the array to compare thesaurus
                     for (String item : word) {
                         if (item.equals(value)) {
-                            //词库中存在返回true
                             //Returns true if it exists in the thesaurus
                             isFalse = true;
                         }
@@ -126,17 +115,14 @@ public class ResumeBallActivity extends BaseActivity {
                 }
 
                 if(!isFalse){
-                    //输入了词库中不存在词汇按钮置灰禁止进行下一步
                     //Enter the vocabulary that does not exist in the vocabulary,
                     // the button is grayed out and prohibited from proceeding to the next step
                     bt.setEnabled(false);
                 }else {
-                    //校验输入的词汇是否是12个,是12个则可以进行下一步,否则按钮置灰禁用
                     //Check whether the entered vocabulary is 12, if it is 12, you can go to the next step,
                     // otherwise the button is grayed out and disabled
                         bt.setEnabled(wordList.length == 12);
                         if(wordList.length == 12) {
-                            //长度正确清除输入
                             //Correct length clear input
                             clearInput();
                         }
@@ -144,12 +130,10 @@ public class ResumeBallActivity extends BaseActivity {
             }
         });
 
-        //弹出提示词汇的adatper
         //The adapter that pops up the prompt word
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 context, R.layout.item_ling, new Word().getWords());
         etPass.setAdapter(adapter);
-        //为MultiAutoCompleteTextView设置分隔符
         //Set separator for MultiAutoCompleteTextView
         etPass.setTokenizer(new CommaTokenizer());
     }
@@ -161,7 +145,6 @@ public class ResumeBallActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.bt:
-                //完成进入下一步页面创建钱包密码
                 //Complete and enter the next page to create a wallet password
                 startActivity(new Intent(context, CreatMoneyPassActivity.class).putExtra("type", 1).putExtra("wordList",wordList));
                 break;
@@ -170,7 +153,6 @@ public class ResumeBallActivity extends BaseActivity {
 
 
     /**
-     * 隐藏键盘
      * hide keyboard
      */
     private void clearInput(){

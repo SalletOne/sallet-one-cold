@@ -25,13 +25,11 @@ import com.sallet.cold.utils.ScanRuleUtil;
 import java.util.Hashtable;
 
 /**
- * 展示该地址的二维码，用于在线端扫描，扫描成功在在线端生成绑定该地址的钱包
  * Display the QR code of the address for online scanning, and successfully generate a wallet bound to the address online
  */
 public class AddressZxinDialog extends BaseDialog {
     Context context;
     /**
-     * 绑定UI
      * Bind UI
      */
     ImageView ivBack;
@@ -40,15 +38,14 @@ public class AddressZxinDialog extends BaseDialog {
     ImageView ivMa;
     TextView tvAddress;
 
-    int type;//代币种类 Token Type
-    String address;//代币地址 Token address
+    int type;// Token Type
+    String address;// Token address
 
     /**
-     * 构造方法 用于赋值该类内的对象
      * Constructor is used to assign objects within the class
-     * @param context 上下文 context
-     * @param type 代币种类 Token Type
-     * @param address 代币地址 Token address
+     * @param context  context
+     * @param type  Token Type
+     * @param address  Token address
      */
     public AddressZxinDialog(Context context,int  type,String address) {
         super(context);
@@ -66,7 +63,6 @@ public class AddressZxinDialog extends BaseDialog {
             super.onCreate(bundle);
         getWindow().setGravity(Gravity.BOTTOM);
         /**
-         * 绑定UI
          * Bind UI
          */
         ivBack=findViewById(R.id.iv_back);
@@ -77,8 +73,6 @@ public class AddressZxinDialog extends BaseDialog {
 
 
         /*
-         * 根据代币种类来显示UI
-         * 图片 ，代币名称， 字体颜色
          * Display UI according to token type
          * Picture, token name, font color
          */
@@ -116,10 +110,8 @@ public class AddressZxinDialog extends BaseDialog {
             });
 
             tvAddress.setText(address);
-            //生成带有协议的地址
             //Generate address with protocol
             String scan= ScanRuleUtil.createAddressTCode(type,address);
-            //把带有协议的地址生成二维码图片
             //Generate a QR code image from the address with the agreement
             ivMa.setImageBitmap(BitmapUtils.createQRCodeBitmap(scan, 600, 600,"UTF-8","L", "1"));
 

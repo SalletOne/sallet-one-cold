@@ -45,24 +45,24 @@ import java.util.Map;
 
 
 /**
- *App入口 App entry
+ * App entry
  */
 
 public class App extends Application {
-    public static SharedPreferences sp;//全局唯一SharedPreferences(Globally unique SharedPreferences)
-    public static    String passWord="";//全局保存的硬件钱包密码(Globally saved hardware wallet password)
-    public static    int passWordTime=5;//输入错误密码次数全局保存倒计时5次(The number of incorrect passwords entered, the global save countdown is 5 times)
-    public static  final  String passSubmit="passSubmit";// 密码提示 password hint
-    public static  final  String passWordDecode="passWord";//加密后的钱包密码 wallet password
-    public static  final  String word="word";//助记词 mnemonic
-    public static  final  String defautBTCAddress="defautBTCAddress";//默认比特币地址 BTC default address
-    public static  final  String AddressList="AddressList";//已生成的地址列表 Generated address list
-    public static  final  String isLogin="isLogin";//验证是否登录 Verify that you are logged in
-    public static  final  String language="language";//硬件语言 hardware language
-    public static  final  String deletePass="deletePass";//删除钱包密码 Delete wallet password
-    public static final String isTracFirst="ISTracFIRST";//是否第一次登录 Is it the first time to log in
+    public static SharedPreferences sp;//(Globally unique SharedPreferences)
+    public static    String passWord="";//(Globally saved hardware wallet password)
+    public static    int passWordTime=5;//(The number of incorrect passwords entered, the global save countdown is 5 times)
+    public static  final  String passSubmit="passSubmit";//  password hint
+    public static  final  String passWordDecode="passWord";// wallet password
+    public static  final  String word="word";// mnemonic
+    public static  final  String defautBTCAddress="defautBTCAddress";// BTC default address
+    public static  final  String AddressList="AddressList";// Generated address list
+    public static  final  String isLogin="isLogin";// Verify that you are logged in
+    public static  final  String language="language";// hardware language
+    public static  final  String deletePass="deletePass";// Delete wallet password
+    public static final String isTracFirst="ISTracFIRST";// Is it the first time to log in
     public static  Context context;
-    //支持语言列表 Language list
+    // Language list
     public static List<Locale> supportLang= Arrays.asList(
             Locale.SIMPLIFIED_CHINESE,
             Locale.US,
@@ -98,17 +98,17 @@ public class App extends Application {
         super.onCreate();
         setupBouncyCastle();
          MultiDex.install(this);
-        //获取用户存储 get user store
+        // get user store
          sp = getSharedPreferences("USER", Context.MODE_PRIVATE);
         context=this;
-        //设置默认语言 set default language
+        // set default language
         LangUtils.defaultLocale=new Locale(getSpString(language));
-        //获取设备devicecode Get device devicecode
+        // Get device devicecode
         ConfigContent.deviceCode = ConfigContent.getDeviceId(this);
-        //获取appVersionname get app versionname
+        // get app versionname
         ConfigContent.deviceVersion=getAppVersionName(this);
         CrashReport.initCrashReport(getApplicationContext(), "357f9ec492", false);
-        //设置jar包语言 Set jar package language
+        // Set jar package language
         setJarLanguage();
     }
 
@@ -131,26 +131,23 @@ public class App extends Application {
     }
 
     /**
-     * 设置jar包语言
      * Set jar package language
      */
 
     private void setJarLanguage(){
         Map<String,String  > map=new HashMap<>();
         for(Locale locale:supportLang){
-            //向map中添加支持语言 Add support language to map
+            // Add support language to map
             map.put(locale.getLanguage(),locale.getCountry());
         }
-        //获取APP保存的默认语言 Get the default language saved by the APP
+        // Get the default language saved by the APP
         String country=map.get(getSpString(language));
-        // * 设置jar包语言
         //     * Set jar package language
         LangUtils.defaultLocale=new Locale(getSpString(language),country);
 
     }
 
     /**
-     * 获取APP版本名
      * @param context
      * @return
      */
@@ -185,7 +182,7 @@ public class App extends Application {
     }
 
     /**
-     * 保存字符串相关内容 Save string related content
+     *  Save string related content
      * @param key
      * @param value
      */
@@ -197,7 +194,7 @@ public class App extends Application {
     }
 
     /**
-     * 默认语言返回英文 Default language returns to English
+     *  Default language returns to English
      * @return
      */
     private static String getCurrentLauguage(){
@@ -206,7 +203,7 @@ public class App extends Application {
 
 
     /**
-     * 获取存储中保存的字符串 Get the string saved in storage
+     *  Get the string saved in storage
      * @param key
      * @return
      */
@@ -225,27 +222,24 @@ public class App extends Application {
 
 
     /**
-     * 保存钱包列表 Save address list
+     *  Save address list
      * @param list
      */
 
 
     public static void saveAddressList(List<CoinSetBean>list){
-        //对集合进行排序
         Collections.sort(list); //
         Gson gson = new Gson();
-        //把集合转成json字符串
         String jsonStr=gson.toJson(list); //
 
         SharedPreferences.Editor editor = sp.edit() ;
-        //把数据保存到APP存储中
         editor.putString(AddressList, jsonStr) ; //
         editor.apply() ;  //
     }
 
 
     /**
-     * 获取钱包列表 Get address list
+     *  Get address list
      * @return
      */
     public static List<CoinSetBean> getAddressList() {
@@ -253,7 +247,6 @@ public class App extends Application {
         if(!list.equals(""))  //
         {
             Gson gson = new Gson();
-            //把json字符串转成集合
             return gson.fromJson(list, new TypeToken<List<CoinSetBean>>() {}.getType()); //
         }else {
             return null;
@@ -268,10 +261,10 @@ public class App extends Application {
     public static void clear() {
         passWord="";
         App.passWordTime=5;
-        //获取存储中的用户数据 Get user data in storage
+        // Get user data in storage
         SharedPreferences preferences = context.getSharedPreferences("USER", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
-        //清除用户数据 clear user data
+        // clear user data
         editor.clear();
         editor.commit();
     }

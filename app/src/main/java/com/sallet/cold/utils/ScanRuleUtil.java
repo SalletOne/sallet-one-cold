@@ -12,7 +12,6 @@ import com.hk.common.dto.XrpTransDTO;
 import com.sallet.cold.bean.ScanResultTradeBean;
 
 /**
- *  扫描和解析软件传过来的数据
  * Scan and parse data from the software
  */
 public class ScanRuleUtil {
@@ -23,12 +22,10 @@ public class ScanRuleUtil {
     static String agree= ConfigContent.agree;
 
     /**
-     * 外部调用
-     * 把地址生成为带协议格式的字符串用于软件解析
      * External call
      * Generate the address as a string with protocol format for software parsing
-     * @param type  币种 currency
-     * @param address   地址 address
+     * @param type   currency
+     * @param address    address
      * @return
      */
 
@@ -41,7 +38,6 @@ public class ScanRuleUtil {
     }
 
     /**
-     * 解析数据格式
      * Check the data
      * @param result
      * @return
@@ -50,12 +46,11 @@ public class ScanRuleUtil {
 
     public static int checkData(String result){
         try {
-            //解压字符串
             //unpack string
             String ss=DeflaterUtils.unzipString(result.substring(agree.length()));
         String []ssArray=ss.split("/");
         if(ssArray[2].equals("tx")){
-            return 1;//是交易数据格式 is a transaction QR code
+            return 1;// is a transaction QR code
         }else {
             return -1;
         }
@@ -70,18 +65,16 @@ public class ScanRuleUtil {
 
 
     /**
-     * 拿到扫码结果通过定义的数据结构来解析每个币种的数据
      * Get the scan code result and parse the data of each currency through the defined data structure
-     * @param result 扫码结果 Scanning result
+     * @param result  Scanning result
      * @return
      */
 
 
     public static ScanResultTradeBean analysisTradeTCode(String result){
-        //交易数据实体类
         //Transaction data entity class
         ScanResultTradeBean content=new ScanResultTradeBean();
-        //解压内容 Unzip the content
+        // Unzip the content
         String ss=DeflaterUtils.unzipString(result.substring(agree.length()));
 
         String []ssArray=ss.split("/");

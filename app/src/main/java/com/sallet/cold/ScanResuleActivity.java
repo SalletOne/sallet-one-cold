@@ -66,7 +66,6 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 
 /**
- * 通过扫描在线端的二维码的内容，在此页面展示交易信息
  * By scanning the content of the QR code on the online side,
  * the transaction information is displayed on this page
  */
@@ -74,7 +73,6 @@ public class ScanResuleActivity extends BaseActivity {
 
     String result;//在线端扫描的结果数据 Result data of online scan
     /**
-     * 绑定UI
      * Bind UI
      */
     @InjectView(R.id.tv_send_addr)
@@ -87,28 +85,26 @@ public class ScanResuleActivity extends BaseActivity {
     TextView tvFee;
     @InjectView(R.id.bt)
     TextView Bt;
-    String sendAddr;//发送地址 sending address
-    String getAddr;//接受地址 Acceptance address
-    String num;//交易数量 Number of transactions
-    String fee;//矿工费 miner fee
-    String sign;//交易签名 transaction signature
+    String sendAddr;// sending address
+    String getAddr;// Acceptance address
+    String num;// Number of transactions
+    String fee;// miner fee
+    String sign;// transaction signature
     int index=0;
     int type;
-    private BtcTransDTO btcTrade;//btc交易相关内容 btc transaction related content
-    private EthTransDTO ethTrade;//eth交易相关内容 Eth transaction related content
-    private MyTask mTask;//子线程 child thread
-    boolean success=true;//是否签名成功 Whether the signature is successful
+    private BtcTransDTO btcTrade;// btc transaction related content
+    private EthTransDTO ethTrade;// Eth transaction related content
+    private MyTask mTask;// child thread
+    boolean success=true;// Whether the signature is successful
 
-    String message;//错误信息 error message
+    String message;// error message
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_result);
         ButterKnife.inject(this);
-        //离线端的扫描结果
         //Offline scan results
         result = getIntent().getStringExtra("result");
-        //解析在线端传递过来的数据
         //Parse the data passed from the online end
         parseData();
         tvSendAddr.setText(sendAddr);
@@ -119,8 +115,6 @@ public class ScanResuleActivity extends BaseActivity {
 
 
     /**
-     * 解析二维码数据，给相关数据赋值
-     * 根据代币种类不同，从不同的参数中取出数据
      * Parse QR code data and assign values to related data
      * Extract data from different parameters according to different types of tokens
      */
@@ -128,11 +122,9 @@ public class ScanResuleActivity extends BaseActivity {
     private void parseData(){
         try {
             ScanResultTradeBean bean= ScanRuleUtil.analysisTradeTCode(result);
-            //代币种类
             //Token Type
             type= Integer.parseInt(bean.getType());
             /*
-               根据代币种类给控件赋值发送地址，接收地址，交易数量和矿工费
                 Assign the sending address, receiving address,
                 transaction quantity and miner fee to the control according to the token type
              */
@@ -220,7 +212,6 @@ public class ScanResuleActivity extends BaseActivity {
 
 
     /**
-     * 开启子线程去做耗时签名
      * Open child thread to do time-consuming signature
      */
 
@@ -233,17 +224,14 @@ public class ScanResuleActivity extends BaseActivity {
 
         @Override
         protected String doInBackground(String... params) {
-            //获取助记词
             //get mnemonic
             String[] word = AesUtils.aesDecrypt(App.getSpString(App.word)).split(",");
 
 
-            //通过助记符获取签名
             //Get signature by mnemonic
             DeterministicHierarchy dh = SeedMasterKey.seedMasterKey( Arrays.asList(word));
 
             try {
-                //签名操作,根据每个代币的种类去调用不同的签名方法
                 //Signature operation, calling different signature methods according to the type of each token
                 switch (type) {
                     case 0:
@@ -282,16 +270,13 @@ public class ScanResuleActivity extends BaseActivity {
 
 
 
-            //取消加载
             //Cancel loading
             cancleLoading();
             if(!success){
-                //如果签名失败提示错误
                 //If the signature fails, it will prompt an error
                 showToast(message);
                 success=true;
             }else {
-                //签名成功，启动下一个页面展示签名二维码
                 //If the signature is successful, start the next page to display the signature QR code
                 context.startActivity(new Intent(context, ScanResultOkActivity.class).putExtra("sign", sign));
             }
@@ -309,7 +294,6 @@ public class ScanResuleActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.rl_back:
-                //结束当前页面
                 //end current page
                 finish();
                 break;
@@ -318,17 +302,14 @@ public class ScanResuleActivity extends BaseActivity {
                     showToast(getStringResources(R.string.scan_resulte_ac1));
                 }else {
 
-                    //输入密码完成签名
                     //Enter the password to complete the signature
                     new PwDialog(context, getStringResources(R.string.input_password_2_sign), new PwDialog.OnPress() {
                         @Override
                         public void onPress() {
 
-                            //密码正确启动子线程去签名
                             //The password is correct to start the child thread to sign
                             mTask = new MyTask();
                             mTask.execute();
-                            //展示加载动画
                             //Show loading animation
                             showLoading();
 
@@ -337,7 +318,6 @@ public class ScanResuleActivity extends BaseActivity {
                         }
                     },getAddr).show();
 
-                    //再次确认关键交易数据弹窗
                     //Reconfirm the key transaction data popup
                     new ConfirmDialog(
                             context,tvSendAddr.getText().toString(),

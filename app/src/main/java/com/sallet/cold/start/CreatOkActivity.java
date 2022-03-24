@@ -19,12 +19,10 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 
 /**
- * 创建钱包成功页面，点击OK进入钱包主页
  */
 public class CreatOkActivity extends BaseActivity {
 
     /**
-     * 绑定UI
      */
     @InjectView(R.id.tv_ok)
     TextView tvOk;
@@ -42,11 +40,9 @@ public class CreatOkActivity extends BaseActivity {
     @OnClick(R.id.tv_ok)
     public void onClick() {
         if(getIntent().getStringExtra("words")!=null) {
-            //把生成的助记词加密保存在App存储中
             //Verify that the mnemonic was saved successfully
             App.saveString(App.word, getIntent().getStringExtra("words"));
         }
-        //启动主页
         //start home page
         startActivity(new Intent(context, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
     }

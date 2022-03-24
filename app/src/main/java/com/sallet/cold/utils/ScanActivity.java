@@ -12,7 +12,6 @@ import com.journeyapps.barcodescanner.CaptureManager;
 import com.journeyapps.barcodescanner.DecoratedBarcodeView;
 
 /**
- * 扫描二维码页面
  * Scan the QR code page
  */
 public class ScanActivity extends BaseActivity implements  DecoratedBarcodeView.TorchListener {

@@ -23,8 +23,7 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 
 /**
- * 关于我们
- * 用来展示本产品相关信息
+
  * about us
  * Used to display information about this product
  */
@@ -53,7 +52,6 @@ public class AboutUsActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
         ButterKnife.inject(this);
-        //版本号
         tvVersion.setText("v "+ ConfigContent.deviceVersion);
         if(App.getSpString("checkSign")==null){
             llCheckSign.setVisibility(View.VISIBLE);

@@ -1,12 +1,12 @@
 package com.sallet.cold.bean;
 
 /**
- * 语言设置实体类
+ *
  */
 public class LanguageBean {
-    private boolean check;//语言是否选中状态 Whether the language is selected
-    private String name;//语言名称 language name
-    private String code;//语言代号 language code
+    private boolean check;// Whether the language is selected
+    private String name;// language name
+    private String code;// language code
 
     public boolean isCheck() {
         return check;

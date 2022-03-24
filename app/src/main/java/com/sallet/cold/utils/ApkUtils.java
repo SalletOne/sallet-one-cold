@@ -13,7 +13,6 @@ import com.sallet.cold.App;
 import java.io.File;
 
 /**
- * 安装APK
  * Install APK
  */
 public class ApkUtils {

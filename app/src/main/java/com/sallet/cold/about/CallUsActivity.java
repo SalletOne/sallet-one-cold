@@ -8,7 +8,6 @@ import com.sallet.cold.R;
 import com.sallet.cold.base.BaseActivity;
 
 /**
- * 联系我们
  * contact us
  */
 public class CallUsActivity extends BaseActivity {

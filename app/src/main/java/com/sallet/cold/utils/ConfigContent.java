@@ -15,13 +15,10 @@ import static android.text.TextUtils.isEmpty;
 public class ConfigContent {
 
 
-    //和在线端交互的传输协议
     //The transport protocol that interacts with the online side
     public static final String agree="odfp://";
-    //设备号
     //Device No
     public static  String deviceCode="";
-    //设备版本
     //Device version
     public static  String deviceVersion="";
 

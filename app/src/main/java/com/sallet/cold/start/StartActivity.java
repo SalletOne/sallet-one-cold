@@ -23,14 +23,12 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 /**
- * 硬件起始页，供用户选择是创建钱包还是恢复已存在的钱包
  * Hardware start page for users to choose whether to create a wallet or restore an existing wallet
 
  */
 public class StartActivity extends BaseActivity {
 
     /**
-     * 绑定UI
      * Bind UI
      */
     @InjectView(R.id.tv_1)
@@ -54,17 +52,15 @@ public class StartActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //更改语言为保存的语言
         //Change language to saved language
         changeLanguage(App.getSpString(App.language));
         setContentView(R.layout.activity_start);
         ButterKnife.inject(this);
 
-        //获取APP中的user存储
         //Get user storage in APP
         App.sp = getSharedPreferences("USER", Context.MODE_PRIVATE);
 
-        //创建个新钱包 Create new wallet
+        // Create new wallet
         findViewById(R.id.ll_1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,7 +68,7 @@ public class StartActivity extends BaseActivity {
 
             }
         });
-        //恢复已存在的钱包 restore existing wallet
+        // restore existing wallet
         findViewById(R.id.ll_2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,7 +76,7 @@ public class StartActivity extends BaseActivity {
 
             }
         });
-        //更改语言 change language
+        // change language
         findViewById(R.id.ll_change_language).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,7 +93,6 @@ public class StartActivity extends BaseActivity {
     }
 
     /**
-     * 修改UI语言
      * Modify UI language
      */
     private void changeText(){

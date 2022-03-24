@@ -21,7 +21,6 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 
 /**
- * 服务条款相关介绍
  * Introduction to Terms of Service
  */
 public class WebActivity extends BaseActivity {

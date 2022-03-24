@@ -30,37 +30,29 @@ import java.util.Locale;
 import java.util.Map;
 
 /**
- * activity基类用于每个activity常用的方法封装
  * The activity base class is used to encapsulate the methods commonly used in each activity
  *
  */
 public class BaseActivity extends AppCompatActivity {
-    //外部调用 上下文
     //external call context
     public Activity context;
-    //吐司
     //toast
     private static Toast toast;
-    //加载状态dialog
     //Loading status dialog
     private Dialog mDialog ;
 
     private NetChangeReceiver netBroadcastReceiver;
     /**
-     * 网络类型
      */
     private int netType;
-    private IsNetDialog isNetDialog;//有网提示的弹窗
+    private IsNetDialog isNetDialog;//
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //强制竖屏
         //Force vertical screen
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        //上下文赋值
         //context assignment
         context = this;
-        //activity管理器，每个新开的activity页面都加入到一个集合中，便于销毁的时候一起处理
         //Activity manager, each newly opened activity page is added to a collection, which is easy to deal with when it is destroyed
         ActivityCollector.addActivity(this);
         new WebView(this).destroy();
@@ -69,9 +61,7 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * 外部调用
-     * 展示吐司的方法
-     * @param content 展示的内容
+
      * External call
      * How to show toast
      * @param content the content displayed
@@ -83,7 +73,6 @@ public class BaseActivity extends AppCompatActivity {
         } else {
             toast.setText(content);
         }
-        //隐藏键盘
         //hide keyboard
         hideKeyboard();
         toast.show();
@@ -93,14 +82,12 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        //移除该activity
         //remove the activity
         ActivityCollector.removeActivity(this);
     }
 
 
     /**
-     * 隐藏键盘
      * hide keyboard
      */
     private void hideKeyboard() {
@@ -114,21 +101,16 @@ public class BaseActivity extends AppCompatActivity {
 
 
     /**
-     * 改变语言
-     * @param language 语言的简称
      * Change language
      * @param language short name of language
      */
 
     public void changeLanguage(String language){
-        //获取资源对象
         //get resource object
         Resources resources = context.getResources();
         DisplayMetrics metrics = resources.getDisplayMetrics();
-        //获取配置对象
         //get configuration object
         Configuration config = resources.getConfiguration();
-        //本地语言
         //local language
         Locale locale;
 
@@ -139,21 +121,16 @@ public class BaseActivity extends AppCompatActivity {
         } else {
             config.locale = locale;//
         }
-        //设置好语言保存到app存储中
         //Set the language and save it to the app storage
         App.saveString(App.language,language);
-        //更新资源
         //Update resources
         resources.updateConfiguration(config, metrics);
-        //设置jar包语言
         //Set jar package language
         setJarLanguage();
     }
 
 
     /**
-     * 获取string资源文件
-     * @param resource  文件名
      * Get string resource file
      * @param resource filename
      * @return
@@ -164,7 +141,6 @@ public class BaseActivity extends AppCompatActivity {
 
 
     /**
-     * 取消加载
      * Cancel loading
      */
 
@@ -173,7 +149,6 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * 展示加载
      * show loading
      */
     public void showLoading() {
@@ -182,25 +157,21 @@ public class BaseActivity extends AppCompatActivity {
 
 
     /**
-     * 设置jar包语言
      * Set jar package language
      */
     private void setJarLanguage(){
         Map<String,String  > map=new HashMap<>();
-        //遍历语言列表把list转成map
         //Traverse the language list and convert the list to a map
         for(Locale locale:App.supportLang){
             map.put(locale.getLanguage(),locale.getCountry());
         }
 
         String country=map.get(App.getSpString(App.language));
-        //设置jar包默认语言
         //Set the default language of the jar package
         LangUtils.defaultLocale=new Locale(App.getSpString(App.language),country);
 
     }
 
-    //检查网络
     private void checkNet() {
         netBroadcastReceiver = new NetChangeReceiver();
         netBroadcastReceiver.setNetChangeListener(new NetChangeReceiver.NetChangeListener() {
@@ -208,31 +179,24 @@ public class BaseActivity extends AppCompatActivity {
             public void onChangeListener(int status) {
                 netType = status;
                 if (isNetConnect()) {
-                    //TODO 有网时操作
 
                     isNetDialog.show();
                 }else{
 
-                    //TODO 无网时的操作
                     if (isNetDialog.isShowing()){
                         isNetDialog.dismiss();
                     }
                 }
             }
         });
-        //Android 7.0以上需要动态注册
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            //实例化IntentFilter对象
             IntentFilter filter = new IntentFilter();
             filter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
-            //注册广播接收
             registerReceiver(netBroadcastReceiver, filter);
         }
     }
     /**
-     * 判断有无网络 。
      *
-     * @return true 有网, false 没有网络.
      */
     public boolean isNetConnect() {
         if (netType == 1) {

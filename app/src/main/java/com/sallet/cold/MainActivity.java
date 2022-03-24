@@ -71,7 +71,6 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 
 /**
- * APP首页 ，展示已经生成的钱包地址列表， 点击每个选项展示该地址的二维码， 底部的扫一扫图标用来扫描在线端的交易二维码。
  *The homepage of the APP displays the list of wallet addresses that have been generated.
  * Click on each option to display the QR code of the address.
  * The scan icon at the bottom is used to scan the online transaction QR code.
@@ -81,7 +80,6 @@ import butterknife.OnClick;
 public class MainActivity extends BaseActivity {
 
     /**
-     * 绑定UI
      */
     @InjectView(R.id.tv_title)
     TextView tvTitle;
@@ -90,17 +88,17 @@ public class MainActivity extends BaseActivity {
     @InjectView(R.id.tvv_beifen)
     TextView tvv_beifen;
 
-    List<CoinSetBean>list=new ArrayList<>();//地址列表 address list
+    List<CoinSetBean>list=new ArrayList<>();// address list
     MainAdapter adapter=new MainAdapter(R.layout.item_main,list);
-    String ETHAddress;//以太坊地址
-    String BTCAddress;//比特币地址
-    private MyTask mTask;//子线程 child thread
-    List<String> words;//助记词 mnemonic
+    String ETHAddress;//
+    String BTCAddress;//
+    private MyTask mTask;// child thread
+    List<String> words;// mnemonic
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //清除栈顶所有activity Clear all activities at the top of the stack
+        // Clear all activities at the top of the stack
         ActivityCollector.finishAll();
         super.onCreate(savedInstanceState);
 
@@ -110,7 +108,6 @@ public class MainActivity extends BaseActivity {
         ButterKnife.inject(this);
 
         if (App.getSpString(App.defautBTCAddress) != null) {
-            //有默认地址直接从存储中取
             //There is a default address, which is taken directly from the storage table
             getAddress();
         } else {
@@ -124,14 +121,12 @@ public class MainActivity extends BaseActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setAdapter(adapter);
-        //保存登录状态
         // save login status
         App.saveString(App.isLogin, "true");
 
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                //展示地址二维码
                 //Display address QR code
                 new AddressZxinDialog(context,list.get(position).getType(),list.get(position).getAddress()).show();
 
@@ -143,7 +138,6 @@ public class MainActivity extends BaseActivity {
     protected void onResume() {
         super.onResume();
 
-        //获取地址
         // get address
         getAddress();
 
@@ -155,16 +149,13 @@ public class MainActivity extends BaseActivity {
 
 
     /**
-     * 保存生成过的地址
      * save the generated address
      */
 
 
     private void creatAddress() {
-        //保存比特币地址为默认地址，用来区分是否已生成过地址
         //Save the bitcoin address as the default address to distinguish whether the address has been generated
         App.saveString(App.defautBTCAddress, BTCAddress);
-        //保存币种相关信息 地址 类别
         // Save currency related information Address Category
         CoinSetBean address = new CoinSetBean();
         address.setAddress(BTCAddress);
@@ -179,7 +170,6 @@ public class MainActivity extends BaseActivity {
         address1.setCheck(true);
         address1.setType(1);
         list.add(address1);
-        //保存到APP中
         // Save to APP
         App.saveAddressList(list);
 
@@ -189,8 +179,6 @@ public class MainActivity extends BaseActivity {
     }
 
     /**
-     * 获取地址如果APP中保存的地址不是空，清空下集合然后从APP的存储中更新钱包地址列表数据
-     * isCheck返回true则在首页中展示
      * Get the address If the address saved in the APP is not empty,
      * clear the lower set and then update the wallet address list data from the storage of the APP
      * if isCheck returns true, it will be displayed on the home page
@@ -198,17 +186,14 @@ public class MainActivity extends BaseActivity {
 
     private void getAddress(){
         if(App.getAddressList()!=null) {
-            //清空集合
             //empty collection
             list.clear();
             for (CoinSetBean bean :App.getAddressList()) {
                 if (bean.isCheck()) {
-                    //选中则加入集合中
                     //Select to add to the collection
                     list.add(bean);
                 }
             }
-            //更新UI
             //Update UI
             adapter.notifyDataSetChanged();
         }

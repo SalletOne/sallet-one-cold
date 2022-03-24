@@ -14,10 +14,8 @@ import org.jetbrains.annotations.NotNull;
 public class SubmitDialog extends BaseDialog{
     String content;
     /**
-     * dialog基类构造方法
      * dialog base class constructor
      *
-     * @param context 上下文
      */
     public SubmitDialog(@NonNull @NotNull Context context,String content) {
         super(context);

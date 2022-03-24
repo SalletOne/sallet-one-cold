@@ -23,7 +23,6 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 
 /**
- * 选择软件语言，选择后软件默认语言为选中的语言，保存在APP存储中
  * Select the software language,
  * after selection, the software default language is the selected language, which is saved in the APP storage
  */
@@ -36,10 +35,8 @@ public class LanguageActivity extends BaseActivity {
     RelativeLayout rlTitle;
     @InjectView(R.id.rc_view)
     RecyclerView rcView;
-    //语言列表adapter
     //Language list adapter
     LanguageSetAdapter adapter;
-    //支持的语言列表
     //List of supported languages
     List<LanguageBean> list=new ArrayList<>();
     @Override
@@ -48,26 +45,20 @@ public class LanguageActivity extends BaseActivity {
         setContentView(R.layout.activity_language);
         ButterKnife.inject(this);
         rcView.setLayoutManager(new LinearLayoutManager(context));
-        //初始化adaper
         //Initialize the adapter
         adapter=new LanguageSetAdapter(R.layout.item_language,list);
         rcView.setAdapter(adapter);
-        //添加列表的点击事件
         //Add click event to list
         adapter.setOnItemClickListener((adapter, view, position) -> {
             for(int i=0;i<list.size();i++){
-                //遍历集合,选中的check设为true，其他设为false
                 //Traverse the collection, the selected check is set to true, the others are set to false
                 list.get(i).setCheck(position == i);
             }
-            //刷新数据
             //refresh data
             this.adapter.notifyDataSetChanged();
-            //改变语言方法
             //change language approach
             changeLanguage(list.get(position).getCode());
         });
-        //初始化支持的语言列表
         //Initialize the list of supported languages
         initData();
 
@@ -185,7 +176,6 @@ public class LanguageActivity extends BaseActivity {
                     break;
             }
             if(bean.getCode().equals(App.getSpString(App.language))){
-                //将APP中已存储的语言设为选中状态
                 //Set the language stored in the APP to the selected state
                 bean.setCheck(true);
             }

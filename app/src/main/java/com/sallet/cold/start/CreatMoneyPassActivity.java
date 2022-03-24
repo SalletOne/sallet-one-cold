@@ -31,7 +31,6 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 
 /**
- * 设置钱包密码,该密码用于解析加密的助记词，生成地址和交易签名都需要校验该密码
  * Set the wallet password. This password is used to parse the encrypted mnemonic.
  * It is necessary to verify the password when generating the address and transaction signature.
  */
@@ -39,7 +38,6 @@ public class CreatMoneyPassActivity extends BaseActivity {
 
 
     /**
-     * 绑定UI
      * Bind UI
      */
     @InjectView(R.id.rl_back)
@@ -56,14 +54,13 @@ public class CreatMoneyPassActivity extends BaseActivity {
     TextView tv_hint;
     @InjectView(R.id.iv_is_see)
     ImageView ivSee;
-    private boolean isSee = false;//密码是否可见 Is the password visible?
+    private boolean isSee = false;// Is the password visible?
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_money_pass);
         ButterKnife.inject(this);
-        //监听密码输入框
         //Monitor password input box
         etPass.addTextChangedListener(new TextWatcher() {
             @Override
@@ -73,7 +70,6 @@ public class CreatMoneyPassActivity extends BaseActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                //输入框有值设置按钮状态
                 //The input box has a value to set the button state
                 bt.setEnabled(s.length() > 0);
             }
@@ -94,7 +90,6 @@ public class CreatMoneyPassActivity extends BaseActivity {
                 break;
             case R.id.iv_is_see:
                 if (isSee) {
-                    //设置密码可见状态时的UI
                     //UI when setting password visible state
                     etPass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
                     etPass2.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
@@ -102,19 +97,16 @@ public class CreatMoneyPassActivity extends BaseActivity {
                     isSee = false;
 
                 } else {
-                    //设置密码不可见状态时的UI
                     //UI when setting the password invisible state
                     etPass.setTransformationMethod(PasswordTransformationMethod.getInstance());
                     etPass2.setTransformationMethod(PasswordTransformationMethod.getInstance());
                     ivSee.setImageResource(R.mipmap.ic_nosee);
                     isSee = true;
                 }
-                //设置光标位置
                 //set cursor position
                 etPass.setSelection(etPass.getText().toString().length());//
                 break;
             case R.id.bt:
-                //首次输入密码无值返回错误提示
                 //Entering the password for the first time returns an error message with no value
                 if (etPass.getText().toString().length() <= 0) {
                     showToast(getStringResources(R.string.creat_money_pass_ac5));
@@ -122,7 +114,6 @@ public class CreatMoneyPassActivity extends BaseActivity {
                 }
 
                 if (PassUtil.isStringPwd(etPass.getText().toString()).equals("0")) {
-                    //校验密码格式不对提示
                     //Check password format is incorrect
                     tv_hint.setVisibility(View.VISIBLE);
                     tv_hint.setText(getStringResources(R.string.creat_money_pass_ac1));
@@ -132,32 +123,26 @@ public class CreatMoneyPassActivity extends BaseActivity {
                     tv_hint.setVisibility(View.GONE);
 
                 }
-                //重复输入密码无值返回错误提示
                 //Repeatedly enter the password without value and return an error prompt
                 if (etPass2.getText().toString().length() <= 0) {
                     showToast(getStringResources(R.string.creat_money_pass_ac4));
                     return;
                 }
-                //比较两次密码是否一致
                 //Compare the two passwords for the same
                 if (etPass.getText().toString().equals(etPass2.getText().toString())) {
                     //Save wallet password
-                    //保存钱包密码
                     App.passWord = etPass.getText().toString();
                     App.saveString(App.passWordDecode, PasswordUtils.encryptPassword(etPass.getText().toString()));
                     //password hint
-                    //保存密码提示
                     if (etPassSubmit.getText().toString().length() > 0) {
                         App.saveString(App.passSubmit, etPassSubmit.getText().toString());
                     }
                     if (getIntent().getIntExtra("type", 0) == 1) {
-                        //type是1，是恢复钱包操作，直接进入钱包主页
                         //To restore wallet, go directly to
                         App.saveString(App.word, AesUtils.aesEncrypt(StringUtils.join(getIntent().getStringArrayExtra("wordList"), ",")));
                         startActivity(new Intent(CreatMoneyPassActivity.this, CreatOkActivity.class));
 
                     } else {
-                        //其他情况进入提示用户是否需要备份助记词页面
                         //Create a wallet, prompt to verify the mnemonic
                         startActivity(new Intent(CreatMoneyPassActivity.this, CsBpWordActivity.class));
                     }

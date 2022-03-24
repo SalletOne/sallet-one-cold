@@ -28,7 +28,6 @@ import butterknife.OnClick;
 
 
 /**
- *离线端生成交易签名二维码,该二维码用于在线端第三步去扫描
  *The offline terminal generates a transaction signature QR code,
  * which is used to scan the online terminal in the third step
  */
@@ -48,7 +47,6 @@ public class ScanResultOkActivity extends BaseActivity {
 
         ButterKnife.inject(this);
         if(App.getSpString(App.isTracFirst)==null){
-            //如果第一次进显示引导页
             //If the boot page is displayed for the first time
             spIv1.setVisibility(View.VISIBLE);
             App.saveString(App.isTracFirst,"false");
@@ -56,13 +54,11 @@ public class ScanResultOkActivity extends BaseActivity {
         }else {
             spIv1.setVisibility(View.GONE);
         }
-        //从上个页面获取签名字符串
         //Get the signature string from the previous page
         sign=getIntent().getStringExtra("sign");
         Log.e("sign",sign);
-        //压缩签名字符串 Compressed signature
+        // Compressed signature
         sign= DeflaterUtils.zipString(sign);
-        //在UI上展示出签名的二维码
         //Display the signed QR code on the UI
         ivMa.setImageBitmap(BitmapUtils.createQRCodeBitmap("hash:"+sign, 700, 700,"UTF-8","L", "1"));
         new Mnemonic().wordList();
@@ -72,12 +68,10 @@ public class ScanResultOkActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.rl_back:
-                //结束当前页面
                 //end current page
                 finish();
                 break;
             case R.id.bt:
-                //返回首页
                 //Back to Home
                 startActivity(new Intent(context,MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 break;

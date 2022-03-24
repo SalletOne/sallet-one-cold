@@ -46,7 +46,6 @@ public class RecycleViewDivider extends RecyclerView.ItemDecoration {
     }
 
     /**
-     * 自定义分割线
      *
      * @param context
      */

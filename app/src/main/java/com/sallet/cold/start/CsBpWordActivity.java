@@ -23,20 +23,18 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 
 /**
- * 让用户选择是否需要备份助记词
  * prompt note mnemonic，Generate mnemonic
  */
 public class CsBpWordActivity extends BaseActivity {
 
     /**
-     * 绑定UI
      * Bind UI
      */
     @InjectView(R.id.bt1)
     TextView bt1;
     @InjectView(R.id.bt2)
     TextView bt2;
-    private String[] value;//助记词
+    private String[] value;//
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,11 +43,9 @@ public class CsBpWordActivity extends BaseActivity {
         ButterKnife.inject(this);
 
 
-        //生成助记词返回一个集合
         //generate mnemonic
         List<String> list = new Mnemonic().words();
         value = new String[12];
-        //把集合转为数组
         //Convert collection to array
         list.toArray(value);
 
@@ -59,15 +55,12 @@ public class CsBpWordActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt1:
-                //前往备份助记词页面
                 //Backup verification mnemonic
                 startActivity(new Intent(context,BackUpWordActivity.class).putExtra("words",AesUtils.aesEncrypt(StringUtils.join(value, ","))));
                 break;
             case R.id.bt2:
-                //保存助记词到APP存储中
                 //Save the mnemonic to the APP storage
                 App.saveString(App.word, AesUtils.aesEncrypt(StringUtils.join(value, ",")));
-                //稍后备份助记词直接进入主页
                 //Go directly to the home page, not backed up
                 startActivity(new Intent(context, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
 

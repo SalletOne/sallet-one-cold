@@ -6,7 +6,6 @@ import android.text.TextUtils;
 import android.widget.MultiAutoCompleteTextView;
 
 /**
- * 复写的分割符规则,通过空格符作为分隔符
  */
 public  class CommaTokenizer implements MultiAutoCompleteTextView.Tokenizer {
     public int findTokenStart(CharSequence text, int cursor) {

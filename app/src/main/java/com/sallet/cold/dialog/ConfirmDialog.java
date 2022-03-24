@@ -17,12 +17,10 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 /**
- * 倒计时3s展示交易重要信息,3s后自动关闭
  * Countdown 3s to display important transaction information, and automatically close after 3s
  */
 public class ConfirmDialog extends BaseDialog {
     /**
-     * 绑定UI
      *  bind ui
      */
     @InjectView(R.id.tv_send_addr)
@@ -51,7 +49,6 @@ public class ConfirmDialog extends BaseDialog {
         @Override
 
         public void onFinish() {
-            //页面消失
             //The timer counts down 3s
             dismiss();
 
@@ -59,12 +56,11 @@ public class ConfirmDialog extends BaseDialog {
 
     };
     /**
-     * @param context 上下文
+     * @param context
      */
     public ConfirmDialog(@NonNull @NotNull Context context,String send,String receive,String num,String fee) {
         super(context);
         View convertView = getLayoutInflater().inflate(R.layout.dialog_confirm, null);
-        //设置布局
         //set layout
         setContentView(convertView);
         ButterKnife.inject(this, convertView);

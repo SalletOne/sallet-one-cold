@@ -12,7 +12,6 @@ import org.jetbrains.annotations.NotNull;
 
 public class IsNetDialog extends BaseDialog{
     /**
-     * dialog基类构造方法
      * dialog base class constructor
      *
      * @param context 上下文

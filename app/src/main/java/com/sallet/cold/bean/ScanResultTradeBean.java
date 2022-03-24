@@ -9,19 +9,17 @@ import com.hk.common.dto.TronTransDTO;
 import com.hk.common.dto.XrpTransDTO;
 
 /**
- * 交易相关实体类
- * 用于接收软件传递过来的交易展示数据
  */
 public class ScanResultTradeBean {
-    private String deviceCode; //设备码 device code
-    private String deviceVersion;//设备版本 Device version
+    private String deviceCode; // device code
+    private String deviceVersion;// Device version
     private String type;//0 btc 1eth 2usdt 3usdc 4doge 5ltc 6bch 7fil 8matic
-    private BtcTransDTO btcTrade;//btc 相关模型 btc related models
-    private EthTransDTO ethTrade;//eth 相关模型 eth related models
-    private FilMsgDTO filTrade;//fil 相关模型 fil correlation model
-    private XrpTransDTO xrpTransDTO;//xrp 相关模型 xrp correlation model
-    private SolTransDTO solTransDTO;//sol 相关模型 sol 相关模型
-    private TronTransDTO tronTransDTO;//tron 相关模型 tron 相关模型
+    private BtcTransDTO btcTrade;//btc  btc related models
+    private EthTransDTO ethTrade;//eth  eth related models
+    private FilMsgDTO filTrade;//fil  fil correlation model
+    private XrpTransDTO xrpTransDTO;//xrp  xrp correlation model
+    private SolTransDTO solTransDTO;//sol  sol 相关模型
+    private TronTransDTO tronTransDTO;//tron  tron 相关模型
 
 
 
