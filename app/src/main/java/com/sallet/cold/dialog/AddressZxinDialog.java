@@ -99,6 +99,11 @@ public class AddressZxinDialog extends BaseDialog {
                 tv_logo.setText("BCH");
                 tv_logo.setTextColor(Color.parseColor("#48CB45"));
                 break;
+            case 4:
+                iv_logo.setBackgroundResource(R.mipmap.ic_set_ltc);
+                tv_logo.setText("LTC");
+                tv_logo.setTextColor(Color.parseColor("#345C99"));
+                break;
         }
 
 

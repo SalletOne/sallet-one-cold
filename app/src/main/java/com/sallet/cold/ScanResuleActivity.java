@@ -198,6 +198,25 @@ public class ScanResuleActivity extends BaseActivity {
 
                     break;
                 }
+                case "6": {
+                    btcTrade = bean.getBtcTrade();
+                    sendAddr = btcTrade.getSendAddress();
+                    getAddr = btcTrade.getReceiveAddress();
+
+                    fee = btcTrade.getFee().toString();
+                    for (BtcTransDTO.Out bb : btcTrade.getReceivers()) {
+                        if (bb.getAddress().equalsIgnoreCase(getAddr)) {
+                            num = bb.getAmount().toString();
+                        }
+                    }
+                    DecimalFormat df = new DecimalFormat("0.00000000");
+                    String amount = df.format(Double.parseDouble(num) * 0.00000001);
+                    tvNum.setText(amount + " LTC");
+                    String amountFee = df.format(Double.parseDouble(fee) * 0.00000001);
+                    tvFee.setText(amountFee + " LTC");
+
+                    break;
+                }
 
                 default:
 
@@ -246,7 +265,9 @@ public class ScanResuleActivity extends BaseActivity {
                     case 5:
                         sign = BitcoinCash.getInstance().signTx(btcTrade, dh, index);
                         break;
-
+                    case 6:
+                        sign = Litecoin.getInstance().signTx(btcTrade, dh, index);
+                        break;
                 }
             } catch (Exception e) {
 

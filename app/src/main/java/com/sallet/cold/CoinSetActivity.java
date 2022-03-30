@@ -14,11 +14,8 @@ import com.hk.offline.currency.Bitcoin;
 import com.hk.offline.currency.BitcoinCash;
 import com.hk.offline.currency.Dogecoin;
 import com.hk.offline.currency.Ethereum;
-import com.hk.offline.currency.Filecoin;
+
 import com.hk.offline.currency.Litecoin;
-import com.hk.offline.currency.Solana;
-import com.hk.offline.currency.Tron;
-import com.hk.offline.currency.Xrp;
 import com.hk.offline.dto.AddressDTO;
 import com.sallet.cold.adapter.CoinSetAdapter;
 import com.sallet.cold.base.BaseActivity;
@@ -137,11 +134,12 @@ public class CoinSetActivity extends BaseActivity {
         data3.setNameSign("BCH");
         data3.setImage(R.mipmap.ic_set_bch);
         list.add(data3);
-//        CoinSetBean data9=new CoinSetBean();
-//        data9.setName("Polokadot");
-//        data9.setNameSign("DOT");
-//        data9.setImage(R.mipmap.ic_set_dot);
-//        list.add(data9);
+        CoinSetBean data4=new CoinSetBean();
+        data4.setName("Litecoin");
+        data4.setNameSign("LTC");
+        data4.setImage(R.mipmap.ic_set_ltc);
+        list.add(data4);
+
         List<CoinSetBean>addressList=App.getAddressList();
         //初始化已保存的数据
         //Initialize saved data
@@ -231,6 +229,14 @@ public class CoinSetActivity extends BaseActivity {
                 AddressDTO addressDTO5 = BitcoinCash.getInstance().address(dh, 0);
                 bean.setAddress(addressDTO5.getAddress());
                 bean.setName("BCH");
+                break;
+            case 4:
+                //生成ltc地址
+                //Generate ltc address
+                AddressDTO addressDTO4 = Litecoin.getInstance().address(dh, 0);
+                bean.setAddress(addressDTO4.getAddress());
+                bean.setName("LTC");
+
                 break;
         }
 

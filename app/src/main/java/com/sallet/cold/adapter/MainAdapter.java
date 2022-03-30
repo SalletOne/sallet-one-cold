@@ -39,6 +39,9 @@ public class MainAdapter extends BaseQuickAdapter<CoinSetBean, BaseViewHolder> {
             case 3:
                 image=R.mipmap.ic_home_bch;
                 break;
+            case 4:
+                image=R.mipmap.ic_home_ltc;
+                break;
         }
         helper.setBackgroundRes(R.id.ll_content,image);
 

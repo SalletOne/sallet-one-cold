@@ -264,7 +264,6 @@ public class MainActivity extends BaseActivity {
                                 break;
                             case 5://助记词备份 mnemonic backup
 
-//                               main();
                                 new PwDialog(context, "",  getStringResources(R.string.please_input_etpass), new PwDialog.OnPress() {
                                     @Override
                                     public void onPress() {

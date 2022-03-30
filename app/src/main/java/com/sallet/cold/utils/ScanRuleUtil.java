@@ -89,6 +89,7 @@ public class ScanRuleUtil {
             case "0":
             case "4":
             case "5":
+            case "6":
                  { //btc doge ltc bch
                 BtcTransDTO dto = gson.fromJson(trade, new TypeToken<BtcTransDTO>() {
                 }.getType()); //
