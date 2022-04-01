@@ -23,7 +23,7 @@ import com.sallet.cold.utils.DeflaterUtils;
 import java.util.Hashtable;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 
@@ -34,9 +34,9 @@ import butterknife.OnClick;
 public class ScanResultOkActivity extends BaseActivity {
 
 
-    @InjectView(R.id.iv_ma)
+    @BindView(R.id.iv_ma)
     ImageView ivMa;
-    @InjectView(R.id.sp_iv_1)
+    @BindView(R.id.sp_iv_1)
     ImageView spIv1;
     String sign;
     @Override
@@ -45,7 +45,7 @@ public class ScanResultOkActivity extends BaseActivity {
         setContentView(R.layout.activity_scan_result_ok);
 
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         if(App.getSpString(App.isTracFirst)==null){
             //If the boot page is displayed for the first time
             spIv1.setVisibility(View.VISIBLE);

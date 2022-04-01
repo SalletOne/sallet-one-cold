@@ -83,39 +83,22 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    //安卓自带组件库 最新1.4.1
     implementation 'androidx.appcompat:appcompat:1.0.2'
-    //安卓自带组件库 最新2.1.3
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    //后台的jar包 最新
     implementation 'com.hk:offline:1.3.0'
-    //github u盘管理库 最新
     implementation 'com.github.mjdev:libaums:0.5.5'
-    //github波卡用的算法库 最新
     implementation 'ove:ove.blake2b:alpha.0'
-    //安卓的列表库 最新
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
-    //谷歌的gson转义网络数据库 最新
-    implementation 'com.google.code.gson:gson:2.8.6'
-    //github绑定UI组件的库 最新
-    implementation 'com.jakewharton:butterknife:6.1.0'
-    annotationProcessor 'com.jakewharton:butterknife:6.1.0'
-    //github扫描二维码的库 最新
+    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
     implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
-    //安卓自带测试库 最新
     testImplementation 'junit:junit:4.12'
-    //安卓自带测试库 最新1.1.3
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
-    //安卓自带测试库 最新3.4.0
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
-    //github列表适配器的库 最新
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
-    //安卓的方法超限控制库 最新
     implementation 'com.android.support:multidex:1.0.3'
-    //波卡的jar包 最新
     implementation files('libs/polkaj-scale-0.2.3.jar')
-    //github算法库 最新
     implementation 'io.github.novacrypto:SHA256:2019.01.27@jar'
-    //腾讯BUG统计库 最新
     implementation 'com.tencent.bugly:crashreport:latest.release'
 }

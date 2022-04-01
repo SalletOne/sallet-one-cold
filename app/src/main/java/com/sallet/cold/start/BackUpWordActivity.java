@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -32,12 +32,12 @@ import butterknife.OnClick;
 public class BackUpWordActivity extends BaseActivity {
 
 
-    @InjectView(R.id.rl_back)
+    @BindView(R.id.rl_back)
     RelativeLayout rlBack;
 
-    @InjectView(R.id.g_view)
+    @BindView(R.id.g_view)
     GridView gView;
-    @InjectView(R.id.bt)
+    @BindView(R.id.bt)
     TextView bt;
     private List<Map<String, Object>> data_list;// mnemonic collection
     private SimpleAdapter sim_adapter;// Mnemonic Adapter
@@ -51,7 +51,7 @@ public class BackUpWordActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_back_up_word);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         //New collection
         data_list = new ArrayList<Map<String, Object>>();
         root=getIntent().getIntExtra("root",0);

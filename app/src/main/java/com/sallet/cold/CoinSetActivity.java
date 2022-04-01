@@ -34,7 +34,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -43,11 +43,11 @@ import butterknife.OnClick;
 public class CoinSetActivity extends BaseActivity {
 
 
-    @InjectView(R.id.rl_back)
+    @BindView(R.id.rl_back)
     RelativeLayout rlBack;
-    @InjectView(R.id.rl_title)
+    @BindView(R.id.rl_title)
     RelativeLayout rlTitle;
-    @InjectView(R.id.rc_view)
+    @BindView(R.id.rc_view)
     RecyclerView rcView;
     List<CoinSetBean> list=new ArrayList<>();// address list
     CoinSetAdapter coinSetAdapter;// address list adapter
@@ -55,7 +55,7 @@ public class CoinSetActivity extends BaseActivity {
     protected void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coin_set);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         //dividing line between each item
         rcView.addItemDecoration(new RecycleViewDivider(context, LinearLayoutManager.VERTICAL));
 

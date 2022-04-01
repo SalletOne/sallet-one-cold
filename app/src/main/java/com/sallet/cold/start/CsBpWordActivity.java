@@ -19,7 +19,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -30,9 +30,9 @@ public class CsBpWordActivity extends BaseActivity {
     /**
      * Bind UI
      */
-    @InjectView(R.id.bt1)
+    @BindView(R.id.bt1)
     TextView bt1;
-    @InjectView(R.id.bt2)
+    @BindView(R.id.bt2)
     TextView bt2;
     private String[] value;//
 
@@ -40,7 +40,7 @@ public class CsBpWordActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sc_bp_word);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
 
         //generate mnemonic

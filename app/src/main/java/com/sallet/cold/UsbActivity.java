@@ -32,7 +32,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -47,13 +47,13 @@ public class UsbActivity extends AppCompatActivity {
     /**
      * Bind UI
      */
-    @InjectView(R.id.tv_submit)
+    @BindView(R.id.tv_submit)
     TextView tvSubmit;
-    @InjectView(R.id.tv_submit2)
+    @BindView(R.id.tv_submit2)
     TextView tvSubmit2;
-    @InjectView(R.id.rl_back)
+    @BindView(R.id.rl_back)
     RelativeLayout rlBack;
-    @InjectView(R.id.rl_title)
+    @BindView(R.id.rl_title)
     RelativeLayout rlTitle;
     private USBBroadcastReceiver usbBroadcastReceiver = new USBBroadcastReceiver();//usb插拔广播监听 usb plug-in broadcast monitoring
     File apkFile;// installation package file
@@ -63,7 +63,7 @@ public class UsbActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usb);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         //New Intent Display Object
         IntentFilter usbDeviceStateFilter = new IntentFilter();

@@ -25,7 +25,7 @@ import java.util.Map;
 import java.util.Random;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -34,19 +34,19 @@ import butterknife.OnClick;
 public class ResumeWordActivity extends BaseActivity {
 
 
-    @InjectView(R.id.title)
+    @BindView(R.id.title)
     TextView title;
-    @InjectView(R.id.gv_1)
+    @BindView(R.id.gv_1)
     GridView gv1;
-    @InjectView(R.id.gv_2)
+    @BindView(R.id.gv_2)
     GridView gv2;
-    @InjectView(R.id.bt)
+    @BindView(R.id.bt)
     TextView bt;
 
     String[] word; // out-of-order mnemonic
     String[] wordSes;// mnemonics in correct order
     List<Integer> positionArr = new ArrayList<>();// Save the entered location
-    @InjectView(R.id.rl_back)
+    @BindView(R.id.rl_back)
     RelativeLayout rlBack;
 
     private MyAdapter sim_adapter;//
@@ -58,7 +58,7 @@ public class ResumeWordActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resume_word);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         // out-of-order mnemonic
         word = AesUtils.aesDecrypt(getIntent().getStringExtra("words")).split(",");
         // mnemonics in correct order

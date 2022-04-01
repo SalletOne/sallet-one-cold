@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -29,11 +29,11 @@ import butterknife.OnClick;
 public class LanguageActivity extends BaseActivity {
 
 
-    @InjectView(R.id.rl_back)
+    @BindView(R.id.rl_back)
     RelativeLayout rlBack;
-    @InjectView(R.id.rl_title)
+    @BindView(R.id.rl_title)
     RelativeLayout rlTitle;
-    @InjectView(R.id.rc_view)
+    @BindView(R.id.rc_view)
     RecyclerView rcView;
     //Language list adapter
     LanguageSetAdapter adapter;
@@ -43,7 +43,7 @@ public class LanguageActivity extends BaseActivity {
     protected void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_language);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         rcView.setLayoutManager(new LinearLayoutManager(context));
         //Initialize the adapter
         adapter=new LanguageSetAdapter(R.layout.item_language,list);

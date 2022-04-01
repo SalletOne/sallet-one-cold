@@ -62,7 +62,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -75,15 +75,15 @@ public class ScanResuleActivity extends BaseActivity {
     /**
      * Bind UI
      */
-    @InjectView(R.id.tv_send_addr)
+    @BindView(R.id.tv_send_addr)
     TextView tvSendAddr;
-    @InjectView(R.id.tv_get_addr)
+    @BindView(R.id.tv_get_addr)
     TextView tvGetAddr;
-    @InjectView(R.id.tv_num)
+    @BindView(R.id.tv_num)
     TextView tvNum;
-    @InjectView(R.id.tv_fee)
+    @BindView(R.id.tv_fee)
     TextView tvFee;
-    @InjectView(R.id.bt)
+    @BindView(R.id.bt)
     TextView Bt;
     String sendAddr;// sending address
     String getAddr;// Acceptance address
@@ -102,7 +102,7 @@ public class ScanResuleActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_result);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         //Offline scan results
         result = getIntent().getStringExtra("result");
         //Parse the data passed from the online end

@@ -14,7 +14,7 @@ import com.sallet.cold.R;
 import org.jetbrains.annotations.NotNull;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 /**
  * Countdown 3s to display important transaction information, and automatically close after 3s
@@ -23,15 +23,15 @@ public class ConfirmDialog extends BaseDialog {
     /**
      *  bind ui
      */
-    @InjectView(R.id.tv_send_addr)
+    @BindView(R.id.tv_send_addr)
     TextView tvSendAddr;
-    @InjectView(R.id.tv_get_addr)
+    @BindView(R.id.tv_get_addr)
     TextView tvGetAddr;
-    @InjectView(R.id.tv_num)
+    @BindView(R.id.tv_num)
     TextView tvNum;
-    @InjectView(R.id.tv_fee)
+    @BindView(R.id.tv_fee)
     TextView tvFee;
-    @InjectView(R.id.tv_time)
+    @BindView(R.id.tv_time)
     TextView tvTime;
     /**
      * The timer counts down 3s
@@ -63,7 +63,7 @@ public class ConfirmDialog extends BaseDialog {
         View convertView = getLayoutInflater().inflate(R.layout.dialog_confirm, null);
         //set layout
         setContentView(convertView);
-        ButterKnife.inject(this, convertView);
+        ButterKnife.bind(this, convertView);
         tvSendAddr.setText(send);
         tvGetAddr.setText(receive);
         tvNum.setText(num);

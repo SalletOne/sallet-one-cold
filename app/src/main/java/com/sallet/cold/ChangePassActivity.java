@@ -16,7 +16,7 @@ import com.sallet.cold.base.BaseActivity;
 import com.sallet.cold.utils.PassUtil;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 
@@ -30,19 +30,19 @@ public class ChangePassActivity extends BaseActivity {
     /**
      * Bind UI
      */
-    @InjectView(R.id.rl_back)
+    @BindView(R.id.rl_back)
     RelativeLayout rlBack;
-    @InjectView(R.id.rl_title)
+    @BindView(R.id.rl_title)
     RelativeLayout rlTitle;
-    @InjectView(R.id.tv_titel)
+    @BindView(R.id.tv_titel)
     TextView tvTitel;
-    @InjectView(R.id.et_pass)
+    @BindView(R.id.et_pass)
     EditText etPass;
-    @InjectView(R.id.et_pass2)
+    @BindView(R.id.et_pass2)
     EditText etPass2;
-    @InjectView(R.id.bt)
+    @BindView(R.id.bt)
     TextView bt;
-    @InjectView(R.id.iv_is_see)
+    @BindView(R.id.iv_is_see)
     ImageView ivSee;
 
     private boolean isSee = false;//密码是否可见 Is the password visible?
@@ -51,7 +51,7 @@ public class ChangePassActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_pass);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         ivSee.setOnClickListener(v->{
                     if (isSee) {
                         //密码可见

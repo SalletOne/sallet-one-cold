@@ -19,7 +19,7 @@ import com.sallet.cold.utils.CheckSign;
 import com.sallet.cold.utils.ConfigContent;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -30,28 +30,28 @@ import butterknife.OnClick;
 public class AboutUsActivity extends BaseActivity {
 
 
-    @InjectView(R.id.rl_back)
+    @BindView(R.id.rl_back)
     RelativeLayout rlBack;
-    @InjectView(R.id.rl_title)
+    @BindView(R.id.rl_title)
     RelativeLayout rlTitle;
-    @InjectView(R.id.tv_version)
+    @BindView(R.id.tv_version)
     TextView tvVersion;
-    @InjectView(R.id.tv_serve)
+    @BindView(R.id.tv_serve)
     TextView tvServe;
-    @InjectView(R.id.tv_about_us)
+    @BindView(R.id.tv_about_us)
     TextView tvAboutUs;
-    @InjectView(R.id.tv_call_us)
+    @BindView(R.id.tv_call_us)
     TextView tvCallUs;
-    @InjectView(R.id.iv_submit)
+    @BindView(R.id.iv_submit)
     ImageView ivSubmit;
-    @InjectView(R.id.ll_check_sign)
+    @BindView(R.id.ll_check_sign)
     LinearLayout llCheckSign;
 
     @Override
     protected void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         tvVersion.setText("v "+ ConfigContent.deviceVersion);
         if(App.getSpString("checkSign")==null){
             llCheckSign.setVisibility(View.VISIBLE);

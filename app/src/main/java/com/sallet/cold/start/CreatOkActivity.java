@@ -15,7 +15,7 @@ import com.sallet.cold.utils.AesUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -24,9 +24,9 @@ public class CreatOkActivity extends BaseActivity {
 
     /**
      */
-    @InjectView(R.id.tv_ok)
+    @BindView(R.id.tv_ok)
     TextView tvOk;
-    @InjectView(R.id.tv)
+    @BindView(R.id.tv)
     TextView tv;
 
     @Override
@@ -34,7 +34,7 @@ public class CreatOkActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_up_ok);
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
     }
 
     @OnClick(R.id.tv_ok)

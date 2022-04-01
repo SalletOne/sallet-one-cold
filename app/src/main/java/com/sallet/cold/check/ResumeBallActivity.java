@@ -35,7 +35,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 
@@ -49,14 +49,14 @@ public class ResumeBallActivity extends BaseActivity {
      * Bind UI
      */
 
-    @InjectView(R.id.rl_back)
+    @BindView(R.id.rl_back)
     RelativeLayout rlBack;
 
-    @InjectView(R.id.et_pass)
+    @BindView(R.id.et_pass)
     MultiAutoCompleteTextView etPass;
-    @InjectView(R.id.bt)
+    @BindView(R.id.bt)
     TextView bt;
-    @InjectView(R.id.title)
+    @BindView(R.id.title)
     TextView title;
 
 
@@ -66,7 +66,7 @@ public class ResumeBallActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resume_ball);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         //Get all legal mnemonics from Word class
         word=new Word().getWords();
         //input box input rules

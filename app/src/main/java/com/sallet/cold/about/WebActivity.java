@@ -17,7 +17,7 @@ import com.sallet.cold.base.BaseActivity;
 import org.w3c.dom.Text;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -26,13 +26,13 @@ import butterknife.OnClick;
 public class WebActivity extends BaseActivity {
 
 
-    @InjectView(R.id.rl_back)
+    @BindView(R.id.rl_back)
     RelativeLayout rlBack;
-    @InjectView(R.id.rl_title)
+    @BindView(R.id.rl_title)
     RelativeLayout rlTitle;
-    @InjectView(R.id.tv_title)
+    @BindView(R.id.tv_title)
     TextView tvTitle;
-    @InjectView(R.id.webView)
+    @BindView(R.id.webView)
     TextView webView;
 
     String zhContent="<h1 align=\"center\">服务条款 2021年6月1号生效版本</h1>\n" +
@@ -250,7 +250,7 @@ public class WebActivity extends BaseActivity {
     protected void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_web);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
             if(App.getSpString(App.language).equals("zh")) {
                 webView.setText(Html.fromHtml(zhContent));

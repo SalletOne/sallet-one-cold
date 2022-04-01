@@ -67,7 +67,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -81,11 +81,11 @@ public class MainActivity extends BaseActivity {
 
     /**
      */
-    @InjectView(R.id.tv_title)
+    @BindView(R.id.tv_title)
     TextView tvTitle;
-    @InjectView(R.id.rc_view)
+    @BindView(R.id.rc_view)
     RecyclerView recyclerView;
-    @InjectView(R.id.tvv_beifen)
+    @BindView(R.id.tvv_beifen)
     TextView tvv_beifen;
 
     List<CoinSetBean>list=new ArrayList<>();// address list
@@ -105,7 +105,7 @@ public class MainActivity extends BaseActivity {
 
         setContentView(R.layout.activity_main);
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         if (App.getSpString(App.defautBTCAddress) != null) {
             //There is a default address, which is taken directly from the storage table

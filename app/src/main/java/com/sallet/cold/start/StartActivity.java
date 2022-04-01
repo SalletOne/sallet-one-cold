@@ -20,7 +20,7 @@ import com.sallet.cold.utils.LanguageActivity;
 import java.util.Locale;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 /**
  * Hardware start page for users to choose whether to create a wallet or restore an existing wallet
@@ -31,19 +31,19 @@ public class StartActivity extends BaseActivity {
     /**
      * Bind UI
      */
-    @InjectView(R.id.tv_1)
+    @BindView(R.id.tv_1)
     TextView tv_1;
-    @InjectView(R.id.tv_2)
+    @BindView(R.id.tv_2)
     TextView tv_2;
-    @InjectView(R.id.tv_3)
+    @BindView(R.id.tv_3)
     TextView tv_3;
-    @InjectView(R.id.tv_4)
+    @BindView(R.id.tv_4)
     TextView tv_4;
-    @InjectView(R.id.tv_5)
+    @BindView(R.id.tv_5)
     TextView tv_5;
-    @InjectView(R.id.tv_6)
+    @BindView(R.id.tv_6)
     TextView tv_6;
-    @InjectView(R.id.tv_change)
+    @BindView(R.id.tv_change)
     TextView tvChange;
 
 
@@ -55,7 +55,7 @@ public class StartActivity extends BaseActivity {
         //Change language to saved language
         changeLanguage(App.getSpString(App.language));
         setContentView(R.layout.activity_start);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         //Get user storage in APP
         App.sp = getSharedPreferences("USER", Context.MODE_PRIVATE);

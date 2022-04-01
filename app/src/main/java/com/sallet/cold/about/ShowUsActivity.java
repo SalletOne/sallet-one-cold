@@ -14,7 +14,7 @@ import com.sallet.cold.R;
 import com.sallet.cold.base.BaseActivity;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -23,13 +23,13 @@ import butterknife.OnClick;
 public class ShowUsActivity extends BaseActivity {
 
 
-    @InjectView(R.id.rl_back)
+    @BindView(R.id.rl_back)
     RelativeLayout rlBack;
-    @InjectView(R.id.rl_title)
+    @BindView(R.id.rl_title)
     RelativeLayout rlTitle;
-    @InjectView(R.id.tv_title)
+    @BindView(R.id.tv_title)
     TextView tvTitle;
-    @InjectView(R.id.tv_content)
+    @BindView(R.id.tv_content)
     TextView tvContent;
 
     String tvAbountUs="关于我们\n" +
@@ -106,7 +106,7 @@ public class ShowUsActivity extends BaseActivity {
     protected void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_us);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         content=getIntent().getStringExtra("content");
 
 

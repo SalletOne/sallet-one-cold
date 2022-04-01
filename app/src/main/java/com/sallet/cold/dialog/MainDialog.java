@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -28,15 +28,15 @@ public class MainDialog extends BaseDialog {
     /**
      * Bind UI
      */
-    @InjectView(R.id.ll_coin_manange)
+    @BindView(R.id.ll_coin_manange)
     LinearLayout llCoinManange;
-    @InjectView(R.id.tv_delete_pwd)
+    @BindView(R.id.tv_delete_pwd)
     TextView tvDeletePwd;
-    @InjectView(R.id.ll_set_pwd)
+    @BindView(R.id.ll_set_pwd)
     LinearLayout llSetPwd;
-    @InjectView(R.id.iv_language_type)
+    @BindView(R.id.iv_language_type)
     ImageView ivLanguageType;
-    @InjectView(R.id.ll_change_language)
+    @BindView(R.id.ll_change_language)
     LinearLayout llChangeLanguage;
     private int type;//  0 is the destruction password is set, 1 is not set
 
@@ -64,7 +64,7 @@ public class MainDialog extends BaseDialog {
         super.onCreate(savedInstanceState);
         //Set popup placement to top
         getWindow().setGravity(Gravity.TOP);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         //Determine whether the wallet's destruction password is set
         if(App.getSpString(App.deletePass)!=null){
             //If the destruction password is set, directly display the destruction wallet

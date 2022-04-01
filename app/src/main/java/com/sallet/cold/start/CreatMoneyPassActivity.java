@@ -27,7 +27,7 @@ import com.hk.offline.utils.PasswordUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -40,19 +40,19 @@ public class CreatMoneyPassActivity extends BaseActivity {
     /**
      * Bind UI
      */
-    @InjectView(R.id.rl_back)
+    @BindView(R.id.rl_back)
     RelativeLayout rlBack;
-    @InjectView(R.id.et_pass)
+    @BindView(R.id.et_pass)
     EditText etPass;
-    @InjectView(R.id.et_pass2)
+    @BindView(R.id.et_pass2)
     EditText etPass2;
-    @InjectView(R.id.et_pass_submit)
+    @BindView(R.id.et_pass_submit)
     EditText etPassSubmit;
-    @InjectView(R.id.bt)
+    @BindView(R.id.bt)
     TextView bt;
-    @InjectView(R.id.tv_hint)
+    @BindView(R.id.tv_hint)
     TextView tv_hint;
-    @InjectView(R.id.iv_is_see)
+    @BindView(R.id.iv_is_see)
     ImageView ivSee;
     private boolean isSee = false;// Is the password visible?
 
@@ -60,7 +60,7 @@ public class CreatMoneyPassActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_money_pass);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         //Monitor password input box
         etPass.addTextChangedListener(new TextWatcher() {
             @Override
