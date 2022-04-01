@@ -939,7 +939,7 @@ public class Word {
             "inhale",
             "inherit",
             "initial",
-            "bind",
+            "inject",
             "injury",
             "inmate",
             "inner",
