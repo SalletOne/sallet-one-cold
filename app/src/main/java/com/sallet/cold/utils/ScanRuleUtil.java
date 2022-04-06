@@ -97,6 +97,13 @@ public class ScanRuleUtil {
                 content.setBtcTrade(dto);
                 break;
             }
+            case "7": {//fil
+                FilMsgDTO dto = gson.fromJson(trade, new TypeToken<FilMsgDTO>() {
+                }.getType()); //
+
+                content.setFilTrade(dto);
+                break;
+            }
             default: {//eth
                 EthTransDTO dto = gson.fromJson(trade, new TypeToken<EthTransDTO>() {
                 }.getType()); //

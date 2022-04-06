@@ -94,6 +94,7 @@ public class ScanResuleActivity extends BaseActivity {
     int type;
     private BtcTransDTO btcTrade;// btc transaction related content
     private EthTransDTO ethTrade;// Eth transaction related content
+    private FilMsgDTO filTrade;// fil transaction related content
     private MyTask mTask;// child thread
     boolean success=true;// Whether the signature is successful
 
@@ -217,6 +218,21 @@ public class ScanResuleActivity extends BaseActivity {
 
                     break;
                 }
+                case "7": {
+                    filTrade = bean.getFilTrade();
+                    sendAddr = filTrade.getFilTransDTO().getFrom();
+                    getAddr = filTrade.getFilTransDTO().getTo();
+
+                    fee = filTrade.getFee().toString();
+                    num=filTrade.getFilTransDTO().getValue();
+                    DecimalFormat df = new DecimalFormat("0.00000000");
+                    String amount = df.format(Double.parseDouble(num) /Math.pow(10,18));
+                    tvNum.setText(amount + " FIL");
+                    String amountFee = df.format(Double.parseDouble(fee) * 2200000 * 0.000000001);
+                    tvFee.setText(amountFee + " FIL");
+
+                    break;
+                }
 
                 default:
 
@@ -267,6 +283,9 @@ public class ScanResuleActivity extends BaseActivity {
                         break;
                     case 6:
                         sign = Litecoin.getInstance().signTx(btcTrade, dh, index);
+                        break;
+                    case 7:
+                        sign = Filecoin.getInstance().sign(filTrade.getFilTransDTO(), dh, index);
                         break;
                 }
             } catch (Exception e) {

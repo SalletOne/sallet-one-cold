@@ -15,6 +15,7 @@ import com.hk.offline.currency.BitcoinCash;
 import com.hk.offline.currency.Dogecoin;
 import com.hk.offline.currency.Ethereum;
 
+import com.hk.offline.currency.Filecoin;
 import com.hk.offline.currency.Litecoin;
 import com.hk.offline.dto.AddressDTO;
 import com.sallet.cold.adapter.CoinSetAdapter;
@@ -139,9 +140,12 @@ public class CoinSetActivity extends BaseActivity {
         data4.setNameSign("LTC");
         data4.setImage(R.mipmap.ic_set_ltc);
         list.add(data4);
-
+        CoinSetBean data5=new CoinSetBean();
+        data5.setName("Filecoin");
+        data5.setNameSign("FIL");
+        data5.setImage(R.mipmap.ic_set_fil);
+        list.add(data5);
         List<CoinSetBean>addressList=App.getAddressList();
-        //初始化已保存的数据
         //Initialize saved data
         for(int i=0;i<addressList.size();i++){ //
                 CoinSetBean bean=list.get(addressList.get(i).getType());
@@ -231,13 +235,17 @@ public class CoinSetActivity extends BaseActivity {
                 bean.setName("BCH");
                 break;
             case 4:
-                //生成ltc地址
                 //Generate ltc address
                 AddressDTO addressDTO4 = Litecoin.getInstance().address(dh, 0);
                 bean.setAddress(addressDTO4.getAddress());
                 bean.setName("LTC");
 
                 break;
+            case 5:
+                //Generate fil address
+                AddressDTO addressDTO6 = Filecoin.getInstance().address(dh, 0);
+                bean.setAddress(addressDTO6.getAddress());
+                bean.setName("FIL");
         }
 
 
