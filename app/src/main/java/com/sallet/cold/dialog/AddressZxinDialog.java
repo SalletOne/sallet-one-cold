@@ -109,6 +109,11 @@ public class AddressZxinDialog extends BaseDialog {
                 tv_logo.setText("FIL");
                 tv_logo.setTextColor(Color.parseColor("#0092FF"));
                 break;
+            case 6:
+                iv_logo.setBackgroundResource(R.mipmap.ic_set_matic);
+                tv_logo.setText("MATIC");
+                tv_logo.setTextColor(Color.parseColor("#2BBDF7"));
+                break;
         }
 
 

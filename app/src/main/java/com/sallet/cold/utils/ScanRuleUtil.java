@@ -104,6 +104,7 @@ public class ScanRuleUtil {
                 content.setFilTrade(dto);
                 break;
             }
+
             default: {//eth
                 EthTransDTO dto = gson.fromJson(trade, new TypeToken<EthTransDTO>() {
                 }.getType()); //

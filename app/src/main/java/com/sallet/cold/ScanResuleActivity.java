@@ -233,6 +233,21 @@ public class ScanResuleActivity extends BaseActivity {
 
                     break;
                 }
+                case "8": {
+                    ethTrade = bean.getEthTrade();
+                    sendAddr = ethTrade.getSender();
+                    getAddr = ethTrade.getReceiver();
+                    num = ethTrade.getAmount().toPlainString();
+                    fee = String.valueOf(ethTrade.getGasPrice());
+
+                    DecimalFormat df = new DecimalFormat("0.000000");
+                    tvNum.setText(num + " MATIC");
+                    String amountFee = df.format(Double.parseDouble(fee) * 21000 * 0.000000001);
+                    tvFee.setText(amountFee + " MATIC");
+
+
+                    break;
+                }
 
                 default:
 
@@ -286,6 +301,9 @@ public class ScanResuleActivity extends BaseActivity {
                         break;
                     case 7:
                         sign = Filecoin.getInstance().sign(filTrade.getFilTransDTO(), dh, index);
+                        break;
+                    case 8:
+                        sign = Matic.getInstance().signTx(ethTrade, dh, index);
                         break;
                 }
             } catch (Exception e) {

@@ -40,8 +40,10 @@ public class SplashActivity extends BaseActivity {
 
         if (App.getSpString(App.isLogin) != null && App.getSpString(App.isLogin).equals("true")) {
             startActivity(new Intent(SplashActivity.this, MainActivity.class));
+            finish();
         }else {
             startActivity(new Intent(SplashActivity.this, StartActivity.class));
+            finish();
         }
 
 

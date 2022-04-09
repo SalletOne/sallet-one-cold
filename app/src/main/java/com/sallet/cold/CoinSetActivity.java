@@ -145,6 +145,11 @@ public class CoinSetActivity extends BaseActivity {
         data5.setNameSign("FIL");
         data5.setImage(R.mipmap.ic_set_fil);
         list.add(data5);
+        CoinSetBean data6=new CoinSetBean();
+        data6.setName("Polygon");
+        data6.setNameSign("MATIC");
+        data6.setImage(R.mipmap.ic_set_matic);
+        list.add(data6);
         List<CoinSetBean>addressList=App.getAddressList();
         //Initialize saved data
         for(int i=0;i<addressList.size();i++){ //
@@ -246,6 +251,15 @@ public class CoinSetActivity extends BaseActivity {
                 AddressDTO addressDTO6 = Filecoin.getInstance().address(dh, 0);
                 bean.setAddress(addressDTO6.getAddress());
                 bean.setName("FIL");
+                break;
+            case 6:
+                //生成matic地址
+                //Generate matic address
+                Ethereum eth1 = Ethereum.getInstance();
+                AddressDTO addressDTO21 = eth1.address(dh, 0);
+                bean.setAddress(addressDTO21.getAddress());
+                bean.setName("MATIC");
+                break;
         }
 
 

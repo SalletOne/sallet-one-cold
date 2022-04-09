@@ -20,7 +20,7 @@
     <style name="SplashAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
-        <item name="android:windowBackground">@mipmap/ic_start</item>
+        <item name="android:windowBackground">@drawable/main_bitmap_splash_bg</item>
     </style>
 
     <style name="btStyle" >
