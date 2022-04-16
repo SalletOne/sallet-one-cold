@@ -49,9 +49,21 @@
         android:text="@string/ac_sc_bp_word4"
         android:layout_marginTop="15dp"
         android:id="@+id/bt2"
-        android:layout_marginBottom="52.5dp"
+        android:layout_marginBottom="20dp"
         />
 
-
+    <TextView
+        style="@style/btStyle"
+        android:background="@color/white"
+        android:textSize="11sp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_height="wrap_content"
+        android:textColor="#0471FF"
+        android:text="@string/custom_mnemonic"
+        android:gravity="right"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/bt3"
+        />
 
 </LinearLayout>

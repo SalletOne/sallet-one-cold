@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:background="#f7f7f7"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:text="选择助记词"
+            android:textSize="15sp"
+            android:paddingTop="10dp"
+            android:layout_weight="1"
+            android:paddingBottom="10dp"
+            android:textColor="@color/color_black_333"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="返回"
+            android:layout_centerVertical="true"
+            android:padding="7dp"
+            android:textSize="12sp"
+            android:id="@+id/tv_back"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="提交"
+            android:textColor="@color/main_blue"
+            android:layout_centerVertical="true"
+            android:id="@+id/tv_put"
+            android:layout_alignParentRight="true"
+            android:textSize="12sp"
+            android:padding="7dp"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:background="#f7f7f7"
+        android:paddingBottom="10dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+
+            android:background="@drawable/shape_10_corner_f7"
+            android:layout_marginLeft="15dp"
+
+            android:gravity="center_vertical"
+            android:layout_height="31dp">
+            <ImageView
+                android:layout_width="15dp"
+                android:background="@mipmap/ic_search"
+                android:layout_marginLeft="6dp"
+                android:layout_height="15dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:hint="搜索"
+                android:background="@null"
+                android:singleLine="true"
+                android:id="@+id/search"
+                android:textSize="13sp"
+                android:layout_marginLeft="6dp"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="取消"
+            android:textColor="#2e2e2e"
+            android:layout_marginLeft="16dp"
+            android:id="@+id/tv_cancle"
+            android:padding="5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="16sp"
+            android:textSize="13sp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:background="#e7e7e9"
+        android:layout_height="0.8dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_list"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="104dp"
+        android:layout_height="match_parent" />
+
+
+
+        <GridView
+            android:id="@+id/gv_2"
+            android:layout_width="match_parent"
+            android:layout_height="104dp"
+            android:layout_marginTop="27dp"
+            android:paddingTop="4dp"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentBottom="true"
+            android:paddingRight="7dp"
+            android:paddingBottom="10dp"
+            android:background="@drawable/shape_6_corner_f2"
+            android:numColumns="3" />
+        <com.sallet.cold.utils.azlist.AZSideBarView
+            android:id="@+id/bar_list"
+            app:textColor="@color/main_blue"
+            app:barWidth="10dp"
+            app:textSize="11sp"
+            app:backgroundColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+</LinearLayout>

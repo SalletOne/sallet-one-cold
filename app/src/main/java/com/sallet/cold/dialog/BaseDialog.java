@@ -19,7 +19,7 @@ public class BaseDialog extends Dialog {
 
     /**
      *dialog base class constructor
-     * @param context
+     * @param context 上下文
      */
     public BaseDialog(@NonNull Context context) {
         super(context, R.style.quick_option_dialog);

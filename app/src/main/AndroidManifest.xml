@@ -22,6 +22,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:name=".App"
+
+        android:persistent="true"
         android:hardwareAccelerated="true"
         android:largeHeap="true"
 
@@ -35,10 +37,13 @@
         </activity>
         <activity android:name=".start.SplashActivity"
             android:theme="@style/SplashAppTheme"
+            android:exported="true"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <category android:name="android.intent.category.MONKEY" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.HOME" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -59,6 +64,11 @@
         <activity android:name=".UsbActivity" />
         <activity android:name=".about.CallUsActivity" />
         <activity android:name=".about.WebActivity" />
+        <activity android:name=".utils.TestWeb" />
+        <activity android:name=".start.CenterHintActivity"
+            android:windowSoftInputMode="adjustPan"
+            />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.sallet.cold.fileprovider"
@@ -69,7 +79,9 @@
                 android:resource="@xml/provider_paths" />
         </provider>
         <!--监听网络变化-->
-        <receiver android:name=".utils.NetChangeReceiver">
+        <receiver android:name=".utils.NetChangeReceiver"
+            android:exported="false"
+            >
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>

@@ -57,7 +57,7 @@ public class BackUpWordActivity extends BaseActivity {
         root=getIntent().getIntExtra("root",0);
         if(root==0) {
             //root==0 Entering from the start page needs to decrypt the mnemonic display
-            value = AesUtils.aesDecrypt(getIntent().getStringExtra("words")).split(",");
+            value = AesUtils.aesDecrypt(getIntent().getStringExtra(App.password),getIntent().getStringExtra("words")).split(",");
         }else {
             //The mnemonic words that came in from the homepage have already been decrypted and brought over
             value=getIntent().getStringArrayExtra("words");
@@ -87,7 +87,7 @@ public class BackUpWordActivity extends BaseActivity {
                     finish();
                 }else {
                     //Confirm the pop-up window is used to enter the next page
-                    new SureDialog(context, getIntent().getStringExtra("words")).show();
+                    new SureDialog(context, getIntent().getStringExtra("words"),getIntent().getStringExtra(App.password)).show();
                 }
                 break;
         }

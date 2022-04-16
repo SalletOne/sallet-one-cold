@@ -80,7 +80,7 @@ public class MainDialog extends BaseDialog {
     }
 
     @OnClick({R.id.ll_coin_manange, R.id.ll_set_pwd, R.id.ll_change_language,R.id.ll_about_us,R.id.ll_check,
-    R.id.ll_backup_words})
+    R.id.ll_backup_words,R.id.ll_parent})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ll_coin_manange:
@@ -111,6 +111,9 @@ public class MainDialog extends BaseDialog {
             case R.id.ll_backup_words:
                 //Go to the backup mnemonic page
                 onMainClick.onClick(5,type);
+                dismiss();
+                break;
+            case R.id.ll_parent:
                 dismiss();
                 break;
         }

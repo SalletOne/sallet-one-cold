@@ -15,6 +15,6 @@
     <color name="color_tv_blue">#0471FF</color>
     <color name="color_black_50trans">#60000000</color>
     <color name="color_989898">#989898</color>
-    <color name="color_trance">#00FFFFFF</color>
+    <color name="color_trance">#00000000</color>
     <color name="line_color">#ececec</color>
 </resources>

@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="174dp"
-    android:layout_height="220dp"
-    android:layout_gravity="right"
-    android:layout_marginTop="53dp"
-    android:layout_marginRight="18dp"
-    android:background="@drawable/shape_5_corner_white_all_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ll_parent"
     android:orientation="vertical">
 
-
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="174dp"
+        android:layout_height="220dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="53dp"
+        android:layout_marginRight="18dp"
+        android:background="@drawable/shape_5_corner_white_all_dialog"
+        android:orientation="vertical">
     <LinearLayout
         android:id="@+id/ll_coin_manange"
         android:layout_width="match_parent"
@@ -170,4 +179,5 @@
 
 
     </LinearLayout>
+</LinearLayout>
 </LinearLayout>

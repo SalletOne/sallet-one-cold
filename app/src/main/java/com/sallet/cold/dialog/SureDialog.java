@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.sallet.cold.App;
 import com.sallet.cold.R;
 import com.sallet.cold.start.ResumeWordActivity;
 
@@ -19,16 +20,18 @@ import com.sallet.cold.start.ResumeWordActivity;
 public class SureDialog extends Dialog {
     Context context;//
     String words;//
+    String password;//
 
     /**
      * Construction method
      * @param context context
      * @param words mnemonic
      */
-    public SureDialog(Context context,String words) {
+    public SureDialog(Context context,String words,String password) {
         this(context, R.style.quick_option_dialog);
         this.context=context;
         this.words=words;
+        this.password=password;
     }
 
     /**
@@ -62,7 +65,8 @@ public class SureDialog extends Dialog {
             @Override
             public void onClick(View v) {
                 //Make sure to start the next page and pass the mnemonic to the next page
-                context.startActivity(new Intent(context, ResumeWordActivity.class).putExtra("words",words));
+                context.startActivity(new Intent(context, ResumeWordActivity.class).putExtra("words",words)
+                .putExtra(App.password,password));
 
             }
         });

@@ -138,6 +138,10 @@
     <string name="net_submit">您的设备处于网络连接中，为确保冷钱包的使用安全，建议您断开所有的网络连接。</string>
     <string name="sallet_one_check">sallet one 版本安全校验</string>
     <string name="check_submit">为防止sallet one被恶意修改，请前往sallet one官网 https://www.salletone.com/ 验证当前版本的sha1/md5/APKHash</string>
+    <string name="custom_mnemonic">自定义助记词</string>
+    <string name="custom_submit">输入首字母后请选择提示框中的单词</string>
+    <string name="no_same_word">请不要输入相同单词</string>
+    <string name="address_not_cold">该发送地址非本设备助记词生成</string>
 
 
 </resources>

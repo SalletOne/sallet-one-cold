@@ -51,20 +51,28 @@ public class CsBpWordActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.bt1, R.id.bt2})
+    @OnClick({R.id.bt1, R.id.bt2, R.id.bt3})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt1:
                 //Backup verification mnemonic
-                startActivity(new Intent(context,BackUpWordActivity.class).putExtra("words",AesUtils.aesEncrypt(StringUtils.join(value, ","))));
+                startActivity(new Intent(context,BackUpWordActivity.class)
+                        .putExtra( App.password,getIntent().getStringExtra(App.password))
+                        .putExtra("words",AesUtils.aesEncrypt(getIntent().getStringExtra( App.password),StringUtils.join(value, ","))));
                 break;
             case R.id.bt2:
                 //Save the mnemonic to the APP storage
-                App.saveString(App.word, AesUtils.aesEncrypt(StringUtils.join(value, ",")));
+                App.saveString(App.word, AesUtils.aesEncrypt(getIntent().getStringExtra( App.password),StringUtils.join(value, ",")));
                 //Go directly to the home page, not backed up
-                startActivity(new Intent(context, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                startActivity(new Intent(context, MainActivity.class)
+                        .putExtra(App.password,getIntent().getStringExtra( App.password))
+                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
 
 
+                break;
+            case R.id.bt3:
+                //custom mnemonic
+                startActivity(new Intent(context,CenterHintActivity.class).putExtra(App.password,getIntent().getStringExtra( App.password)));
                 break;
         }
     }

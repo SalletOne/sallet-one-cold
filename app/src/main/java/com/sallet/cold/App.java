@@ -55,6 +55,7 @@ public class App extends Application {
     public static  final  String passSubmit="passSubmit";//  password hint
     public static  final  String passWordDecode="passWord";// wallet password
     public static  final  String word="word";// mnemonic
+    public static  final  String password= "password";// mnemonic
     public static  final  String defautBTCAddress="defautBTCAddress";// BTC default address
     public static  final  String AddressList="AddressList";// Generated address list
     public static  final  String isLogin="isLogin";// Verify that you are logged in
@@ -62,6 +63,7 @@ public class App extends Application {
     public static  final  String deletePass="deletePass";// Delete wallet password
     public static final String isTracFirst="ISTracFIRST";// Is it the first time to log in
     public static  Context context;
+    public  static boolean isDebug=false;
     // Language list
     public static List<Locale> supportLang= Arrays.asList(
             Locale.SIMPLIFIED_CHINESE,
@@ -259,7 +261,6 @@ public class App extends Application {
      */
 
     public static void clear() {
-        passWord="";
         App.passWordTime=5;
         // Get user data in storage
         SharedPreferences preferences = context.getSharedPreferences("USER", Context.MODE_PRIVATE);

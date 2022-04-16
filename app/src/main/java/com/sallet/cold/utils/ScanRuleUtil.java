@@ -7,6 +7,7 @@ import com.hk.common.dto.EthTransDTO;
 import com.hk.common.dto.FilMsgDTO;
 import com.hk.common.dto.FilTransDTO;
 import com.hk.common.dto.SolTransDTO;
+import com.hk.common.dto.TerraTransDTO;
 import com.hk.common.dto.TronTransDTO;
 import com.hk.common.dto.XrpTransDTO;
 import com.sallet.cold.bean.ScanResultTradeBean;
@@ -89,19 +90,24 @@ public class ScanRuleUtil {
             case "0":
             case "4":
             case "5":
-            case "6":
-                 { //btc doge ltc bch
+            case "6": { //btc doge ltc bch
                 BtcTransDTO dto = gson.fromJson(trade, new TypeToken<BtcTransDTO>() {
-                }.getType()); //
-
+                }.getType());
                 content.setBtcTrade(dto);
                 break;
             }
             case "7": {//fil
                 FilMsgDTO dto = gson.fromJson(trade, new TypeToken<FilMsgDTO>() {
-                }.getType()); //
+                }.getType());
 
                 content.setFilTrade(dto);
+                break;
+            }
+            case "11": {//xrp
+                XrpTransDTO dto = gson.fromJson(trade, new TypeToken<XrpTransDTO>() {
+                }.getType());
+
+                content.setXrpTransDTO(dto);
                 break;
             }
 

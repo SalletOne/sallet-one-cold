@@ -154,7 +154,7 @@ class PolKatUtils {
     }
 
     private fun bytesToBinaryString(bytes: ByteArray): String {
-        return bytes.toUByteArray().joinToString("") { x -> lpad(x.toString(2), "0", 8); }
+        return bytes.toUByteArray().joinToString("") { x -> lpad(x.toString(), "0", 8); }
     }
 
     fun generateSeed(entropy: ByteArray, passphrase: String): ByteArray {

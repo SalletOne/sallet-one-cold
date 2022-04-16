@@ -45,7 +45,7 @@ public class ResumeWordActivity extends BaseActivity {
 
     String[] word; // out-of-order mnemonic
     String[] wordSes;// mnemonics in correct order
-    List<Integer> positionArr = new ArrayList<>();// Save the entered location
+    List<Integer> positionArr = new ArrayList<>();//保存输入的位置 Save the entered location
     @BindView(R.id.rl_back)
     RelativeLayout rlBack;
 
@@ -60,9 +60,9 @@ public class ResumeWordActivity extends BaseActivity {
         setContentView(R.layout.activity_resume_word);
         ButterKnife.bind(this);
         // out-of-order mnemonic
-        word = AesUtils.aesDecrypt(getIntent().getStringExtra("words")).split(",");
+        word = AesUtils.aesDecrypt(getIntent().getStringExtra(App.password),getIntent().getStringExtra("words")).split(",");
         // mnemonics in correct order
-        wordSes = AesUtils.aesDecrypt(getIntent().getStringExtra("words")).split(",");
+        wordSes = AesUtils.aesDecrypt(getIntent().getStringExtra(App.password),getIntent().getStringExtra("words")).split(",");
         //scramble the mnemonic
         changePosition();
         data_list = new ArrayList<Map<String, Object>>();
@@ -92,7 +92,9 @@ public class ResumeWordActivity extends BaseActivity {
     @OnClick(R.id.bt)
     public void onClick() {
         //All verifications are successful to start the next page
-        startActivity(new Intent(context, CreatOkActivity.class).putExtra("words",getIntent().getStringExtra("words")));
+        startActivity(new Intent(context, CreatOkActivity.class)
+                .putExtra(App.password,getIntent().getStringExtra( App.password))
+                .putExtra("words",getIntent().getStringExtra("words")));
     }
 
     /**

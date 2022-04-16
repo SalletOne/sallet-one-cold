@@ -29,6 +29,7 @@ import com.hk.common.dto.EthTransDTO;
 import com.hk.common.dto.FilMsgDTO;
 import com.hk.common.dto.FilTransDTO;
 import com.hk.common.dto.SolTransDTO;
+import com.hk.common.dto.TerraTransDTO;
 import com.hk.common.dto.TronTransDTO;
 import com.hk.common.dto.XrpTransDTO;
 import com.hk.common.utils.TxnType;
@@ -47,9 +48,11 @@ import com.hk.offline.currency.Tron;
 import com.hk.offline.currency.Xrp;
 import com.hk.offline.dto.AddressDTO;
 import com.sallet.cold.base.BaseActivity;
+import com.sallet.cold.bean.CoinSetBean;
 import com.sallet.cold.bean.ScanResultTradeBean;
 import com.sallet.cold.dialog.ConfirmDialog;
 import com.sallet.cold.dialog.PwDialog;
+import com.sallet.cold.luna.LunaAddress;
 import com.sallet.cold.utils.AesUtils;
 import com.sallet.cold.utils.ScanRuleUtil;
 
@@ -64,6 +67,7 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.BindView;
 import butterknife.OnClick;
+import cn.hutool.core.util.ArrayUtil;
 
 /**
  * By scanning the content of the QR code on the online side,
@@ -71,7 +75,7 @@ import butterknife.OnClick;
  */
 public class ScanResuleActivity extends BaseActivity {
 
-    String result;//在线端扫描的结果数据 Result data of online scan
+    String result;// Result data of online scan
     /**
      * Bind UI
      */
@@ -93,8 +97,12 @@ public class ScanResuleActivity extends BaseActivity {
     int index=0;
     int type;
     private BtcTransDTO btcTrade;// btc transaction related content
-    private EthTransDTO ethTrade;// Eth transaction related content
     private FilMsgDTO filTrade;// fil transaction related content
+    private EthTransDTO ethTrade;// Eth transaction related content
+    private XrpTransDTO xrpTransDTO;// xrp transaction related content
+    private SolTransDTO solTransDTO;// sol transaction related content
+    private TronTransDTO tronTransDTO;// tron transaction related content
+    private TerraTransDTO terraTransDTO;// tron transaction related content
     private MyTask mTask;// child thread
     boolean success=true;// Whether the signature is successful
 
@@ -161,6 +169,20 @@ public class ScanResuleActivity extends BaseActivity {
 
                     break;
                 }
+                case "2": {
+                    ethTrade = bean.getEthTrade();
+                    sendAddr = ethTrade.getSender();
+                    getAddr = ethTrade.getReceiver();
+                    num = String.valueOf(ethTrade.getAmount());
+                    fee = String.valueOf(ethTrade.getGasPrice());
+
+                    DecimalFormat df = new DecimalFormat("0.000000");
+                    tvNum.setText(num + " "+ethTrade.getSymbol());
+                    String amountFee = df.format(Double.parseDouble(fee) * ethTrade.getGasLimit() * 0.000000001);
+                    tvFee.setText(amountFee + " ETH");
+
+                    break;
+                }
                 case "4": {
                     btcTrade = bean.getBtcTrade();
                     sendAddr = btcTrade.getSendAddress();
@@ -180,6 +202,7 @@ public class ScanResuleActivity extends BaseActivity {
 
                     break;
                 }
+
                 case "5": {
                     btcTrade = bean.getBtcTrade();
                     sendAddr = btcTrade.getSendAddress();
@@ -233,6 +256,8 @@ public class ScanResuleActivity extends BaseActivity {
 
                     break;
                 }
+
+
                 case "8": {
                     ethTrade = bean.getEthTrade();
                     sendAddr = ethTrade.getSender();
@@ -249,6 +274,17 @@ public class ScanResuleActivity extends BaseActivity {
                     break;
                 }
 
+
+                case "11":
+                    xrpTransDTO = bean.getXrpTransDTO();
+                    sendAddr = xrpTransDTO.getSender();
+                    getAddr = xrpTransDTO.getReceiver();
+                    fee = String.valueOf(xrpTransDTO.getFee());
+                    tvNum.setText(xrpTransDTO.getAmount()*0.000001 + " XRP");
+                    tvFee.setText(fee + " drops");
+
+                    break;
+
                 default:
 
                     break;
@@ -256,6 +292,17 @@ public class ScanResuleActivity extends BaseActivity {
         }catch ( Exception e){
             showToast(getString(R.string.not_new_version));
         }
+        boolean isHav=false;
+        for (CoinSetBean bean :App.getAddressList()) {
+            if (bean.getAddress().equals(sendAddr)) {
+                isHav=true;
+            }
+        }
+        if(!isHav){
+            showToast(getString(R.string.address_not_cold));
+            finish();
+        }
+
 
 
     }
@@ -275,7 +322,7 @@ public class ScanResuleActivity extends BaseActivity {
         @Override
         protected String doInBackground(String... params) {
             //get mnemonic
-            String[] word = AesUtils.aesDecrypt(App.getSpString(App.word)).split(",");
+            String[] word = AesUtils.aesDecrypt(pass,App.getSpString(App.word)).split(",");
 
 
             //Get signature by mnemonic
@@ -289,6 +336,9 @@ public class ScanResuleActivity extends BaseActivity {
                         break;
                     case 1:
                         sign = Ethereum.getInstance().signTx(ethTrade, dh, index);
+                        break;
+                    case 2:
+                        sign = Ethereum.getInstance().erc20Sign(ethTrade, dh, index);
                         break;
                     case 4:
                         sign = Dogecoin.getInstance().signTx(btcTrade, dh, index);
@@ -305,6 +355,10 @@ public class ScanResuleActivity extends BaseActivity {
                     case 8:
                         sign = Matic.getInstance().signTx(ethTrade, dh, index);
                         break;
+                    case 11:
+                        sign = Xrp.getInstance().signTx(xrpTransDTO, dh, index);
+                        break;
+
                 }
             } catch (Exception e) {
 
@@ -347,7 +401,7 @@ public class ScanResuleActivity extends BaseActivity {
 
         }
     }
-
+    String pass;
     @OnClick({R.id.rl_back, R.id.bt})
     public void onClick(View view) {
         switch (view.getId()) {
@@ -363,8 +417,8 @@ public class ScanResuleActivity extends BaseActivity {
                     //Enter the password to complete the signature
                     new PwDialog(context, getStringResources(R.string.input_password_2_sign), new PwDialog.OnPress() {
                         @Override
-                        public void onPress() {
-
+                        public void onPress(String password) {
+                            pass=password;
                             //The password is correct to start the child thread to sign
                             mTask = new MyTask();
                             mTask.execute();

@@ -7,6 +7,8 @@ import android.graphics.LinearGradient;
 import android.graphics.Rect;
 import android.graphics.Shader;
 import android.util.AttributeSet;
+
+import com.journeyapps.barcodescanner.Size;
 import com.sallet.cold.R;
 import com.google.zxing.ResultPoint;
 import com.journeyapps.barcodescanner.ViewfinderView;
@@ -32,12 +34,11 @@ public class CustomZxingView extends ViewfinderView {
     @Override
     public void onDraw(Canvas canvas) {
         refreshSizes();
-        if (framingRect == null || previewFramingRect == null) {
+        if (framingRect == null ) {
             return;
         }
 
         Rect frame = framingRect;
-        Rect previewFrame = previewFramingRect;
 
         int width = canvas.getWidth();
         int height = canvas.getHeight();
@@ -74,11 +75,10 @@ public class CustomZxingView extends ViewfinderView {
             linearGradient = new LinearGradient(frame.left + 1, frame.top + laserLinePosition, frame.right - 1, frame.top + 10 + laserLinePosition, colors, position, Shader.TileMode.CLAMP);
             // Draw a red "laser scanner" line through the middle to show decoding is active
             paint.setShader(linearGradient);
-            //绘制扫描线
             canvas.drawRect(frame.left + 1, frame.top + laserLinePosition, frame.right - 1, frame.top + 10 + laserLinePosition, paint);
             paint.setShader(null);
-            float scaleX = frame.width() / (float) previewFrame.width();
-            float scaleY = frame.height() / (float) previewFrame.height();
+            float scaleX = frame.width();
+            float scaleY = frame.height();
 
             List<ResultPoint> currentPossible = possibleResultPoints;
             List<ResultPoint> currentLast = lastPossibleResultPoints;

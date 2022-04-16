@@ -131,7 +131,6 @@ public class CreatMoneyPassActivity extends BaseActivity {
                 //Compare the two passwords for the same
                 if (etPass.getText().toString().equals(etPass2.getText().toString())) {
                     //Save wallet password
-                    App.passWord = etPass.getText().toString();
                     App.saveString(App.passWordDecode, PasswordUtils.encryptPassword(etPass.getText().toString()));
                     //password hint
                     if (etPassSubmit.getText().toString().length() > 0) {
@@ -139,12 +138,14 @@ public class CreatMoneyPassActivity extends BaseActivity {
                     }
                     if (getIntent().getIntExtra("type", 0) == 1) {
                         //To restore wallet, go directly to
-                        App.saveString(App.word, AesUtils.aesEncrypt(StringUtils.join(getIntent().getStringArrayExtra("wordList"), ",")));
-                        startActivity(new Intent(CreatMoneyPassActivity.this, CreatOkActivity.class));
+                        App.saveString(App.word, AesUtils.aesEncrypt(etPass.getText().toString(),StringUtils.join(getIntent().getStringArrayExtra("wordList"), ",")));
+                        startActivity(new Intent(CreatMoneyPassActivity.this, CreatOkActivity.class)
+                                .putExtra(App.password,etPass.getText().toString()));
 
                     } else {
                         //Create a wallet, prompt to verify the mnemonic
-                        startActivity(new Intent(CreatMoneyPassActivity.this, CsBpWordActivity.class));
+                        startActivity(new Intent(CreatMoneyPassActivity.this, CsBpWordActivity.class)
+                        .putExtra( App.password,etPass.getText().toString()));
                     }
                     tv_hint.setVisibility(View.GONE);
                 } else {

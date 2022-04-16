@@ -5,6 +5,7 @@ import com.hk.common.dto.EthTransDTO;
 import com.hk.common.dto.FilMsgDTO;
 import com.hk.common.dto.FilTransDTO;
 import com.hk.common.dto.SolTransDTO;
+import com.hk.common.dto.TerraTransDTO;
 import com.hk.common.dto.TronTransDTO;
 import com.hk.common.dto.XrpTransDTO;
 
@@ -20,6 +21,7 @@ public class ScanResultTradeBean {
     private XrpTransDTO xrpTransDTO;//xrp  xrp correlation model
     private SolTransDTO solTransDTO;//sol  sol 相关模型
     private TronTransDTO tronTransDTO;//tron  tron 相关模型
+    private TerraTransDTO terraTransDTO;//terra  tron 相关模型
 
 
 
@@ -94,5 +96,13 @@ public class ScanResultTradeBean {
 
     public void setTronTransDTO(TronTransDTO tronTransDTO) {
         this.tronTransDTO = tronTransDTO;
+    }
+
+    public TerraTransDTO getTerraTransDTO() {
+        return terraTransDTO;
+    }
+
+    public void setTerraTransDTO(TerraTransDTO terraTransDTO) {
+        this.terraTransDTO = terraTransDTO;
     }
 }

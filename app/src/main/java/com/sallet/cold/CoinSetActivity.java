@@ -9,22 +9,27 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
+import com.hk.common.dto.TerraTransDTO;
 import com.hk.offline.base.SeedMasterKey;
 import com.hk.offline.currency.Bitcoin;
 import com.hk.offline.currency.BitcoinCash;
 import com.hk.offline.currency.Dogecoin;
 import com.hk.offline.currency.Ethereum;
-
 import com.hk.offline.currency.Filecoin;
 import com.hk.offline.currency.Litecoin;
+import com.hk.offline.currency.Solana;
+import com.hk.offline.currency.Tron;
+import com.hk.offline.currency.Xrp;
 import com.hk.offline.dto.AddressDTO;
 import com.sallet.cold.adapter.CoinSetAdapter;
 import com.sallet.cold.base.BaseActivity;
 import com.sallet.cold.bean.CoinSetBean;
 import com.sallet.cold.dialog.PwDialog;
+import com.sallet.cold.luna.LunaAddress;
 import com.sallet.cold.polket.PolAddress;
-import com.sallet.cold.polket.PolKatUtils;
 import com.sallet.cold.utils.AesUtils;
+import com.sallet.cold.utils.L;
 import com.sallet.cold.utils.RecycleViewDivider;
 
 import org.apache.commons.lang3.StringUtils;
@@ -37,6 +42,7 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.BindView;
 import butterknife.OnClick;
+import cn.hutool.core.util.ArrayUtil;
 
 /**
  * Currency address management
@@ -64,7 +70,7 @@ public class CoinSetActivity extends BaseActivity {
         rcView.setLayoutManager(new LinearLayoutManager(context));
         rcView.setAdapter(coinSetAdapter);
         //adapter add list click event
-        coinSetAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        coinSetAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 //Is it selected
@@ -130,11 +136,13 @@ public class CoinSetActivity extends BaseActivity {
         data2.setNameSign("DOGE");
         data2.setImage(R.mipmap.ic_dog_logo);
         list.add(data2);
+
         CoinSetBean data3=new CoinSetBean();
         data3.setName("Bitcoin Cash");
         data3.setNameSign("BCH");
         data3.setImage(R.mipmap.ic_set_bch);
         list.add(data3);
+
         CoinSetBean data4=new CoinSetBean();
         data4.setName("Litecoin");
         data4.setNameSign("LTC");
@@ -150,6 +158,13 @@ public class CoinSetActivity extends BaseActivity {
         data6.setNameSign("MATIC");
         data6.setImage(R.mipmap.ic_set_matic);
         list.add(data6);
+        CoinSetBean data7=new CoinSetBean();
+        data7.setName("Ripple");
+        data7.setNameSign("XRP");
+        data7.setImage(R.mipmap.ic_set_xrp);
+        list.add(data7);
+
+
         List<CoinSetBean>addressList=App.getAddressList();
         //Initialize saved data
         for(int i=0;i<addressList.size();i++){ //
@@ -172,30 +187,18 @@ public class CoinSetActivity extends BaseActivity {
 
 
     private void creatAddress(int type){
-        //If the global saved password is not empty, the address will be generated directly
-        if(App.passWord.length()>0) {
-            //Get mnemonic by password
-            String[] word = AesUtils.aesDecrypt(App.getSpString(App.word)).split(",");
-            Arrays.asList(word);
-            //Generate address from mnemonic and currency
-            creatAddress2(word,type);
-            //set checked
-            list.get(type).setCheck(true);
-            //Update UI state
-            coinSetAdapter.notifyDataSetChanged();
-        }else {
+
             //If the global save password is empty, the address can only be generated after entering the correct password.
             new PwDialog(context, "",  getStringResources(R.string.please_input_etpass), new PwDialog.OnPress() {
                 @Override
-                public void onPress() {
+                public void onPress(String password) {
                     //Get mnemonic by password
-                    String[] word = AesUtils.aesDecrypt(App.getSpString(App.word)).split(",");
+                    String[] word = AesUtils.aesDecrypt(password,App.getSpString(App.word)).split(",");
                     Arrays.asList(word);
                     //Generate address from mnemonic and currency
                     creatAddress2(word,type);
                 }
             }).show();
-        }
     }
 
     /**
@@ -233,6 +236,7 @@ public class CoinSetActivity extends BaseActivity {
                 bean.setAddress(addressDTO3.getAddress());
                 bean.setName("DOGE");
                 break;
+
             case 3:
                 //Generate bch address
                 AddressDTO addressDTO5 = BitcoinCash.getInstance().address(dh, 0);
@@ -251,15 +255,63 @@ public class CoinSetActivity extends BaseActivity {
                 AddressDTO addressDTO6 = Filecoin.getInstance().address(dh, 0);
                 bean.setAddress(addressDTO6.getAddress());
                 bean.setName("FIL");
+
                 break;
             case 6:
-                //生成matic地址
                 //Generate matic address
                 Ethereum eth1 = Ethereum.getInstance();
                 AddressDTO addressDTO21 = eth1.address(dh, 0);
                 bean.setAddress(addressDTO21.getAddress());
                 bean.setName("MATIC");
                 break;
+            case 7:
+                //generate xrp address
+                AddressDTO addressDTO7 = Xrp.getInstance().address(dh, 0);
+                bean.setAddress(addressDTO7.getAddress());
+                bean.setName("XRP");
+                break;
+            case 8:
+
+                //Generate sol address
+                AddressDTO solanaDto= Solana.getInstance().address( Arrays.asList(word));
+
+                bean.setAddress(solanaDto.getAddress());
+                bean.setName("SOL");
+                break;
+
+            case 9:
+                //Generate avax address
+                Ethereum eth2 = Ethereum.getInstance();
+                AddressDTO addressDTO22 = eth2.address(dh, 0);
+                bean.setAddress(addressDTO22.getAddress());
+                bean.setName("AVAX");
+
+//                PolKatUtils utils=new PolKatUtils();
+//                PolAddress address=new PolAddress(utils);
+//                String dotAddress=address.saveFromMnemonic(StringUtils.join(word," "),"");
+//                bean.setAddress(dotAddress);
+//                bean.setName("DOT");
+                break;
+            case 10:
+                //Generate trx address
+                Tron tron = Tron.getInstance();
+                AddressDTO tronAddress = tron.address(Arrays.asList(word));
+                bean.setAddress(tronAddress.getAddress());
+                bean.setName("TRX");
+
+
+                break;
+            case 11:
+
+
+                LunaAddress lunaAddress=new LunaAddress();
+                bean.setAddress(lunaAddress.getAddress(ArrayUtil.join(word," ")));
+                bean.setName("LUNA");
+
+
+                break;
+
+
         }
 
 

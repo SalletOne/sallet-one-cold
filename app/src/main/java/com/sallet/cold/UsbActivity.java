@@ -43,7 +43,7 @@ import butterknife.OnClick;
  */
 public class UsbActivity extends AppCompatActivity {
     private static final String ACTION_USB_PERMISSION = "com.android.example.USB_PERMISSION";
-    int apkInstall = 10008; //安装APK请求码 Install APK request code
+    int apkInstall = 10008; // Install APK request code
     /**
      * Bind UI
      */
@@ -55,7 +55,7 @@ public class UsbActivity extends AppCompatActivity {
     RelativeLayout rlBack;
     @BindView(R.id.rl_title)
     RelativeLayout rlTitle;
-    private USBBroadcastReceiver usbBroadcastReceiver = new USBBroadcastReceiver();//usb插拔广播监听 usb plug-in broadcast monitoring
+    private USBBroadcastReceiver usbBroadcastReceiver = new USBBroadcastReceiver();// usb plug-in broadcast monitoring
     File apkFile;// installation package file
     private String localRootPath = Environment.getExternalStorageDirectory().getAbsolutePath();
 
@@ -331,15 +331,15 @@ public class UsbActivity extends AppCompatActivity {
                 saveFile.mkdirs();
             }
             //local files
-            apkFile = new File(filrDir + "/SalletOnecold");
-            //apkFile = new File(filrDir + verName);
+//            apkFile = new File(filrDir + "/SalletOnecold");
+            apkFile = new File(filrDir + "/SalletOnecold"+ ConfigContent.deviceVersion);
             apkFile.delete();
             //Open sub-threads to process time-consuming tasks
 
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    boolean result = saveUSbFileToLocal(usbFile, filrDir + "/SalletOnecold", new DownloadProgressListener() {
+                    boolean result = saveUSbFileToLocal(usbFile, filrDir  + "/SalletOnecold"+ ConfigContent.deviceVersion, new DownloadProgressListener() {
                         @Override
                         public void downloadProgress(int progress) {
                             //save progress callback

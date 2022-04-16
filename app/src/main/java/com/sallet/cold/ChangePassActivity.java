@@ -45,7 +45,7 @@ public class ChangePassActivity extends BaseActivity {
     @BindView(R.id.iv_is_see)
     ImageView ivSee;
 
-    private boolean isSee = false;//密码是否可见 Is the password visible?
+    private boolean isSee = false;// Is the password visible?
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,20 +54,17 @@ public class ChangePassActivity extends BaseActivity {
         ButterKnife.bind(this);
         ivSee.setOnClickListener(v->{
                     if (isSee) {
-                        //密码可见
                         //password is visible
                         etPass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
                         ivSee.setImageResource(R.mipmap.ic_see);
                         isSee = false;
 
                     } else {
-                        //密码不可见
                         //Password is not visible
                         etPass.setTransformationMethod(PasswordTransformationMethod.getInstance());
                         ivSee.setImageResource(R.mipmap.ic_nosee);
                         isSee = true;
                     }
-                    //设置光标位置
                     //set cursor position
                     etPass.setSelection(etPass.getText().toString().length());//
                 }
@@ -75,7 +72,6 @@ public class ChangePassActivity extends BaseActivity {
     }
 
     /**
-     * 控件点击事件
      * control click event
      * @param view
      */
@@ -83,12 +79,10 @@ public class ChangePassActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.rl_back:
-                //结束页面
                 //end page
                 finish();
                 break;
             case R.id.bt:
-                //提交步骤
                 //Submission steps
                 submit();
                 break;
@@ -97,18 +91,15 @@ public class ChangePassActivity extends BaseActivity {
 
 
     private void submit(){
-        //校验密码格式是否正确
         //Verify that the password format is correct
         if(PassUtil.isStringPwd10(etPass.getText().toString()).equals("0")){
             showToast(getStringResources(R.string.no_lenth_pass));
             return;
         }
-        //校验两次密码是否一致
         //Verify that the two passwords are the same
         if(!etPass.getText().toString().equals(etPass2.getText().toString())){
             showToast(getStringResources(R.string.pass_not_eq));
         }else {
-            //所有校验通过则保存密码
             //If all verifications pass, save the password
             showToast(getStringResources(R.string.setting_success));
             App.saveString(App.deletePass,etPass.getText().toString());

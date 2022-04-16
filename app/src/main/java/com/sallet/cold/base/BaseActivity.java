@@ -9,9 +9,13 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.util.DisplayMetrics;
+import android.view.MotionEvent;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.WebView;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -41,11 +45,7 @@ public class BaseActivity extends AppCompatActivity {
     //Loading status dialog
     private Dialog mDialog ;
 
-    private NetChangeReceiver netBroadcastReceiver;
-    /**
-     */
-    private int netType;
-    private IsNetDialog isNetDialog;//
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,8 +56,6 @@ public class BaseActivity extends AppCompatActivity {
         //Activity manager, each newly opened activity page is added to a collection, which is easy to deal with when it is destroyed
         ActivityCollector.addActivity(this);
         new WebView(this).destroy();
-        isNetDialog=new IsNetDialog(context);
-        checkNet();
     }
 
     /**
@@ -87,10 +85,55 @@ public class BaseActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent me) {
+        if (me.getAction() == MotionEvent.ACTION_DOWN) {  //
+            View v = getCurrentFocus();      //
+            if (isShouldHideKeyboard(v, me)) { //
+                hideKeyboard(v.getWindowToken());   //
+            }
+        }
+        return super.dispatchTouchEvent(me);
+    }
+    /**
+     *
+     * @param v
+     * @param event
+     * @return
+     */
+    private boolean isShouldHideKeyboard(View v, MotionEvent event) {
+        if (v != null && (v instanceof EditText)) {  //Determine whether the obtained focus control contains EditText
+            int[] l = {0, 0};
+            v.getLocationInWindow(l);
+            int left = l[0],    //Get the position of the input box on the screen
+                    top = l[1],
+                    bottom = top + v.getHeight(),
+                    right = left + v.getWidth();
+            if (event.getX() > left && event.getX() < right
+                    && event.getY() > top && event.getY() < bottom) {
+                // If the click position is an area of EditText, ignore it and do not close the keyboard.
+                return false;
+            } else {
+                return true;
+            }
+        }
+        // Ignored if focus is not EditText
+        return false;
+    }
+    /**
+     * Get InputMethodManager, hide soft keyboard
+     * @param token
+     */
+    private void hideKeyboard(IBinder token) {
+        if (token != null) {
+            InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            im.hideSoftInputFromWindow(token, InputMethodManager.HIDE_NOT_ALWAYS);
+        }
+    }
     /**
      * hide keyboard
      */
-    private void hideKeyboard() {
+    public void hideKeyboard() {
         InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
         if (imm.isActive() && this.getCurrentFocus() != null) {
             if (this.getCurrentFocus().getWindowToken() != null) {
@@ -172,40 +215,6 @@ public class BaseActivity extends AppCompatActivity {
 
     }
 
-    private void checkNet() {
-        netBroadcastReceiver = new NetChangeReceiver();
-        netBroadcastReceiver.setNetChangeListener(new NetChangeReceiver.NetChangeListener() {
-            @Override
-            public void onChangeListener(int status) {
-                netType = status;
-                if (isNetConnect()) {
 
-                    isNetDialog.show();
-                }else{
 
-                    if (isNetDialog.isShowing()){
-                        isNetDialog.dismiss();
-                    }
-                }
-            }
-        });
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            IntentFilter filter = new IntentFilter();
-            filter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
-            registerReceiver(netBroadcastReceiver, filter);
-        }
-    }
-    /**
-     *
-     */
-    public boolean isNetConnect() {
-        if (netType == 1) {
-            return true;
-        } else if (netType == 0) {
-            return true;
-        } else if (netType == -1) {
-            return false;
-        }
-        return false;
-    }
 }

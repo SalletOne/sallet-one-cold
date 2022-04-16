@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p>11111111111111111</p>
+
+<script src="terra.js"></script>
+
+<script>
+
+    function address(mnemonic){
+        const terra = new Terra.LCDClient({
+            URL: "https://lcd.terra.dev/",
+            chainID: "columbus-3"
+        });
+
+        // create a key out of a mnemonic
+        const mk = new Terra.MnemonicKey({
+            mnemonic: mnemonic,
+        });
+
+        //地址
+        //console.log(mk.accAddress)
+
+
+        // const wallet = terra.wallet(mk);
+        // console.log(wallet)
+        return mk.accAddress
+    }
+
+    console.log(address('prepare wet soldier fall pool midnight crash boy civil assist usual mesh'));
+
+
+
+
+    // get the current swap rate from 1 TerraUSD to TerraKRW
+/*
+    const offerCoin = new terra.coin('uusd', '1000000');
+    terra.market.swapRate(offerCoin, 'ukrw').then(c => {
+        console.log(`${offerCoin.toString()} can be swapped for ${c.toString()}`);
+    });
+*/
+
+</script>
+
+</body>
+</html>

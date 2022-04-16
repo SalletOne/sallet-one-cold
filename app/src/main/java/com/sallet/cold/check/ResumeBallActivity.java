@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputFilter;
 import android.text.InputType;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -83,6 +84,7 @@ public class ResumeBallActivity extends BaseActivity {
                 return regular.toCharArray();
             }
         });
+
         //add input listener
         etPass.addTextChangedListener(new TextWatcher() {
             @Override
@@ -99,7 +101,7 @@ public class ResumeBallActivity extends BaseActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 //Split the input by a space character into individual elements in the array
-                wordList =s.toString().split(" ");
+                wordList =s.toString().split("\\s+");
                 //whether to match words in the thesaurus
                 boolean isFalse=false;
                 //iterate over the array

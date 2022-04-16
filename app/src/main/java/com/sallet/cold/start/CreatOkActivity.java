@@ -44,6 +44,8 @@ public class CreatOkActivity extends BaseActivity {
             App.saveString(App.word, getIntent().getStringExtra("words"));
         }
         //start home page
-        startActivity(new Intent(context, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+        startActivity(new Intent(context, MainActivity.class)
+                .putExtra(App.password,getIntent().getStringExtra( App.password))
+                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
     }
 }

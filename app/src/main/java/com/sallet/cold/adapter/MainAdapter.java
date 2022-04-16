@@ -3,7 +3,7 @@ package com.sallet.cold.adapter;
 import androidx.annotation.Nullable;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.sallet.cold.R;
 import com.sallet.cold.bean.CoinSetBean;
 
@@ -36,11 +36,11 @@ public class MainAdapter extends BaseQuickAdapter<CoinSetBean, BaseViewHolder> {
             case 2:
                 image=R.mipmap.ic_home_dog;
                 break;
-            case 3:
-                image=R.mipmap.ic_home_bch;
-                break;
             case 4:
                 image=R.mipmap.ic_home_ltc;
+                break;
+            case 3:
+                image=R.mipmap.ic_home_bch;
                 break;
             case 5:
                 image=R.mipmap.ic_home_fil;
@@ -48,8 +48,12 @@ public class MainAdapter extends BaseQuickAdapter<CoinSetBean, BaseViewHolder> {
             case 6:
                 image=R.mipmap.ic_home_matic;
                 break;
+            case 7:
+                image=R.mipmap.ic_home_xrp;
+                break;
+
         }
-        helper.setBackgroundRes(R.id.ll_content,image);
+        helper.setBackgroundResource(R.id.ll_content,image);
 
     }
 }

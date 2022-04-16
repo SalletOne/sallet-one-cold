@@ -54,6 +54,7 @@ public class PwDeleteDialog extends BaseDialog {
         iv_close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //关闭
                 //closure
                 dismiss();
             }

@@ -26,11 +26,10 @@ public class PwDialog extends BaseDialog {
     OnPress onPress;// callback
 
     public interface OnPress{
-        void onPress();
+        void onPress(String password);
     }
 
     /**
-
      * Construction method
      * @param context context
      * @param content input box prompt content
@@ -49,7 +48,6 @@ public class PwDialog extends BaseDialog {
     }
 
     /**
-
      * Construction method
      * @param context context
      * @param content input box prompt content
@@ -112,9 +110,8 @@ public class PwDialog extends BaseDialog {
                 }
                 //Verify that the password is correct
                 if (PasswordUtils.validatePassword(et_pass.getText().toString(),App.getSpString(App.passWordDecode))) {
-                    App.passWord = et_pass.getText().toString();
                     dismiss();
-                    onPress.onPress();
+                    onPress.onPress(et_pass.getText().toString());
                     //Callback if correct
                 }else {
                     //Password error countdown to destroy wallet

@@ -16,7 +16,7 @@ public class IsNetDialog extends BaseDialog{
      *
      * @param context 上下文
      */
-    public IsNetDialog(@NonNull @NotNull Context context) {
+    public IsNetDialog(Context context) {
         super(context);
     }
 

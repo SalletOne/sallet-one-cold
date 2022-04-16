@@ -3,7 +3,7 @@ package com.sallet.cold.adapter;
 import androidx.annotation.Nullable;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.sallet.cold.R;
 import com.sallet.cold.bean.CoinSetBean;
 
@@ -26,7 +26,7 @@ public class CoinSetAdapter extends BaseQuickAdapter<CoinSetBean, BaseViewHolder
         //Show token name
         helper.setText(R.id.tv_name_sign,item.getNameSign()+"");
         //Show token icon
-        helper.setBackgroundRes(R.id.iv_type,item.getImage());
+        helper.setBackgroundResource(R.id.iv_type,item.getImage());
         //Whether to show the token in the homepage
         if(item.isCheck()) {
             //true show
