@@ -163,7 +163,11 @@ public class CoinSetActivity extends BaseActivity {
         data7.setNameSign("XRP");
         data7.setImage(R.mipmap.ic_set_xrp);
         list.add(data7);
-
+        CoinSetBean data8=new CoinSetBean();
+        data8.setName("Solana");
+        data8.setNameSign("SOL");
+        data8.setImage(R.mipmap.ic_set_solana);
+        list.add(data8);
 
         List<CoinSetBean>addressList=App.getAddressList();
         //Initialize saved data
@@ -279,37 +283,7 @@ public class CoinSetActivity extends BaseActivity {
                 bean.setName("SOL");
                 break;
 
-            case 9:
-                //Generate avax address
-                Ethereum eth2 = Ethereum.getInstance();
-                AddressDTO addressDTO22 = eth2.address(dh, 0);
-                bean.setAddress(addressDTO22.getAddress());
-                bean.setName("AVAX");
 
-//                PolKatUtils utils=new PolKatUtils();
-//                PolAddress address=new PolAddress(utils);
-//                String dotAddress=address.saveFromMnemonic(StringUtils.join(word," "),"");
-//                bean.setAddress(dotAddress);
-//                bean.setName("DOT");
-                break;
-            case 10:
-                //Generate trx address
-                Tron tron = Tron.getInstance();
-                AddressDTO tronAddress = tron.address(Arrays.asList(word));
-                bean.setAddress(tronAddress.getAddress());
-                bean.setName("TRX");
-
-
-                break;
-            case 11:
-
-
-                LunaAddress lunaAddress=new LunaAddress();
-                bean.setAddress(lunaAddress.getAddress(ArrayUtil.join(word," ")));
-                bean.setName("LUNA");
-
-
-                break;
 
 
         }

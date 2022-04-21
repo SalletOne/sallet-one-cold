@@ -284,6 +284,15 @@ public class ScanResuleActivity extends BaseActivity {
                     tvFee.setText(fee + " drops");
 
                     break;
+                case "12":
+                    solTransDTO = bean.getSolTransDTO();
+                    sendAddr = solTransDTO.getSender();
+                    getAddr = solTransDTO.getReceiver();
+                    fee = "0.000005";
+                    tvNum.setText(solTransDTO.getLamports()/Math.pow(10,9) + " SOL");
+                    tvFee.setText(fee + " SOL");
+
+                    break;
 
                 default:
 

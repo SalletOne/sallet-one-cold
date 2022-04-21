@@ -110,6 +110,13 @@ public class ScanRuleUtil {
                 content.setXrpTransDTO(dto);
                 break;
             }
+            case "12": {//sol
+                SolTransDTO dto = gson.fromJson(trade, new TypeToken<SolTransDTO>() {
+                }.getType()); //
+
+                content.setSolTransDTO(dto);
+                break;
+            }
 
             default: {//eth
                 EthTransDTO dto = gson.fromJson(trade, new TypeToken<EthTransDTO>() {
