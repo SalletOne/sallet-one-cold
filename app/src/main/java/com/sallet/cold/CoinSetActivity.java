@@ -167,7 +167,11 @@ public class CoinSetActivity extends BaseActivity {
         data8.setNameSign("SOL");
         data8.setImage(R.mipmap.ic_set_solana);
         list.add(data8);
-
+        CoinSetBean data9=new CoinSetBean();
+        data9.setName("Avalanche");
+        data9.setNameSign("AVAX");
+        data9.setImage(R.mipmap.ic_avax_logo);
+        list.add(data9);
         List<CoinSetBean>addressList=App.getAddressList();
         //Initialize saved data
         for(int i=0;i<addressList.size();i++){ //
