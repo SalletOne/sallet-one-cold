@@ -124,6 +124,11 @@ public class AddressZxinDialog extends BaseDialog {
                 tv_logo.setText("SOL");
                 tv_logo.setTextColor(Color.parseColor("#2BBDF7"));
                 break;
+            case 9:
+                iv_logo.setBackgroundResource(R.mipmap.ic_avax_logo);
+                tv_logo.setText("AVAX");
+                tv_logo.setTextColor(Color.parseColor("#2BBDF7"));
+                break;
 
         }
 

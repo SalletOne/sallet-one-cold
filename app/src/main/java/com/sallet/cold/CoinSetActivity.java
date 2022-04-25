@@ -286,7 +286,20 @@ public class CoinSetActivity extends BaseActivity {
                 bean.setName("SOL");
                 break;
 
+            case 9:
+                //生成avax地址
+                //Generate avax address
+                Ethereum eth2 = Ethereum.getInstance();
+                AddressDTO addressDTO22 = eth2.address(dh, 0);
+                bean.setAddress(addressDTO22.getAddress());
+                bean.setName("AVAX");
 
+//                PolKatUtils utils=new PolKatUtils();
+//                PolAddress address=new PolAddress(utils);
+//                String dotAddress=address.saveFromMnemonic(StringUtils.join(word," "),"");
+//                bean.setAddress(dotAddress);
+//                bean.setName("DOT");
+                break;
 
 
         }

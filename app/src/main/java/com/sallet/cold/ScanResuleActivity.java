@@ -292,7 +292,20 @@ public class ScanResuleActivity extends BaseActivity {
                     tvFee.setText(fee + " SOL");
 
                     break;
+                case "13":
+                    ethTrade = bean.getEthTrade();
+                    sendAddr = ethTrade.getSender();
+                    getAddr = ethTrade.getReceiver();
+                    num = ethTrade.getAmount().toPlainString();
+                    fee = String.valueOf(ethTrade.getGasPrice());
 
+                    DecimalFormat df = new DecimalFormat("0.000000");
+                    tvNum.setText(num + " AVAX");
+                    String amountFee = df.format(Double.parseDouble(fee) * 21000 * 0.000000001);
+                    tvFee.setText(amountFee + " AVAX");
+
+
+                    break;
                 default:
 
                     break;
@@ -366,7 +379,9 @@ public class ScanResuleActivity extends BaseActivity {
                     case 11:
                         sign = Xrp.getInstance().signTx(xrpTransDTO, dh, index);
                         break;
-
+                    case 13:
+                        sign = Avax.getInstance().signTx(ethTrade, dh, index);
+                        break;
                 }
             } catch (Exception e) {
 
