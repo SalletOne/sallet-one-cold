@@ -26,7 +26,6 @@ import com.sallet.cold.adapter.CoinSetAdapter;
 import com.sallet.cold.base.BaseActivity;
 import com.sallet.cold.bean.CoinSetBean;
 import com.sallet.cold.dialog.PwDialog;
-import com.sallet.cold.luna.LunaAddress;
 import com.sallet.cold.polket.PolAddress;
 import com.sallet.cold.utils.AesUtils;
 import com.sallet.cold.utils.L;

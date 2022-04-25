@@ -50,7 +50,6 @@ import com.sallet.cold.dialog.IsNetDialog;
 import com.sallet.cold.dialog.MainDialog;
 import com.sallet.cold.dialog.PwDeleteDialog;
 import com.sallet.cold.dialog.PwDialog;
-import com.sallet.cold.luna.LunaAddress;
 import com.sallet.cold.luna.SignBack;
 import com.sallet.cold.start.BackUpWordActivity;
 import com.sallet.cold.start.StartActivity;

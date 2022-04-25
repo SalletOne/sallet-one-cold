@@ -52,7 +52,6 @@ import com.sallet.cold.bean.CoinSetBean;
 import com.sallet.cold.bean.ScanResultTradeBean;
 import com.sallet.cold.dialog.ConfirmDialog;
 import com.sallet.cold.dialog.PwDialog;
-import com.sallet.cold.luna.LunaAddress;
 import com.sallet.cold.utils.AesUtils;
 import com.sallet.cold.utils.ScanRuleUtil;
 
