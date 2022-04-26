@@ -93,6 +93,7 @@ public class ScanResuleActivity extends BaseActivity {
     String num;// Number of transactions
     String fee;// miner fee
     String sign;// transaction signature
+    String time;//时间戳
     int index=0;
     int type;
     private BtcTransDTO btcTrade;// btc transaction related content
@@ -132,6 +133,7 @@ public class ScanResuleActivity extends BaseActivity {
             ScanResultTradeBean bean= ScanRuleUtil.analysisTradeTCode(result);
             //Token Type
             type= Integer.parseInt(bean.getType());
+            time=bean.getTime();
             /*
                 Assign the sending address, receiving address,
                 transaction quantity and miner fee to the control according to the token type
@@ -413,7 +415,8 @@ public class ScanResuleActivity extends BaseActivity {
                 success=true;
             }else {
                 //If the signature is successful, start the next page to display the signature QR code
-                context.startActivity(new Intent(context, ScanResultOkActivity.class).putExtra("sign", sign));
+                context.startActivity(new Intent(context, ScanResultOkActivity.class).putExtra("sign", sign)
+                        .putExtra("time",time));
             }
         }
 

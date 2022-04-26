@@ -82,7 +82,13 @@ public class ScanRuleUtil {
         content.setDeviceCode(ssArray[0]);
         content.setDeviceVersion(ssArray[1]);
         content.setType(ssArray[3]);
-        String cut=ssArray[0]+"/"+ssArray[1]+"/"+ssArray[2]+"/"+ssArray[3]+"/";
+        String cut="";
+        if(content.getDeviceVersion().equals("1.1")) {
+            content.setTime(ssArray[4]);
+            cut = ssArray[0] + "/" + ssArray[1] + "/" + ssArray[2] + "/" + ssArray[3] + "/" + ssArray[4] + "/";
+        }else {
+            cut = ssArray[0] + "/" + ssArray[1] + "/" + ssArray[2] + "/" + ssArray[3] + "/";
+        }
         String trade=ss.substring(cut.length());
         Gson gson = new Gson();
         String type=ssArray[3];

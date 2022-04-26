@@ -39,6 +39,7 @@ public class ScanResultOkActivity extends BaseActivity {
     @BindView(R.id.sp_iv_1)
     ImageView spIv1;
     String sign;
+    String time;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,11 +57,12 @@ public class ScanResultOkActivity extends BaseActivity {
         }
         //Get the signature string from the previous page
         sign=getIntent().getStringExtra("sign");
+        time=getIntent().getStringExtra("time");
         Log.e("sign",sign);
         // Compressed signature
         sign= DeflaterUtils.zipString(sign);
         //Display the signed QR code on the UI
-        ivMa.setImageBitmap(BitmapUtils.createQRCodeBitmap("hash:"+sign, 700, 700,"UTF-8","L", "1"));
+        ivMa.setImageBitmap(BitmapUtils.createQRCodeBitmap(time+sign, 700, 700,"UTF-8","L", "1"));
         new Mnemonic().wordList();
     }
 

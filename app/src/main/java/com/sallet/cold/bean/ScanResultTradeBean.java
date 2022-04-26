@@ -22,7 +22,7 @@ public class ScanResultTradeBean {
     private SolTransDTO solTransDTO;//sol  sol 相关模型
     private TronTransDTO tronTransDTO;//tron  tron 相关模型
     private TerraTransDTO terraTransDTO;//terra  tron 相关模型
-
+    private String time="hash:";//校验交易的时间戳
 
 
     public String getType() {
@@ -104,5 +104,13 @@ public class ScanResultTradeBean {
 
     public void setTerraTransDTO(TerraTransDTO terraTransDTO) {
         this.terraTransDTO = terraTransDTO;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }
