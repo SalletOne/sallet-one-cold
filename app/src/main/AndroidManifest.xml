@@ -65,9 +65,7 @@
         <activity android:name=".about.CallUsActivity" />
         <activity android:name=".about.WebActivity" />
         <activity android:name=".utils.TestWeb" />
-        <activity android:name=".start.CenterHintActivity"
-            android:windowSoftInputMode="adjustPan"
-            />
+
 
         <provider
             android:name="androidx.core.content.FileProvider"

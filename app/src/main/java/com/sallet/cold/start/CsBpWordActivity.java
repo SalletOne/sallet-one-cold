@@ -51,7 +51,7 @@ public class CsBpWordActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.bt1, R.id.bt2, R.id.bt3})
+    @OnClick({R.id.bt1, R.id.bt2})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt1:
@@ -70,10 +70,7 @@ public class CsBpWordActivity extends BaseActivity {
 
 
                 break;
-            case R.id.bt3:
-                //custom mnemonic
-                startActivity(new Intent(context,CenterHintActivity.class).putExtra(App.password,getIntent().getStringExtra( App.password)));
-                break;
+
         }
     }
 }

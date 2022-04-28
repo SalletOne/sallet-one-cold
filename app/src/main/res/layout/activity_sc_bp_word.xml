@@ -52,18 +52,6 @@
         android:layout_marginBottom="20dp"
         />
 
-    <TextView
-        style="@style/btStyle"
-        android:background="@color/white"
-        android:textSize="11sp"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        android:layout_height="wrap_content"
-        android:textColor="#0471FF"
-        android:text="@string/custom_mnemonic"
-        android:gravity="right"
-        android:layout_marginBottom="5dp"
-        android:id="@+id/bt3"
-        />
+
 
 </LinearLayout>
