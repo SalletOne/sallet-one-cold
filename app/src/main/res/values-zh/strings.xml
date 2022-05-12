@@ -142,6 +142,8 @@
     <string name="custom_submit">输入首字母后请选择提示框中的单词</string>
     <string name="no_same_word">请不要输入相同单词</string>
     <string name="address_not_cold">该发送地址非本设备助记词生成</string>
+    <string name="words_not_yes">不存在词库中，请重新输入</string>
+    <string name="illegal_mnemonic">非法助记词</string>
 
 
 </resources>

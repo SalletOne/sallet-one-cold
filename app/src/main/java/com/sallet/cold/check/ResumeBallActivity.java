@@ -31,7 +31,10 @@ import com.sallet.cold.utils.CommaTokenizer;
 import com.sallet.cold.utils.RoundBackgroundColorSpan;
 
 import org.apache.commons.lang3.StringUtils;
+import org.bitcoinj.crypto.MnemonicCode;
+import org.bitcoinj.crypto.MnemonicException;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -147,6 +150,32 @@ public class ResumeBallActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.bt:
+
+
+                for (String value : wordList) {
+                    boolean isOK=false;
+                    //Traverse the array to compare thesaurus
+                    for (String item : word) {
+                        if (item.equals(value)) {
+                            //Returns true if it exists in the thesaurus
+                            isOK=true;
+                        }
+                    }
+                    if(!isOK) {
+                        showToast(value + " " + getString(R.string.words_not_yes));
+                        return;
+                    }
+
+                    try {
+                        MnemonicCode.INSTANCE.check(Arrays.asList(wordList));
+                    } catch (MnemonicException e) {
+                        showToast(getString(R.string.illegal_mnemonic));
+                        return;
+                    }
+
+                }
+
+
                 //Complete and enter the next page to create a wallet password
                 startActivity(new Intent(context, CreatMoneyPassActivity.class).putExtra("type", 1).putExtra("wordList",wordList));
                 break;
