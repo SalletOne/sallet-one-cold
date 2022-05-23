@@ -1,8 +1,10 @@
 package com.sallet.cold.utils;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,10 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.sallet.cold.App;
+import com.sallet.cold.MainActivity;
 import com.sallet.cold.R;
 import com.sallet.cold.adapter.LanguageSetAdapter;
 import com.sallet.cold.base.BaseActivity;
 import com.sallet.cold.bean.LanguageBean;
+import com.sallet.cold.start.SplashActivity;
+import com.sallet.cold.start.StartActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +28,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
+ * 选择软件语言，选择后软件默认语言为选中的语言，保存在APP存储中
  * Select the software language,
  * after selection, the software default language is the selected language, which is saved in the APP storage
  */
@@ -35,8 +41,12 @@ public class LanguageActivity extends BaseActivity {
     RelativeLayout rlTitle;
     @BindView(R.id.rc_view)
     RecyclerView rcView;
+    @BindView(R.id.tv_next)
+    TextView tvNext;
+    //语言列表adapter
     //Language list adapter
     LanguageSetAdapter adapter;
+    //支持的语言列表
     //List of supported languages
     List<LanguageBean> list=new ArrayList<>();
     @Override
@@ -45,20 +55,39 @@ public class LanguageActivity extends BaseActivity {
         setContentView(R.layout.activity_language);
         ButterKnife.bind(this);
         rcView.setLayoutManager(new LinearLayoutManager(context));
+        //初始化adaper
         //Initialize the adapter
         adapter=new LanguageSetAdapter(R.layout.item_language,list);
         rcView.setAdapter(adapter);
+        //添加列表的点击事件
         //Add click event to list
         adapter.setOnItemClickListener((adapter, view, position) -> {
             for(int i=0;i<list.size();i++){
+                //遍历集合,选中的check设为true，其他设为false
                 //Traverse the collection, the selected check is set to true, the others are set to false
                 list.get(i).setCheck(position == i);
             }
+            //刷新数据
             //refresh data
             this.adapter.notifyDataSetChanged();
+            //改变语言方法
             //change language approach
             changeLanguage(list.get(position).getCode());
+
         });
+        tvNext.setOnClickListener(view -> {
+            if("SplashActivity".equals(getIntent().getStringExtra("entr"))){
+                startActivity(new Intent(context, StartActivity.class));
+                finish();
+            }
+        });
+        if("SplashActivity".equals(getIntent().getStringExtra("entr"))){
+            rlBack.setVisibility(View.GONE);
+            tvNext.setVisibility(View.VISIBLE);
+        }
+
+
+        //初始化支持的语言列表
         //Initialize the list of supported languages
         initData();
 
@@ -176,6 +205,7 @@ public class LanguageActivity extends BaseActivity {
                     break;
             }
             if(bean.getCode().equals(App.getSpString(App.language))){
+                //将APP中已存储的语言设为选中状态
                 //Set the language stored in the APP to the selected state
                 bean.setCheck(true);
             }

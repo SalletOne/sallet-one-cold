@@ -144,6 +144,8 @@
     <string name="address_not_cold">该发送地址非本设备助记词生成</string>
     <string name="words_not_yes">不存在词库中，请重新输入</string>
     <string name="illegal_mnemonic">非法助记词</string>
+    <string name="choose_a_language">选择语言</string>
+    <string name="next">下一步</string>
 
 
 </resources>
