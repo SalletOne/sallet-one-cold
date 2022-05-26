@@ -16,6 +16,7 @@ import com.sallet.cold.App;
 import com.sallet.cold.MainActivity;
 import com.sallet.cold.R;
 import com.sallet.cold.base.BaseActivity;
+import com.sallet.cold.utils.LanguageActivity;
 
 /**
  * Hardware Startup Page
@@ -42,7 +43,8 @@ public class SplashActivity extends BaseActivity {
             startActivity(new Intent(SplashActivity.this, MainActivity.class));
             finish();
         }else {
-            startActivity(new Intent(SplashActivity.this, StartActivity.class));
+            startActivity(new Intent(SplashActivity.this, LanguageActivity.class)
+                    .putExtra("entr","SplashActivity"));
             finish();
         }
 
