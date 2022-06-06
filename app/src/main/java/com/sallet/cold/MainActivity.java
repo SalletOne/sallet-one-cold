@@ -113,7 +113,7 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onChangeListener(int status) {
                 netType = status;
-                if (isNetConnect()) {
+                if (!isFinishing()&&isNetConnect()) {
                     isNetDialog.show();
                 }else{
                     if (isNetDialog.isShowing()){
