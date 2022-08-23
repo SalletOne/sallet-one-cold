@@ -13,3 +13,15 @@ Sallet one wallet core features:
 - Supports only airgapped, opensource hardware wallets
 
 In short, this is the easiest way to manage cryptocurrency with Sallet one, and not much else.
+
+---
+
+uasge:
+- Download sallet one cold wallet from [release](https://github.com/avahowell/sia-coldstorage/releases) or from [sallet one website](https://www.salletone.com/?r=front/showcontent&S_ID=20210520141636)
+- Install APK and set wallet transaction password, then will generate your seed and addresses.
+
+---
+
+license:
+
+The MIT License (MIT)
