@@ -1,6 +1,6 @@
 <h1 align="center"><code>sallet one wallet</code></h1>
 
-<div align="center">Trust, Open source, multi-currency management wallet</div>
+<div align="center">Trust, Open source, multi-currency management cold wallet</div>
 
 <br />
 
