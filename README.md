@@ -17,7 +17,7 @@ In short, this is the easiest way to manage cryptocurrency with Sallet one, and 
 ---
 
 uasge:
-- Download sallet one cold wallet from [release](https://github.com/avahowell/sia-coldstorage/releases) or from [sallet one website](https://www.salletone.com/?r=front/showcontent&S_ID=20210520141636)
+- Download sallet one cold wallet from [release](https://github.com/SalletOne/sallet-one-cold/releases) or from [sallet one website](https://www.salletone.com/cn/?r=front/news&S_ID=20210427140325)
 - Install APK and set wallet transaction password, then will generate your seed and addresses.
 
 ---
