@@ -20,4 +20,4 @@ Here are online java online run env and Deflater compression and uncompress Algo
 
 [java online run env](https://www.programiz.com/java-programming/online-compiler/)
 
-[java Deflater code](https://www.programiz.com/java-programming/online-compiler/)
+[java Deflater code](https://github.com/SalletOne/sallet-one-cold/blob/main/app/src/main/java/com/sallet/cold/utils/DeflaterUtils.java)
