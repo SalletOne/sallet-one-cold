@@ -84,6 +84,11 @@ public class BaseActivity extends AppCompatActivity {
         ActivityCollector.removeActivity(this);
     }
 
+    /**
+     * Click on the blank space to hide the keyboard
+     * @param me
+     * @return
+     */
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent me) {
@@ -126,6 +131,7 @@ public class BaseActivity extends AppCompatActivity {
      */
     private void hideKeyboard(IBinder token) {
         if (token != null) {
+            // hide soft keyboard
             InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             im.hideSoftInputFromWindow(token, InputMethodManager.HIDE_NOT_ALWAYS);
         }
@@ -137,6 +143,7 @@ public class BaseActivity extends AppCompatActivity {
         InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
         if (imm.isActive() && this.getCurrentFocus() != null) {
             if (this.getCurrentFocus().getWindowToken() != null) {
+                //hide keyboard
                 imm.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
             }
         }

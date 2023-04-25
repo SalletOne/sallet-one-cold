@@ -64,6 +64,9 @@ public class ConfirmDialog extends BaseDialog {
         //set layout
         setContentView(convertView);
         ButterKnife.bind(this, convertView);
+        /**
+         * bind ui
+         */
         tvSendAddr.setText(send);
         tvGetAddr.setText(receive);
         tvNum.setText(num);
@@ -75,6 +78,7 @@ public class ConfirmDialog extends BaseDialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setGravity(Gravity.CENTER);
+        //Start countdown
         cdt.start();
     }
 }

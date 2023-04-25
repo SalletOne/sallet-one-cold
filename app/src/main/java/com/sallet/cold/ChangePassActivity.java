@@ -51,6 +51,7 @@ public class ChangePassActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_pass);
+        //Bind UI
         ButterKnife.bind(this);
         ivSee.setOnClickListener(v->{
                     if (isSee) {

@@ -21,8 +21,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ItemAdapter extends AZBaseAdapter<WordCheckBean, ItemAdapter.ItemHolder> implements Filterable {
-	List<AZItemEntity<WordCheckBean>> mDatas;
-	List<AZItemEntity<WordCheckBean>> filterDatas;
+	List<AZItemEntity<WordCheckBean>> mDatas;//raw data
+	List<AZItemEntity<WordCheckBean>> filterDatas;//Filtered data
 
 	@Override
 	public Filter getFilter() {
@@ -35,19 +35,21 @@ public class ItemAdapter extends AZBaseAdapter<WordCheckBean, ItemAdapter.ItemHo
 					//If there is no filtered content, the source data is used
 					filterDatas = mDatas;
 				} else {
+					//Filtered data
 					List<AZItemEntity<WordCheckBean>> filteredList = new ArrayList<>();
 
 
 					for (int i = 0; i < mDatas.size(); i++) {
 
 						if (mDatas.get(i).getValue().getWords().toUpperCase().startsWith(charString.toUpperCase())) {
+							//Match the first letter and add it to the set
 							filteredList.add(mDatas.get(i));
 						}
 					}
-
+					//assignment
 					filterDatas = filteredList;
 				}
-
+				//Return matching data
 				FilterResults filterResults = new FilterResults();
 				filterResults.values = filterDatas;
 				return filterResults;
@@ -57,7 +59,9 @@ public class ItemAdapter extends AZBaseAdapter<WordCheckBean, ItemAdapter.ItemHo
 			@Override
 			protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
 				filterDatas = (List<AZItemEntity<WordCheckBean>>) filterResults.values;
+				//set up data sources
 				setDataList(filterDatas);
+				//renew
 				notifyDataSetChanged();
 				onBack.onBack();
 
@@ -70,8 +74,15 @@ public class ItemAdapter extends AZBaseAdapter<WordCheckBean, ItemAdapter.ItemHo
 	public interface OnClick {
 		void onclick(int position);
 	};
-	OnClick onClick;
-	OnBack onBack;
+	OnClick onClick;//Click callback
+	OnBack onBack;//Return callback
+
+	/**
+	 * Construction method
+	 * @param dataList
+	 * @param onClick
+	 * @param onBack
+	 */
 	public ItemAdapter(List<AZItemEntity<WordCheckBean>> dataList,OnClick onClick,OnBack onBack) {
 		super(dataList);
 		mDatas=dataList;
@@ -88,11 +99,13 @@ public class ItemAdapter extends AZBaseAdapter<WordCheckBean, ItemAdapter.ItemHo
 	@Override
 	public void onBindViewHolder(ItemHolder holder, int position) {
 		holder.mTextName.setText(mDataList.get(position).getValue().getWords());
+		//Determine whether to select and update UI status
 		if(mDataList.get(position).getValue().isCheck()){
 			holder.ivCheck.setVisibility(View.VISIBLE);
 		}else {
 			holder.ivCheck.setVisibility(View.GONE);
 		}
+		//Click Event
 		holder.itemView.setOnClickListener(v -> onClick.onclick(position));
 	}
 
