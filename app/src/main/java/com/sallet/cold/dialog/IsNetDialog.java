@@ -10,9 +10,6 @@ import com.sallet.cold.R;
 
 import org.jetbrains.annotations.NotNull;
 
-/**
- * Link Network Prompt Box
- */
 public class IsNetDialog extends BaseDialog{
     /**
      * dialog base class constructor

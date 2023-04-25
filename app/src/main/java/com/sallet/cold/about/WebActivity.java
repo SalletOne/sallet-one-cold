@@ -251,9 +251,7 @@ public class WebActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_web);
         ButterKnife.bind(this);
-        /**
-         * Judging language
-         */
+
             if(App.getSpString(App.language).equals("zh")) {
                 webView.setText(Html.fromHtml(zhContent));
 

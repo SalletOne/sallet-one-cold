@@ -25,7 +25,7 @@ public class LanguageSetAdapter extends BaseQuickAdapter<LanguageBean, BaseViewH
     protected void convert(BaseViewHolder helper, LanguageBean item) {
         //Display language name
         helper.setText(R.id.tv_language,item.getName()+"");
-        ImageView iv=helper.findView(R.id.iv_check);
+        ImageView iv=helper.itemView.findViewById(R.id.iv_check);
         //Whether the language is selected
         iv.setSelected(item.isCheck());
     }

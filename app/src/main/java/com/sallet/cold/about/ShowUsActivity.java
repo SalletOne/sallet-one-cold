@@ -107,13 +107,10 @@ public class ShowUsActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_us);
         ButterKnife.bind(this);
-        //Obtain display content
         content=getIntent().getStringExtra("content");
 
 
-        /**
-         * Judging language
-         */
+
             if(App.getSpString(App.language).equals("zh")) {
                 tvContent.setText(tvAbountUs);
 

@@ -52,16 +52,13 @@ public class AboutUsActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
         ButterKnife.bind(this);
-        //Set version number
         tvVersion.setText("v "+ ConfigContent.deviceVersion);
-        //Verify signature
         if(App.getSpString("checkSign")==null){
             llCheckSign.setVisibility(View.VISIBLE);
             App.saveString("checkSign","1");
         }else {
             llCheckSign.setVisibility(View.GONE);
         }
-        //Show Signature
         tvCallUs.setText(CheckSign.getSign(context));
     }
 
@@ -69,7 +66,6 @@ public class AboutUsActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.rl_back:
-                //End Page
                 finish();
                 break;
             case R.id.tv_serve:
