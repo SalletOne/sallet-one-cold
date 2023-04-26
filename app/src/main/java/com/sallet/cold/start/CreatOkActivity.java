@@ -19,6 +19,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
+ *Create wallet success page
  */
 public class CreatOkActivity extends BaseActivity {
 

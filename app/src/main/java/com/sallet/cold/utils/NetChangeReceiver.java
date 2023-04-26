@@ -5,23 +5,27 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 
+/**
+ * Network Status Monitoring Popup
+ */
+
 public class NetChangeReceiver extends BroadcastReceiver {
     public NetChangeListener listener;
 
     @Override
     public void onReceive(Context context, Intent intent) {
         // TODO Auto-generated method stub
-        // 如果相等的话就说明网络状态发生了变化
+        // Network Status Monitoring Popup
         if (intent.getAction().equals(ConnectivityManager.CONNECTIVITY_ACTION)) {
             int netWorkState = NetUtil.getNetWorkState(context);
-            // 当网络发生变化，判断当前网络状态，并通过NetEvent回调当前网络状态
+            // When the network changes, determine the current network status and call back the current network status through NetEvent
             if (listener != null) {
                 listener.onChangeListener(netWorkState);
             }
         }
     }
 
-    // 自定义接口
+    // custom interface
     public interface NetChangeListener {
         void onChangeListener(int status);
     }

@@ -11,6 +11,9 @@ import com.sallet.cold.R;
 
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * toolTip box
+ */
 public class SubmitDialog extends BaseDialog{
     String content;
     /**

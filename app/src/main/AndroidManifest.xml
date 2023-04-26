@@ -61,7 +61,6 @@
         <activity android:name=".UsbActivity" />
         <activity android:name=".about.CallUsActivity" />
         <activity android:name=".about.WebActivity" />
-        <activity android:name=".utils.TestWeb" />
 
 
         <provider

@@ -14,8 +14,13 @@ import com.sallet.cold.R;
 import com.sallet.cold.dialog.LoadingDialog;
 
 
+/**
+ * Load Animation Popup
+ */
+
 public class loadDialogUtils {
 
+    //Show loading animation
     public static Dialog createLoadingDialog(Context context, String msg) {
 
         LoadingDialog dialog=new LoadingDialog(context,msg);
@@ -25,7 +30,7 @@ public class loadDialogUtils {
 
     /**
      *
-     *
+     *Close loading animation
      * @param mDialog
      */
     public static void closeDialog(Dialog mDialog) {

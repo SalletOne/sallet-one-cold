@@ -26,7 +26,6 @@ import com.sallet.cold.adapter.CoinSetAdapter;
 import com.sallet.cold.base.BaseActivity;
 import com.sallet.cold.bean.CoinSetBean;
 import com.sallet.cold.dialog.PwDialog;
-import com.sallet.cold.polket.PolAddress;
 import com.sallet.cold.utils.AesUtils;
 import com.sallet.cold.utils.L;
 import com.sallet.cold.utils.RecycleViewDivider;
@@ -115,7 +114,6 @@ public class CoinSetActivity extends BaseActivity {
     /**
      * Initialize the currency data and add the currency data to the collection
      */
-
 
     private void initData(){
 

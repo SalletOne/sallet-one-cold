@@ -12,6 +12,11 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+
+/**
+ * Display the split line custom UI of the list
+ */
+
 public class RecycleViewDivider extends RecyclerView.ItemDecoration {
 
     private Paint mPaint;

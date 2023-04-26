@@ -1,8 +1,11 @@
 package com.sallet.cold.bean;
 
+/**
+ * Entity class of self selected mnemonics
+ */
 public class WordCheckBean {
-    private String words;
-    private boolean check;
+    private String words; //Mnemonic words
+    private boolean check;//Checked
 
     public boolean isCheck() {
         return check;

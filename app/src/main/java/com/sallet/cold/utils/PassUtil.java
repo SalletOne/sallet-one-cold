@@ -6,6 +6,11 @@ import java.util.Set;
 
 public class PassUtil {
 
+    /**
+     * Determine if the password format matches
+     * @param password
+     * @return
+     */
     public static String isStringPwd(String password) {
         Map<String, String> map = new HashMap<String, String>();
         for (int i = 0; i < password.length(); i++) {
@@ -32,7 +37,11 @@ public class PassUtil {
         }
     }
 
-
+    /**
+     * Determine if the password format matches
+     * @param password
+     * @return
+     */
 
     public static String isStringPwd10(String password) {
         Map<String, String> map = new HashMap<String, String>();

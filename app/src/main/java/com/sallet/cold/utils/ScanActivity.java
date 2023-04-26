@@ -23,7 +23,7 @@ public class ScanActivity extends BaseActivity implements  DecoratedBarcodeView.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_parent);
-
+        //Scan UI
         decoratedBarcodeView=this.findViewById(R.id.decoratedBarcodeView);
         captureManager = new CaptureManager(this, decoratedBarcodeView);
         captureManager.initializeFromIntent(getIntent(), savedInstanceState);

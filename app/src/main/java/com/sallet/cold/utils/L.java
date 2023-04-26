@@ -2,6 +2,9 @@ package com.sallet.cold.utils;
 
 import android.util.Log;
 
+/**
+ * Print Log Tool Class
+ */
 public class L {
     private static boolean validLog(String str) {
         return (str == null || str.length() == 0) ? false : false;

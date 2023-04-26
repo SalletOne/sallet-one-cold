@@ -16,6 +16,10 @@ import com.journeyapps.barcodescanner.ViewfinderView;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * Display a custom view of the QR code
+ */
 public class CustomZxingView extends ViewfinderView {
 
     public int laserLinePosition = 0;

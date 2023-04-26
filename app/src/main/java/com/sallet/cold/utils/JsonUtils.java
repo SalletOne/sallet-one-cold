@@ -9,6 +9,10 @@ import java.lang.reflect.Type;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * JSON Conversion Tool Class
+ */
+
 public class JsonUtils {
     private static Gson mGson = new GsonBuilder().create();
 

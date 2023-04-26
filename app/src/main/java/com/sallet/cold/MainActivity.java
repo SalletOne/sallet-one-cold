@@ -61,8 +61,6 @@ import com.sallet.cold.utils.LanguageActivity;
 import com.sallet.cold.utils.NetChangeReceiver;
 import com.sallet.cold.utils.ScanActivity;
 import com.sallet.cold.utils.ScanRuleUtil;
-import com.sallet.cold.utils.TestCode;
-import com.sallet.cold.utils.TestWeb;
 
 import org.bitcoinj.crypto.DeterministicHierarchy;
 import org.web3j.crypto.CipherException;
@@ -104,7 +102,7 @@ public class MainActivity extends BaseActivity {
     IsNetDialog isNetDialog;//
     private NetChangeReceiver netBroadcastReceiver;
     /**
-     *
+     *Check the network status to prompt users if the environment is secure
      */
     private int netType;
     private void checkNet() {

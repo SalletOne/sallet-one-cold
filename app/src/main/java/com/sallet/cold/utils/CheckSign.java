@@ -18,6 +18,11 @@ import java.security.NoSuchAlgorithmException;
 
 
 public class CheckSign {
+    /**
+     *Obtain installation package signature
+     * @param ctx
+     * @return
+     */
     public static String getSign(Context ctx) {
         try {
             PackageInfo packageInfo = ctx.getPackageManager().getPackageInfo(ctx.getPackageName(),
@@ -40,17 +45,22 @@ public class CheckSign {
         }
     }
 
+    /**
+     *Obtain the hash value of the apk file
+     * @param context
+     * @return
+     */
     public static String  apkVerifyWithSHA(Context context) {
-        String apkPath = context.getPackageCodePath(); // 获取Apk包存储路径
+        String apkPath = context.getPackageCodePath(); // Obtain the Apk package storage path
         try {
             MessageDigest dexDigest = MessageDigest.getInstance("SHA-1");
             byte[] bytes = new byte[1024];
             int byteCount;
-            FileInputStream fis = new FileInputStream(new File(apkPath)); // 读取apk文件
+            FileInputStream fis = new FileInputStream(new File(apkPath)); // Read apk file
             while ((byteCount = fis.read(bytes)) != -1) {
                 dexDigest.update(bytes, 0, byteCount);
             }
-            BigInteger bigInteger = new BigInteger(1, dexDigest.digest()); // 计算apk文件的哈希值
+            BigInteger bigInteger = new BigInteger(1, dexDigest.digest()); // Calculate the hash value of apk files
             String sha = bigInteger.toString(16);
             return sha;
         } catch (NoSuchAlgorithmException e) {

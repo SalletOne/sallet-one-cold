@@ -32,11 +32,11 @@ public class AddressZxinDialog extends BaseDialog {
     /**
      * Bind UI
      */
-    ImageView ivBack;
-    ImageView iv_logo;
+    ImageView ivBack;//Back button
+    ImageView iv_logo;//
     TextView tv_logo;
-    ImageView ivMa;
-    TextView tvAddress;
+    ImageView ivMa;//QR code
+    TextView tvAddress;//
 
     int type;// Token Type
     String address;// Token address

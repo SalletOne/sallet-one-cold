@@ -28,7 +28,6 @@ import com.sallet.cold.bean.Word;
 import com.sallet.cold.start.CreatMoneyPassActivity;
 import com.sallet.cold.utils.AesUtils;
 import com.sallet.cold.utils.CommaTokenizer;
-import com.sallet.cold.utils.RoundBackgroundColorSpan;
 
 import org.apache.commons.lang3.StringUtils;
 import org.bitcoinj.crypto.MnemonicCode;
@@ -54,12 +53,12 @@ public class ResumeBallActivity extends BaseActivity {
      */
 
     @BindView(R.id.rl_back)
-    RelativeLayout rlBack;
+    RelativeLayout rlBack;//back
 
     @BindView(R.id.et_pass)
-    MultiAutoCompleteTextView etPass;
+    MultiAutoCompleteTextView etPass;//Enter password box
     @BindView(R.id.bt)
-    TextView bt;
+    TextView bt; //Submit button
     @BindView(R.id.title)
     TextView title;
 
